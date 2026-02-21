@@ -1,4 +1,4 @@
-name: Deploy Static Files to S3
+name: Minify and Deploy to S3
 
 on:
   push:
@@ -12,20 +12,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
+      - name: Prepare build directory
+        # Creates a dist folder and copies the contents of your static folder directly into it
+        run: |
+          mkdir dist
+          cp -r static/* dist/
 
-      - name: Install dependencies
-        run: npm install
+      - name: Minify JS and CSS
+        # Uses esbuild to find and minify all JS and CSS files in-place
+        # The '--yes' flag ensures the CI doesn't pause to ask for installation permission
+        run: |
+          find dist -name "*.js" -exec npx --yes esbuild@latest {} --minify --allow-overwrite --outfile={} \;
+          find dist -name "*.css" -exec npx --yes esbuild@latest {} --minify --allow-overwrite --outfile={} \;
 
-      - name: Build and Minify JS/CSS
-        # This outputs your minified code and unminified public files to the 'dist' folder
-        run: npm run build
-
-      - name: Minify standalone JSON files
-        # Uses 'jq' (pre-installed on Ubuntu runners) to compress any JSON files in the dist directory
+      - name: Minify JSON
+        # Uses pre-installed jq to find and compress all JSON files in-place (if you add any later)
         run: |
           find dist -name "*.json" -exec bash -c 'jq -c . "$1" > temp.json && mv temp.json "$1"' _ {} \;
 
@@ -36,5 +37,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Sync to S3 Bucket
-        run: aws s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET }} --delete 
+      - name: Sync to S3
+        # Syncs the dist folder to your bucket, deleting files on S3 that no longer exist in your repo
+        run: aws s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET }} --delete
