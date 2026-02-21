@@ -18,7 +18,7 @@ jobs:
           mkdir dist
           cp -r static/* dist/
 
-      - name: Minify JS and CSS
+      - name: Minify JS and CSS 
         # Uses esbuild to find and minify all JS and CSS files in-place
         # The '--yes' flag ensures the CI doesn't pause to ask for installation permission
         run: |
