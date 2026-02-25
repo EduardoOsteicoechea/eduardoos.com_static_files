@@ -13,20 +13,16 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Prepare build directory
-        # Creates a dist folder and copies the contents of your static folder directly into it
         run: |
           mkdir dist
           cp -r static/* dist/
 
       - name: Minify JS and CSS 
-        # Uses esbuild to find and minify all JS and CSS files in-place
-        # The '--yes' flag ensures the CI doesn't pause to ask for installation permission
         run: |
           find dist -name "*.js" -exec npx --yes esbuild@latest {} --minify --allow-overwrite --outfile={} \;
           find dist -name "*.css" -exec npx --yes esbuild@latest {} --minify --allow-overwrite --outfile={} \;
 
       - name: Minify JSON
-        # Uses pre-installed jq to find and compress all JSON files in-place (if you add any later)
         run: |
           find dist -name "*.json" -exec bash -c 'jq -c . "$1" > temp.json && mv temp.json "$1"' _ {} \;
 
