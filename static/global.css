@@ -18,7 +18,7 @@
 body {
   min-width: 320px;
   min-height: 100vh;
-  padding: 10px;
+  padding: 10px 15px;
 }
 
 @media (prefers-color-scheme: light) {
