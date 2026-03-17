@@ -1,0 +1,42 @@
+name: Build and Deploy Solid App to S3
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 1. Setup Node environment so we can build the project
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20 # Standard for modern Vite projects
+          cache: 'npm'     # Speeds up subsequent workflow runs
+
+      # 2. Install dependencies (using ci for strict, clean installs)
+      - name: Install dependencies
+        run: npm ci
+
+      # 3. Build the Solid project (Vite automatically minifies and bundles into the 'dist' folder)
+      - name: Build Solid project
+        run: npm run build
+
+      # 4. Configure AWS access
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      # 5. Push the build to S3
+      - name: Sync to S3
+        # Assuming you still want it nested inside the /static/ directory on your bucket.
+        # If you want it at the root, remove '/static/' from the destination string.
+        run: aws s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET }}/static/ --delete
