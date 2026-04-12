@@ -413,7 +413,7 @@
 					id="trigger-impactos"
 					onclick={() => toggleSection('impactos')}
 				>
-					<span class="accordion-label">Impactos en el texto base</span>
+					<span class="accordion-label">Impactos en {headerReference}</span>
 					<span class="chevron" aria-hidden="true"></span>
 				</button>
 				{#if isOpen('impactos')}
@@ -549,7 +549,7 @@
       gap: 15px;
 		max-width: 65ch;
       font-size: 16px;
-      padding: 10px 10px 15px 10px;
+      padding: 15px 10px;
 	}
 
 	.prose p:last-child {
