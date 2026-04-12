@@ -669,6 +669,7 @@
 		display: flex;
       flex-direction: column;
       gap: 15px;
+      padding: 0 0 0 25px;
 	}
 
    .biblio-aporte-label{
