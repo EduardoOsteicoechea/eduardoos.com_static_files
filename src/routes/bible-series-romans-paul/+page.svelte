@@ -13,6 +13,7 @@
 	/** Document order; the sticky header applies to the last open section (lowest on the page). */
 	const SECTION_ORDER = [
 		'pasaje',
+		'enfoque',
 		'introduccion',
 		'idea',
 		'impactos',
@@ -72,7 +73,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.lesson.texto_nbla} — Romanos</title>
+	<title>{data.lesson.titulo_de_enseñanza} — Romanos</title>
 </svelte:head>
 
 <div class="page-shell">
@@ -80,8 +81,8 @@
 	<main class="page">
 	<header class="page-header">
 		<p class="eyebrow">Serie bíblica · Romanos</p>
-		<h1 class="title">{data.lesson.texto_nbla}</h1>
-		<p class="subtitle">{headerReference}</p>
+		<h1 class="title">{data.lesson.titulo_de_enseñanza}</h1>
+		<p class="subtitle">Facilitador: {data.lesson.facilitador}</p>
 	</header>
 
 	<div class="accordion" role="presentation">
@@ -98,7 +99,6 @@
 					onclick={() => toggleSection('pasaje')}
 				>
 					<span class="accordion-label">Pasaje base</span>
-					<span class="chevron" aria-hidden="true"></span>
 				</button>
 				{#if isOpen('pasaje')}
 					<div
@@ -111,19 +111,47 @@
 						<div class="panel-inner prose">
 							<p class="ref-line">{headerReference}</p>
 							{#if data.lesson.texto_nestleadam}
-								<p class="greek">{data.lesson.texto_nestleadam}</p>
+								<p class="greek">"{data.lesson.texto_nestleadam}"</p>
 							{/if}
 							
 							<p class="lead">"{data.lesson.texto_nbla}"</p>
-							<p class="meta">Facilitador: {data.lesson.facilitador}</p>
 						</div>
 					</div>
 				{/if}
 			</section>
 
-			<!-- Introducción -->
-			<!-- Introducción -->
-			<!-- Introducción -->
+			<!-- Enfoque sobre el texto -->
+			<section class="accordion-block">
+				<button
+					type="button"
+					class="accordion-trigger"
+					class:accordion-trigger--open={isOpen('enfoque')}
+					class:accordion-trigger--sticky={isStickyTrigger('enfoque')}
+					aria-expanded={isOpen('enfoque')}
+					aria-controls="panel-enfoque"
+					id="trigger-enfoque"
+					onclick={() => toggleSection('enfoque')}
+				>
+					<span class="accordion-label">Enfoque sobre el texto</span>
+					<span class="chevron" aria-hidden="true"></span>
+				</button>
+				{#if isOpen('enfoque')}
+					<div
+						id="panel-enfoque"
+						class="accordion-panel"
+						role="region"
+						aria-labelledby="trigger-enfoque"
+						transition:slide={slideOpts}
+					>
+						<div class="panel-inner prose">
+							{#each data.lesson.enfoque_sobre_texto as paragraph, i (i)}
+								<p>{paragraph}</p>
+							{/each}
+						</div>
+					</div>
+				{/if}
+			</section>
+
 			<!-- Introducción -->
 			<section class="accordion-block">
 				<button
@@ -662,7 +690,7 @@
 		margin: 0 0 0.85rem;
 		padding-left: 1rem;
 		border-left: 3px solid currentColor;
-      color: rgb(231, 131, 0);
+      color: rgb(201, 114, 0);
 	}
 
 	.biblio-aporte {

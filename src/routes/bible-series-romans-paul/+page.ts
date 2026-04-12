@@ -36,6 +36,8 @@ export type LessonJson = {
 	texto_nbla: string;
 	texto_rvr60?: string;
 	texto_nestleadam?: string;
+	titulo_de_enseñanza: string;
+	enfoque_sobre_texto: string[];
 	idea: Idea;
 	conclusiones: string[];
 };
