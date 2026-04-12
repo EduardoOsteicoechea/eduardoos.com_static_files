@@ -13,6 +13,7 @@
 	/** Document order; the sticky header applies to the last open section (lowest on the page). */
 	const SECTION_ORDER = [
 		'pasaje',
+		'introduccion',
 		'idea',
 		'textos',
 		'aplicacion',
@@ -111,16 +112,52 @@
 							{#if data.lesson.texto_nestleadam}
 								<p class="greek">{data.lesson.texto_nestleadam}</p>
 							{/if}
-							{#if data.lesson.texto_rvr60}
-								<p>{data.lesson.texto_rvr60}</p>
-							{/if}
-							<p class="lead">{data.lesson.texto_nbla}</p>
+							
+							<p class="lead">"{data.lesson.texto_nbla}"</p>
 							<p class="meta">Facilitador: {data.lesson.facilitador}</p>
 						</div>
 					</div>
 				{/if}
 			</section>
 
+			<!-- Introducción -->
+			<!-- Introducción -->
+			<!-- Introducción -->
+			<!-- Introducción -->
+			<section class="accordion-block">
+				<button
+					type="button"
+					class="accordion-trigger"
+					class:accordion-trigger--open={isOpen('introduccion')}
+					class:accordion-trigger--sticky={isStickyTrigger('introduccion')}
+					aria-expanded={isOpen('introduccion')}
+					aria-controls="panel-introduccion"
+					id="trigger-introduccion"
+					onclick={() => toggleSection('introduccion')}
+				>
+					<span class="accordion-label">Introducción</span>
+					<span class="chevron" aria-hidden="true"></span>
+				</button>
+				{#if isOpen('introduccion')}
+					<div
+						id="panel-introduccion"
+						class="accordion-panel"
+						role="region"
+						aria-labelledby="trigger-introduccion"
+						transition:slide={slideOpts}
+					>
+						<div class="panel-inner prose">
+							{#each data.lesson.idea.Introducción as paragraph, i (i)}
+								<p>{paragraph}</p>
+							{/each}
+						</div>
+					</div>
+				{/if}
+			</section>
+
+			<!-- Idea principal -->
+			<!-- Idea principal -->
+			<!-- Idea principal -->
 			<!-- Idea principal -->
 			<section class="accordion-block">
 				<button
@@ -153,6 +190,9 @@
 				{/if}
 			</section>
 
+			<!-- Textos bíblicos clave -->
+			<!-- Textos bíblicos clave -->
+			<!-- Textos bíblicos clave -->
 			<!-- Textos bíblicos clave -->
 			<section class="accordion-block">
 				<button
@@ -456,9 +496,11 @@
 		gap: 0;
 		width: 100%;
 		text-align: left;
-		padding: 5px 10px;
+		padding: 10px 10px;
 		border: none;
 		cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
 	}
 
 	.accordion-trigger:focus-visible {
@@ -523,7 +565,8 @@
 	}
 
 	.meta {
-		margin-top: 1.25rem !important;
+		/* margin-top: 1.25rem !important; */
+      font-size: 12px;
 	}
 
 	.biblio-card {
