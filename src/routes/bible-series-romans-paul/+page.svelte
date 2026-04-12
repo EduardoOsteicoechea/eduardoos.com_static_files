@@ -506,8 +506,8 @@
       flex-direction: column;
       gap: 15px;
 		max-width: 65ch;
-      font-size: 14px;
-      padding: 10px 10px;
+      font-size: 16px;
+      padding: 10px 10px 15px 10px;
 	}
 
 	.prose p:last-child {
