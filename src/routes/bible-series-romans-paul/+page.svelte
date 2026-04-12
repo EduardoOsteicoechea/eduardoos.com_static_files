@@ -243,7 +243,7 @@
 					id="trigger-textos"
 					onclick={() => toggleSection('textos')}
 				>
-					<span class="accordion-label">Textos clave</span>
+					<span class="accordion-label">Textos que demuestran la idea principal</span>
 					<span class="chevron" aria-hidden="true"></span>
 				</button>
 				{#if isOpen('textos')}
@@ -662,11 +662,18 @@
 		margin: 0 0 0.85rem;
 		padding-left: 1rem;
 		border-left: 3px solid currentColor;
+      color: rgb(231, 131, 0);
 	}
 
 	.biblio-aporte {
-		margin: 0;
+		display: flex;
+      flex-direction: column;
+      gap: 15px;
 	}
+
+   .biblio-aporte-label{
+      margin: 10px 0 0 0 !important;
+   }
 
 	.bullet-list {
 		margin: 0;
