@@ -450,6 +450,7 @@
 		z-index: 0;
 		pointer-events: none;
       background: rgba(255,255,255,.95);
+      backdrop-filter: blur(10px);
 	}
 
 	.page {
@@ -486,7 +487,7 @@
 	.accordion-block {
 		display: flex;
 		flex-direction: column;
-		border: 1px solid currentColor;
+		/* border: 1px solid currentColor; */
 	}
 
 	.accordion-trigger {
@@ -501,6 +502,7 @@
 		cursor: pointer;
       font-size: 16px;
       font-weight: 600;
+		border: 1px solid #ccc;
 	}
 
 	.accordion-trigger:focus-visible {
@@ -536,20 +538,18 @@
 	}
 
 	.accordion-panel {
-		border-top: 1px solid currentColor;
+		/* border-top: 1px solid currentColor; */
 	}
 
 	.panel-inner {
-		padding: 5px;
+		padding: 15px 10px;
 	}
 
 	.prose {
       display: flex;
       flex-direction: column;
       gap: 15px;
-		max-width: 65ch;
-      font-size: 16px;
-      padding: 15px 10px;
+      font-size: 18px;
 	}
 
 	.prose p:last-child {
