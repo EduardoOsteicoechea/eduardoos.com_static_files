@@ -99,6 +99,7 @@
 					onclick={() => toggleSection('pasaje')}
 				>
 					<span class="accordion-label">Pasaje base</span>
+					<span class="chevron" aria-hidden="true"></span>
 				</button>
 				{#if isOpen('pasaje')}
 					<div
