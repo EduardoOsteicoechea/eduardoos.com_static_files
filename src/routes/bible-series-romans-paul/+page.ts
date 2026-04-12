@@ -6,15 +6,22 @@ export type TextoBiblico = {
 	capitulos_de_pasaje: number[];
 	versiculos_de_pasaje: number[];
 	texto_nbla: string;
-	aporte: string;
+	aporte: string[];
+};
+
+/** Introductory lines plus the list of biblical text cards. */
+export type TextosBiblicosBloque = {
+	introduccion: string[];
+	textos: TextoBiblico[];
 };
 
 export type Idea = {
 	Introducción: string[];
 	núcleo: string[];
-	textos_biblicos_clave: TextoBiblico[];
-	aplicacion: string;
-	textos_biblicos_que_legitiman_aplicacion: TextoBiblico[];
+	impactos_en_texto_base: string[];
+	textos_biblicos_clave: TextosBiblicosBloque;
+	aplicacion: string[];
+	textos_biblicos_que_legitiman_aplicacion: TextosBiblicosBloque;
 	creencias_fundamentales_de_aplicacion: string[];
 	aclaraciones: string[];
 	beneficios_de_aplicacion: string[];
@@ -30,7 +37,7 @@ export type LessonJson = {
 	texto_rvr60?: string;
 	texto_nestleadam?: string;
 	idea: Idea;
-	impactos_en_texto_base: string[];
+	conclusiones: string[];
 };
 
 export const load: PageLoad = async ({ fetch }) => {

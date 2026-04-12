@@ -15,13 +15,14 @@
 		'pasaje',
 		'introduccion',
 		'idea',
+		'impactos',
 		'textos',
 		'aplicacion',
 		'legitiman',
 		'creencias',
 		'aclaraciones',
 		'beneficios',
-		'impactos',
+		'conclusiones',
 	] as const;
 
 	const stickySectionId = $derived.by(() => {
@@ -190,6 +191,43 @@
 				{/if}
 			</section>
 
+			<!-- Impactos en texto base -->
+			<!-- Impactos en texto base -->
+			<!-- Impactos en texto base -->
+			<!-- Impactos en texto base -->
+			<section class="accordion-block">
+				<button
+					type="button"
+					class="accordion-trigger"
+					class:accordion-trigger--open={isOpen('impactos')}
+					class:accordion-trigger--sticky={isStickyTrigger('impactos')}
+					aria-expanded={isOpen('impactos')}
+					aria-controls="panel-impactos"
+					id="trigger-impactos"
+					onclick={() => toggleSection('impactos')}
+				>
+					<span class="accordion-label">Impactos en {headerReference}</span>
+					<span class="chevron" aria-hidden="true"></span>
+				</button>
+				{#if isOpen('impactos')}
+					<div
+						id="panel-impactos"
+						class="accordion-panel"
+						role="region"
+						aria-labelledby="trigger-impactos"
+						transition:slide={slideOpts}
+					>
+						<div class="panel-inner prose">
+							<ul class="bullet-list">
+								{#each data.lesson.idea.impactos_en_texto_base as item, i (i)}
+									<li>{item}</li>
+								{/each}
+							</ul>
+						</div>
+					</div>
+				{/if}
+			</section>
+
 			<!-- Textos bíblicos clave -->
 			<!-- Textos bíblicos clave -->
 			<!-- Textos bíblicos clave -->
@@ -205,7 +243,7 @@
 					id="trigger-textos"
 					onclick={() => toggleSection('textos')}
 				>
-					<span class="accordion-label">Textos bíblicos clave</span>
+					<span class="accordion-label">Textos clave</span>
 					<span class="chevron" aria-hidden="true"></span>
 				</button>
 				{#if isOpen('textos')}
@@ -217,13 +255,21 @@
 						transition:slide={slideOpts}
 					>
 						<div class="panel-inner prose">
-							{#each data.lesson.idea.textos_biblicos_clave as t, i (i)}
+							{#each data.lesson.idea.textos_biblicos_clave.introduccion as paragraph, i (i)}
+								<p>{paragraph}</p>
+							{/each}
+							{#each data.lesson.idea.textos_biblicos_clave.textos as t, i (i)}
 								<article class="biblio-card">
 									<h3 class="biblio-ref">
 										{formatReference(t.libro_de_pasaje, t.capitulos_de_pasaje, t.versiculos_de_pasaje)}
 									</h3>
 									<blockquote class="biblio-quote">{t.texto_nbla}</blockquote>
-									<p class="biblio-aporte"><span class="biblio-aporte-label">Aporte:</span> {t.aporte}</p>
+									<div class="biblio-aporte">
+										<span class="biblio-aporte-label">Aporte:</span>
+										{#each t.aporte as line, j (j)}
+											<p>{line}</p>
+										{/each}
+									</div>
 								</article>
 							{/each}
 						</div>
@@ -231,6 +277,9 @@
 				{/if}
 			</section>
 
+			<!-- Aplicación -->
+			<!-- Aplicación -->
+			<!-- Aplicación -->
 			<!-- Aplicación -->
 			<section class="accordion-block">
 				<button
@@ -255,12 +304,17 @@
 						transition:slide={slideOpts}
 					>
 						<div class="panel-inner prose">
-							<p>{data.lesson.idea.aplicacion}</p>
+							{#each data.lesson.idea.aplicacion as paragraph, i (i)}
+								<p>{paragraph}</p>
+							{/each}
 						</div>
 					</div>
 				{/if}
 			</section>
 
+			<!-- Textos que legitiman la aplicación -->
+			<!-- Textos que legitiman la aplicación -->
+			<!-- Textos que legitiman la aplicación -->
 			<!-- Textos que legitiman la aplicación -->
 			<section class="accordion-block">
 				<button
@@ -285,13 +339,21 @@
 						transition:slide={slideOpts}
 					>
 						<div class="panel-inner prose">
-							{#each data.lesson.idea.textos_biblicos_que_legitiman_aplicacion as t, i (i)}
+							{#each data.lesson.idea.textos_biblicos_que_legitiman_aplicacion.introduccion as paragraph, i (i)}
+								<p>{paragraph}</p>
+							{/each}
+							{#each data.lesson.idea.textos_biblicos_que_legitiman_aplicacion.textos as t, i (i)}
 								<article class="biblio-card">
 									<h3 class="biblio-ref">
 										{formatReference(t.libro_de_pasaje, t.capitulos_de_pasaje, t.versiculos_de_pasaje)}
 									</h3>
 									<blockquote class="biblio-quote">{t.texto_nbla}</blockquote>
-									<p class="biblio-aporte"><span class="biblio-aporte-label">Aporte:</span> {t.aporte}</p>
+									<div class="biblio-aporte">
+										<span class="biblio-aporte-label">Aporte:</span>
+										{#each t.aporte as line, j (j)}
+											<p>{line}</p>
+										{/each}
+									</div>
 								</article>
 							{/each}
 						</div>
@@ -299,6 +361,9 @@
 				{/if}
 			</section>
 
+			<!-- Creencias fundamentales -->
+			<!-- Creencias fundamentales -->
+			<!-- Creencias fundamentales -->
 			<!-- Creencias fundamentales -->
 			<section class="accordion-block">
 				<button
@@ -368,6 +433,9 @@
 			</section>
 
 			<!-- Beneficios de aplicación -->
+			<!-- Beneficios de aplicación -->
+			<!-- Beneficios de aplicación -->
+			<!-- Beneficios de aplicación -->
 			<section class="accordion-block">
 				<button
 					type="button"
@@ -401,39 +469,42 @@
 				{/if}
 			</section>
 
-			<!-- Impactos en texto base -->
+
+
+         
+
+			<!-- Conclusión -->
 			<section class="accordion-block">
 				<button
 					type="button"
 					class="accordion-trigger"
-					class:accordion-trigger--open={isOpen('impactos')}
-					class:accordion-trigger--sticky={isStickyTrigger('impactos')}
-					aria-expanded={isOpen('impactos')}
-					aria-controls="panel-impactos"
-					id="trigger-impactos"
-					onclick={() => toggleSection('impactos')}
+					class:accordion-trigger--open={isOpen('conclusiones')}
+					class:accordion-trigger--sticky={isStickyTrigger('conclusiones')}
+					aria-expanded={isOpen('conclusiones')}
+					aria-controls="panel-conclusiones"
+					id="trigger-conclusiones"
+					onclick={() => toggleSection('conclusiones')}
 				>
-					<span class="accordion-label">Impactos en {headerReference}</span>
+					<span class="accordion-label">Conclusiones</span>
 					<span class="chevron" aria-hidden="true"></span>
 				</button>
-				{#if isOpen('impactos')}
+				{#if isOpen('conclusiones')}
 					<div
-						id="panel-impactos"
+						id="panel-conclusiones"
 						class="accordion-panel"
 						role="region"
-						aria-labelledby="trigger-impactos"
+						aria-labelledby="trigger-conclusiones"
 						transition:slide={slideOpts}
 					>
 						<div class="panel-inner prose">
-							<ul class="bullet-list">
-								{#each data.lesson.impactos_en_texto_base as item, i (i)}
-									<li>{item}</li>
-								{/each}
-							</ul>
+							{#each data.lesson.conclusiones.filter((p) => p.trim()) as paragraph, i (i)}
+								<p>{paragraph}</p>
+							{/each}
 						</div>
 					</div>
 				{/if}
 			</section>
+
 		</div>
 	</main>
 </div>
@@ -500,7 +571,7 @@
 		padding: 10px 10px;
 		border: none;
 		cursor: pointer;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 600;
 		border: 1px solid #ccc;
 	}
@@ -538,17 +609,17 @@
 	}
 
 	.accordion-panel {
-		/* border-top: 1px solid currentColor; */
+		border-top: 1px solid currentColor;
 	}
 
 	.panel-inner {
-		padding: 15px 10px 20px 10px;
+		padding: 20px 10px;
 	}
 
 	.prose {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 20px;
       font-size: 18px;
 	}
 
