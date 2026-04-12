@@ -670,8 +670,8 @@
 	}
 
 	.biblio-card {
-		padding: 1rem 0;
-		border-bottom: 1px solid currentColor;
+		padding: 0 0 30px 0;
+		border-bottom: 1px solid #ccc;
 	}
 
 	.biblio-card:first-child {
