@@ -47,7 +47,11 @@
     z-index: 1;
   }
 
-  *{
+  :global(:root){
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  :global(*){
    padding: 0;
    margin: 0;
    position: relative;

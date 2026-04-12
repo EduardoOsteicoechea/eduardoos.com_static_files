@@ -145,7 +145,9 @@
 						transition:slide={slideOpts}
 					>
 						<div class="panel-inner prose">
-							<p>{data.lesson.idea.núcleo}</p>
+							{#each data.lesson.idea.núcleo as paragraph, i (i)}
+								<p>{paragraph}</p>
+							{/each}
 						</div>
 					</div>
 				{/if}
@@ -407,7 +409,7 @@
 		inset: 0;
 		z-index: 0;
 		pointer-events: none;
-      background: rgba(255,255,255,.9);
+      background: rgba(255,255,255,.95);
 	}
 
 	.page {
@@ -500,7 +502,12 @@
 	}
 
 	.prose {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
 		max-width: 65ch;
+      font-size: 14px;
+      padding: 10px 10px;
 	}
 
 	.prose p:last-child {
@@ -508,7 +515,7 @@
 	}
 
 	.ref-line {
-		margin: 0 0 0.65rem;
+		margin: 0 0 0rem;
 	}
 
 	.greek {

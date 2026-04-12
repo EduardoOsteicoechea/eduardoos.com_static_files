@@ -10,7 +10,7 @@ export type TextoBiblico = {
 };
 
 export type Idea = {
-	núcleo: string;
+	núcleo: string[];
 	textos_biblicos_clave: TextoBiblico[];
 	aplicacion: string;
 	textos_biblicos_que_legitiman_aplicacion: TextoBiblico[];

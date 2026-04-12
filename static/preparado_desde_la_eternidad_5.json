@@ -2,138 +2,254 @@
    "serie": "romanos",
    "facilitador": "eduardo osteicoechea",
    "libro_de_pasaje": "romanos",
-   "capitulos_de_pasaje": [1],
-   "versiculos_de_pasaje": [1],
+   "capitulos_de_pasaje": [
+      1
+   ],
+   "versiculos_de_pasaje": [
+      1
+   ],
    "texto_nbla": "Pablo",
    "texto_rvr60": "Pablo",
    "texto_nestleadam": "Παῦλος",
    "idea": {
-      "núcleo":"Dios planeó y orquestó desde la eternidad pasada, el glorificarse y preparar un pueblo santificado que obsequiara a Su Hijo, a través del origen y formación de Pablo. Por una parte, su origen, formación y obra como fariseo destacado, le otorgaron un perfil útil para defender a las iglesias gentiles de los falsos maestros judaizantes. Por otra, su ciudadanía romana y destaque intelectual, resultaron valiosas para evangelizar a gobernantes y llevarle vivo a Roma, la capital del mundo en ese tiempo, donde bajo arresto domiciliario predicaría abiertamente el evangelio durante dos años. Cada uno de los elementos originarios de Pablo encajaron perfectamente en este plan soberano de Dios a medida que desenvolvió la historia.",
-
+      "núcleo": [
+         "Dios planeó y orquestó desde la eternidad pasada, el glorificarse y preparar un pueblo santificado que obsequiara a Su Hijo, a través del origen y formación de Pablo",
+         "Por una parte, su origen, formación y obra como fariseo destacado, le otorgaron un perfil útil para defender a las iglesias gentiles de los falsos maestros judaizantes.",
+         "Por otra, su ciudadanía romana y destaque intelectual, resultaron valiosas para evangelizar a gobernantes y llevarle vivo a Roma, la capital del mundo en ese tiempo, donde bajo arresto domiciliario predicaría abiertamente el evangelio durante dos años.",
+         "Cada uno de los elementos originarios de Pablo encajaron perfectamente en este plan soberano de Dios a medida que desenvolvió la historia."
+      ],
       "textos_biblicos_clave": [
          {
             "libro_de_pasaje": "galatas",
-            "capitulos_de_pasaje": [1],
-            "versiculos_de_pasaje": [15],
-            "texto_nbla":"... Dios, que me apartó desde el vientre de mi madre y me llamó por su gracia.",
-            "aporte":"demuestra que Pablo fue predestinado desde su concepción."
-         },{
+            "capitulos_de_pasaje": [
+               1
+            ],
+            "versiculos_de_pasaje": [
+               15
+            ],
+            "texto_nbla": "... Dios, que me apartó desde el vientre de mi madre y me llamó por su gracia.",
+            "aporte": "demuestra que Pablo fue predestinado desde su concepción."
+         },
+         {
             "libro_de_pasaje": "2 timoteo",
-            "capitulos_de_pasaje": [1],
-            "versiculos_de_pasaje": [9],
-            "texto_nbla":"Él nos ha salvado y nos ha llamado con un llamamiento santo, no según nuestras obras, sino según su propósito y según la gracia que nos fue dada en Cristo Jesús desde la eternidad.",
-            "aporte":"demuestra que Pablo fue predestinado a un propósito asignado por gracia desde la eternidad."
-         },{
+            "capitulos_de_pasaje": [
+               1
+            ],
+            "versiculos_de_pasaje": [
+               9
+            ],
+            "texto_nbla": "Él nos ha salvado y nos ha llamado con un llamamiento santo, no según nuestras obras, sino según su propósito y según la gracia que nos fue dada en Cristo Jesús desde la eternidad.",
+            "aporte": "demuestra que Pablo fue predestinado a un propósito asignado por gracia desde la eternidad."
+         },
+         {
             "libro_de_pasaje": "romanos",
-            "capitulos_de_pasaje": [8],
-            "versiculos_de_pasaje": [28,29,30],
-            "texto_nbla":"Y sabemos que para los que aman a Dios, todas las cosas cooperan para bien, esto es, para los que son llamados conforme a Su propósito. Porque a los que de antemano conoció, también los predestinó a ser hechos conforme a la imagen de Su Hijo, para que Él sea el primogénito entre muchos hermanos. A los que predestinó, a esos también llamó. A los que llamó, a esos también justificó. A los que justificó, a esos también glorificó.",
-            "aporte":"demuestra que Dios predestina a individuos a los que ama misteriosamente (conocer no es ver el futuro porque esto lo hace Dios con cada individuo, lo cual rompería la lógica del argumento), los llama, justifica y lleva a la gloria sin fallar en ningún caso."
-         },{
+            "capitulos_de_pasaje": [
+               8
+            ],
+            "versiculos_de_pasaje": [
+               28,
+               29,
+               30
+            ],
+            "texto_nbla": "Y sabemos que para los que aman a Dios, todas las cosas cooperan para bien, esto es, para los que son llamados conforme a Su propósito. Porque a los que de antemano conoció, también los predestinó a ser hechos conforme a la imagen de Su Hijo, para que Él sea el primogénito entre muchos hermanos. A los que predestinó, a esos también llamó. A los que llamó, a esos también justificó. A los que justificó, a esos también glorificó.",
+            "aporte": "demuestra que Dios predestina a individuos a los que ama misteriosamente (conocer no es ver el futuro porque esto lo hace Dios con cada individuo, lo cual rompería la lógica del argumento), los llama, justifica y lleva a la gloria sin fallar en ningún caso."
+         },
+         {
             "libro_de_pasaje": "hechos",
-            "capitulos_de_pasaje": [13],
-            "versiculos_de_pasaje": [9],
-            "texto_nbla":"Entonces Saulo, llamado también Pablo...",
-            "aporte":"demuestra que Pablo es el Saulo del libro de hechos."
-         },{
+            "capitulos_de_pasaje": [
+               13
+            ],
+            "versiculos_de_pasaje": [
+               9
+            ],
+            "texto_nbla": "Entonces Saulo, llamado también Pablo...",
+            "aporte": "demuestra que Pablo es el Saulo del libro de hechos."
+         },
+         {
             "libro_de_pasaje": "hechos",
-            "capitulos_de_pasaje": [21],
-            "versiculos_de_pasaje": [38],
-            "texto_nbla":"Pablo respondió: «Yo soy judío de Tarso de Cilicia, ciudadano de una ciudad no sin importancia.",
-            "aporte":"demuestra que Pablo posee la ciudadanía romana de una ciudad importante."
-         },{
+            "capitulos_de_pasaje": [
+               21
+            ],
+            "versiculos_de_pasaje": [
+               38
+            ],
+            "texto_nbla": "Pablo respondió: «Yo soy judío de Tarso de Cilicia, ciudadano de una ciudad no sin importancia.",
+            "aporte": "demuestra que Pablo posee la ciudadanía romana de una ciudad importante."
+         },
+         {
             "libro_de_pasaje": "hechos",
-            "capitulos_de_pasaje": [22],
-            "versiculos_de_pasaje": [3],
-            "texto_nbla":"Yo soy judío, nacido en Tarso de Cilicia, pero criado en esta ciudad, educado bajo Gamaliel en estricta conformidad a la ley de nuestros padres, siendo tan celoso de Dios como todos ustedes lo son hoy.",
-            "aporte":"demuestra que Pablo es judío, criado en Jerusalén y formado bajo la más excelente erudición en el judaísmo. Esto demuestra igualmente su dominio intelectual de una buena parte del Antiguo Testamento (digo una buena parte porque no entendía el evangelio)."
-         },{
+            "capitulos_de_pasaje": [
+               22
+            ],
+            "versiculos_de_pasaje": [
+               3
+            ],
+            "texto_nbla": "Yo soy judío, nacido en Tarso de Cilicia, pero criado en esta ciudad, educado bajo Gamaliel en estricta conformidad a la ley de nuestros padres, siendo tan celoso de Dios como todos ustedes lo son hoy.",
+            "aporte": "demuestra que Pablo es judío, criado en Jerusalén y formado bajo la más excelente erudición en el judaísmo. Esto demuestra igualmente su dominio intelectual de una buena parte del Antiguo Testamento (digo una buena parte porque no entendía el evangelio)."
+         },
+         {
             "libro_de_pasaje": "filipenses",
-            "capitulos_de_pasaje": [3],
-            "versiculos_de_pasaje": [4,5,6],
-            "texto_nbla":"Aunque yo tengo también de qué confiar en la carne. Si alguno piensa que tiene de qué confiar en la carne, yo más: circuncidado al octavo día, del linaje de Israel, de la tribu de Benjamín, hebreo de hebreos; en cuanto a la ley, fariseo; en cuanto a celo, perseguidor de la iglesia; en cuanto a la justicia que es en la ley, irreprensible.",
-            "aporte":"demuestra que Pablo venía de un linaje judío puro, y era un fariseo extraordinario, y un hombre enérgico en su práctica del judaísmo."
-         },{
+            "capitulos_de_pasaje": [
+               3
+            ],
+            "versiculos_de_pasaje": [
+               4,
+               5,
+               6
+            ],
+            "texto_nbla": "Aunque yo tengo también de qué confiar en la carne. Si alguno piensa que tiene de qué confiar en la carne, yo más: circuncidado al octavo día, del linaje de Israel, de la tribu de Benjamín, hebreo de hebreos; en cuanto a la ley, fariseo; en cuanto a celo, perseguidor de la iglesia; en cuanto a la justicia que es en la ley, irreprensible.",
+            "aporte": "demuestra que Pablo venía de un linaje judío puro, y era un fariseo extraordinario, y un hombre enérgico en su práctica del judaísmo."
+         },
+         {
             "libro_de_pasaje": "hechos",
-            "capitulos_de_pasaje": [22],
-            "versiculos_de_pasaje": [25,26,27,28,29],
-            "texto_nbla":"Pero cuando lo estiraron con correas, Pablo dijo al centurión que estaba allí: «¿Les es lícito azotar a un ciudadano romano sin haberlo juzgado?». Al oír esto el centurión, fue al comandante y le avisó, diciendo: «¿Qué va a hacer? Porque este hombre es romano». El comandante vino y le preguntó: «Dime, ¿eres romano?». «Sí», le respondió Pablo. El comandante le contestó: «Yo adquirí esta ciudadanía por una gran cantidad de dinero». «Pero yo soy romano de nacimiento», le dijo Pablo. Entonces los que iban a someterlo a azotes, al instante lo soltaron; y también el comandante tuvo temor cuando supo que Pablo era romano, y porque lo había atado con cadenas.",
-            "aporte":"demuestra parte de la utilidad de la ciudadanía romana de Pablo para llevarle vivo a Roma."
-         },{
+            "capitulos_de_pasaje": [
+               22
+            ],
+            "versiculos_de_pasaje": [
+               25,
+               26,
+               27,
+               28,
+               29
+            ],
+            "texto_nbla": "Pero cuando lo estiraron con correas, Pablo dijo al centurión que estaba allí: «¿Les es lícito azotar a un ciudadano romano sin haberlo juzgado?». Al oír esto el centurión, fue al comandante y le avisó, diciendo: «¿Qué va a hacer? Porque este hombre es romano». El comandante vino y le preguntó: «Dime, ¿eres romano?». «Sí», le respondió Pablo. El comandante le contestó: «Yo adquirí esta ciudadanía por una gran cantidad de dinero». «Pero yo soy romano de nacimiento», le dijo Pablo. Entonces los que iban a someterlo a azotes, al instante lo soltaron; y también el comandante tuvo temor cuando supo que Pablo era romano, y porque lo había atado con cadenas.",
+            "aporte": "demuestra parte de la utilidad de la ciudadanía romana de Pablo para llevarle vivo a Roma."
+         },
+         {
             "libro_de_pasaje": "hechos",
-            "capitulos_de_pasaje": [25],
-            "versiculos_de_pasaje": [1,2,3,10,11,12],
-            "texto_nbla":"Festo, habiendo llegado a la provincia, subió tres días después de Cesarea a Jerusalén. Y los principales sacerdotes y los judíos más influyentes le presentaron acusaciones contra Pablo, y le instaban, pidiéndole, como un favor contra Pablo, que lo hiciera traer a Jerusalén, preparando ellos, mientras tanto, una emboscada para matarlo en el camino. Entonces Pablo respondió: «Ante el tribunal del César estoy, que es donde debo ser juzgado. Ningún agravio he hecho a los judíos, como usted muy bien sabe. Si soy, pues, un malhechor y he hecho algo digno de muerte, no rehúso morir; pero si ninguna de estas cosas de que estos me acusan es cierta, nadie puede entregarme a ellos. Apelo al César». Entonces Festo, habiendo deliberado con el consejo, respondió: «Al César ha apelado, al César irá».",
-            "aporte":"demuestra parte de la utilidad de la ciudadanía romana de Pablo para llevarle vivo a Roma."
-         },{
+            "capitulos_de_pasaje": [
+               25
+            ],
+            "versiculos_de_pasaje": [
+               1,
+               2,
+               3,
+               10,
+               11,
+               12
+            ],
+            "texto_nbla": "Festo, habiendo llegado a la provincia, subió tres días después de Cesarea a Jerusalén. Y los principales sacerdotes y los judíos más influyentes le presentaron acusaciones contra Pablo, y le instaban, pidiéndole, como un favor contra Pablo, que lo hiciera traer a Jerusalén, preparando ellos, mientras tanto, una emboscada para matarlo en el camino. Entonces Pablo respondió: «Ante el tribunal del César estoy, que es donde debo ser juzgado. Ningún agravio he hecho a los judíos, como usted muy bien sabe. Si soy, pues, un malhechor y he hecho algo digno de muerte, no rehúso morir; pero si ninguna de estas cosas de que estos me acusan es cierta, nadie puede entregarme a ellos. Apelo al César». Entonces Festo, habiendo deliberado con el consejo, respondió: «Al César ha apelado, al César irá».",
+            "aporte": "demuestra parte de la utilidad de la ciudadanía romana de Pablo para llevarle vivo a Roma."
+         },
+         {
             "libro_de_pasaje": "hechos",
-            "capitulos_de_pasaje": [25],
-            "versiculos_de_pasaje": [13,22],
-            "texto_nbla":"Pasados varios días, el rey Herodes Agripa y Berenice llegaron a Cesarea y fueron a saludar a Festo... Entonces Agripa II dijo a Festo: 'A mí también me gustaría oír al hombre'. 'Mañana lo oirás', dijo Festo.",
-            "aporte":"demuestra parte de la utilidad de la ciudadanía romana de Pablo para evangelizar a gobernantes."
-         },{
+            "capitulos_de_pasaje": [
+               25
+            ],
+            "versiculos_de_pasaje": [
+               13,
+               22
+            ],
+            "texto_nbla": "Pasados varios días, el rey Herodes Agripa y Berenice llegaron a Cesarea y fueron a saludar a Festo... Entonces Agripa II dijo a Festo: 'A mí también me gustaría oír al hombre'. 'Mañana lo oirás', dijo Festo.",
+            "aporte": "demuestra parte de la utilidad de la ciudadanía romana de Pablo para evangelizar a gobernantes."
+         },
+         {
             "libro_de_pasaje": "hechos",
-            "capitulos_de_pasaje": [28],
-            "versiculos_de_pasaje": [16,17,18,19,20,21],
-            "texto_nbla":"Cuando entramos en Roma, el centurión entregó los presos al prefecto militar, pero a Pablo se le permitió vivir aparte, con el soldado que lo custodiaba. Tres días después Pablo convocó a los principales de los judíos, y cuando se reunieron, les dijo: «Hermanos, sin haber hecho yo nada contra nuestro pueblo ni contra las tradiciones de nuestros padres, desde Jerusalén fui entregado preso en manos de los romanos, los cuales, cuando me interrogaron, quisieron ponerme en libertad, pues no encontraron causa para condenarme a muerte. Pero cuando los judíos se opusieron, me vi obligado a apelar al César, pero no porque tuviera acusación alguna contra mi pueblo. Por tanto, por esta razón he pedido verlos y hablarles, porque por causa de la esperanza de Israel llevo esta cadena». Ellos le dijeron: «Nosotros no hemos recibido cartas de Judea sobre ti, ni ha venido aquí ninguno de los hermanos que haya informado o hablado algo malo acerca de ti.",
-            "aporte":"demuestra parte de la utilidad de la ciudadanía romana de Pablo para llevarle vivo a Roma."
-         },{
+            "capitulos_de_pasaje": [
+               28
+            ],
+            "versiculos_de_pasaje": [
+               16,
+               17,
+               18,
+               19,
+               20,
+               21
+            ],
+            "texto_nbla": "Cuando entramos en Roma, el centurión entregó los presos al prefecto militar, pero a Pablo se le permitió vivir aparte, con el soldado que lo custodiaba. Tres días después Pablo convocó a los principales de los judíos, y cuando se reunieron, les dijo: «Hermanos, sin haber hecho yo nada contra nuestro pueblo ni contra las tradiciones de nuestros padres, desde Jerusalén fui entregado preso en manos de los romanos, los cuales, cuando me interrogaron, quisieron ponerme en libertad, pues no encontraron causa para condenarme a muerte. Pero cuando los judíos se opusieron, me vi obligado a apelar al César, pero no porque tuviera acusación alguna contra mi pueblo. Por tanto, por esta razón he pedido verlos y hablarles, porque por causa de la esperanza de Israel llevo esta cadena». Ellos le dijeron: «Nosotros no hemos recibido cartas de Judea sobre ti, ni ha venido aquí ninguno de los hermanos que haya informado o hablado algo malo acerca de ti.",
+            "aporte": "demuestra parte de la utilidad de la ciudadanía romana de Pablo para llevarle vivo a Roma."
+         },
+         {
             "libro_de_pasaje": "hechos",
-            "capitulos_de_pasaje": [28],
-            "versiculos_de_pasaje": [21,22,23,24,25,26,27,28],
-            "texto_nbla":"Ellos le dijeron: «Nosotros no hemos recibido cartas de Judea sobre ti, ni ha venido aquí ninguno de los hermanos que haya informado o hablado algo malo acerca de ti. Pero deseamos oír de ti lo que enseñas, porque lo que sabemos de esta secta es que en todas partes se habla contra ella». Y habiéndole fijado un día, vinieron en gran número a donde él se alojaba. Y desde la mañana hasta la tarde les explicaba testificando fielmente sobre el reino de Dios, y procurando persuadirlos acerca de Jesús, tanto por la ley de Moisés como por los profetas. Algunos eran persuadidos por lo que se decía, pero otros no creían. Al no estar de acuerdo entre sí, comenzaron a marcharse después de que Pablo dijo una última palabra: «Bien habló el Espíritu Santo a los padres de ustedes por medio del profeta Isaías, diciendo: “Ve a este pueblo y di: ‘Al oír oirán, y no entenderán; Y viendo verán, y no percibirán; Porque el corazón de este pueblo se ha vuelto insensible, Y con dificultad oyen con sus oídos; Y han cerrado sus ojos; De otro modo, verían con los ojos, Oirían con los oídos, Y entenderían con el corazón, Y se convertirían, Y Yo los sanaría’”. Sepan, por tanto, que esta salvación de Dios ha sido enviada a los gentiles. Ellos sí oirán».",
-            "aporte":"demuestra parte de la utilidad de la formación extraordinaria de Pablo y también de su ciudadanía romana."
-         },{
+            "capitulos_de_pasaje": [
+               28
+            ],
+            "versiculos_de_pasaje": [
+               21,
+               22,
+               23,
+               24,
+               25,
+               26,
+               27,
+               28
+            ],
+            "texto_nbla": "Ellos le dijeron: «Nosotros no hemos recibido cartas de Judea sobre ti, ni ha venido aquí ninguno de los hermanos que haya informado o hablado algo malo acerca de ti. Pero deseamos oír de ti lo que enseñas, porque lo que sabemos de esta secta es que en todas partes se habla contra ella». Y habiéndole fijado un día, vinieron en gran número a donde él se alojaba. Y desde la mañana hasta la tarde les explicaba testificando fielmente sobre el reino de Dios, y procurando persuadirlos acerca de Jesús, tanto por la ley de Moisés como por los profetas. Algunos eran persuadidos por lo que se decía, pero otros no creían. Al no estar de acuerdo entre sí, comenzaron a marcharse después de que Pablo dijo una última palabra: «Bien habló el Espíritu Santo a los padres de ustedes por medio del profeta Isaías, diciendo: “Ve a este pueblo y di: ‘Al oír oirán, y no entenderán; Y viendo verán, y no percibirán; Porque el corazón de este pueblo se ha vuelto insensible, Y con dificultad oyen con sus oídos; Y han cerrado sus ojos; De otro modo, verían con los ojos, Oirían con los oídos, Y entenderían con el corazón, Y se convertirían, Y Yo los sanaría’”. Sepan, por tanto, que esta salvación de Dios ha sido enviada a los gentiles. Ellos sí oirán».",
+            "aporte": "demuestra parte de la utilidad de la formación extraordinaria de Pablo y también de su ciudadanía romana."
+         },
+         {
             "libro_de_pasaje": "hechos",
-            "capitulos_de_pasaje": [28],
-            "versiculos_de_pasaje": [30,31],
-            "texto_nbla":"Pablo se quedó por dos años enteros en la habitación que había alquilado, y recibía a todos los que iban a verlo, predicando el reino de Dios y enseñando todo lo concerniente al Señor Jesucristo con toda libertad, sin estorbo.",
-            "aporte":"demuestra parte de la utilidad de la ciudadanía romana de Pablo para llevar el evangelio hasta lo último de la tierra."
+            "capitulos_de_pasaje": [
+               28
+            ],
+            "versiculos_de_pasaje": [
+               30,
+               31
+            ],
+            "texto_nbla": "Pablo se quedó por dos años enteros en la habitación que había alquilado, y recibía a todos los que iban a verlo, predicando el reino de Dios y enseñando todo lo concerniente al Señor Jesucristo con toda libertad, sin estorbo.",
+            "aporte": "demuestra parte de la utilidad de la ciudadanía romana de Pablo para llevar el evangelio hasta lo último de la tierra."
          }
       ],
-
-      "aplicacion":"Acepta con gozo tu pasado sabiendo que cada parte de este tiene eterno provecho gracias al plan soberano de Dios y vive al máximo el presente como Pablo lo hizo.",
-
+      "aplicacion": "Acepta con gozo tu pasado sabiendo que cada parte de este tiene eterno provecho gracias al plan soberano de Dios y vive al máximo el presente como Pablo lo hizo.",
       "textos_biblicos_que_legitiman_aplicacion": [
-      {
-         "libro_de_pasaje": "romanos",
-         "capitulos_de_pasaje": [8],
-         "versiculos_de_pasaje": [28],
-         "texto_nbla":"Y sabemos que para los que aman a Dios, todas las cosas cooperan para bien, esto es, para los que son llamados conforme a Su propósito.",
-         "aporte":"legitima que Dios orquesta absolutamente todas las cosas, incluyendo nuestro pasado, para el bien eterno de los llamados."
-      },
-      {
-         "libro_de_pasaje": "genesis",
-         "capitulos_de_pasaje": [50],
-         "versiculos_de_pasaje": [20],
-         "texto_nbla":"Ustedes pensaron hacerme mal, pero Dios lo tornó en bien para que sucediera como vemos hoy, y se preservara la vida de mucha gente.",
-         "aporte":"legitima que Dios usa soberanamente la maldad humana y las injusticias pasadas para orquestar un bien mayor en Su plan perfecto."
-      },
-      {
-         "libro_de_pasaje": "juan",
-         "capitulos_de_pasaje": [9],
-         "versiculos_de_pasaje": [3],
-         "texto_nbla":"Jesús respondió: «Ni este pecó, ni sus padres; sino que está ciego para que las obras de Dios se manifiesten en él.",
-         "aporte":"legitima que el sufrimiento, las limitaciones o las condiciones adversas de nacimiento están orquestadas desde el origen para manifestar la gloria de Dios y que algunos sufrimientos no son consecuencia del pecado."
-      },
-      {
-         "libro_de_pasaje": "lucas",
-         "capitulos_de_pasaje": [23],
-         "versiculos_de_pasaje": [42,43],
-         "texto_nbla":"Y decía: «Jesús, acuérdate de mí cuando vengas en Tu reino». Entonces Él le dijo: «En verdad te digo: hoy estarás conmigo en el paraíso».",
-         "aporte":"legitima que un pasado lleno de delitos no arruina el plan de Dios, sino que la gracia soberana lo utiliza para exhibir la salvación in extremis para la gloria de Cristo. Esta vida criminal se plasmó en la Biblia para salvar y santificar a millones."
-      },
-      {
-         "libro_de_pasaje": "lucas",
-         "capitulos_de_pasaje": [7],
-         "versiculos_de_pasaje": [47],
-         "texto_nbla":"Por lo cual te digo que sus pecados, que son muchos, han sido perdonados, porque amó mucho; pero a quien poco se le perdona, poco ama».",
-         "aporte":"legitima que un pasado lleno de muchos pecados, una vez alcanzado por la gracia, resulta útil para producir un amor y devoción mucho más profundos hacia Dios. Esta vida criminal se plasmó en la Biblia para salvar y santificar a millones."
-      }
+         {
+            "libro_de_pasaje": "romanos",
+            "capitulos_de_pasaje": [
+               8
+            ],
+            "versiculos_de_pasaje": [
+               28
+            ],
+            "texto_nbla": "Y sabemos que para los que aman a Dios, todas las cosas cooperan para bien, esto es, para los que son llamados conforme a Su propósito.",
+            "aporte": "legitima que Dios orquesta absolutamente todas las cosas, incluyendo nuestro pasado, para el bien eterno de los llamados."
+         },
+         {
+            "libro_de_pasaje": "genesis",
+            "capitulos_de_pasaje": [
+               50
+            ],
+            "versiculos_de_pasaje": [
+               20
+            ],
+            "texto_nbla": "Ustedes pensaron hacerme mal, pero Dios lo tornó en bien para que sucediera como vemos hoy, y se preservara la vida de mucha gente.",
+            "aporte": "legitima que Dios usa soberanamente la maldad humana y las injusticias pasadas para orquestar un bien mayor en Su plan perfecto."
+         },
+         {
+            "libro_de_pasaje": "juan",
+            "capitulos_de_pasaje": [
+               9
+            ],
+            "versiculos_de_pasaje": [
+               3
+            ],
+            "texto_nbla": "Jesús respondió: «Ni este pecó, ni sus padres; sino que está ciego para que las obras de Dios se manifiesten en él.",
+            "aporte": "legitima que el sufrimiento, las limitaciones o las condiciones adversas de nacimiento están orquestadas desde el origen para manifestar la gloria de Dios y que algunos sufrimientos no son consecuencia del pecado."
+         },
+         {
+            "libro_de_pasaje": "lucas",
+            "capitulos_de_pasaje": [
+               23
+            ],
+            "versiculos_de_pasaje": [
+               42,
+               43
+            ],
+            "texto_nbla": "Y decía: «Jesús, acuérdate de mí cuando vengas en Tu reino». Entonces Él le dijo: «En verdad te digo: hoy estarás conmigo en el paraíso».",
+            "aporte": "legitima que un pasado lleno de delitos no arruina el plan de Dios, sino que la gracia soberana lo utiliza para exhibir la salvación in extremis para la gloria de Cristo. Esta vida criminal se plasmó en la Biblia para salvar y santificar a millones."
+         },
+         {
+            "libro_de_pasaje": "lucas",
+            "capitulos_de_pasaje": [
+               7
+            ],
+            "versiculos_de_pasaje": [
+               47
+            ],
+            "texto_nbla": "Por lo cual te digo que sus pecados, que son muchos, han sido perdonados, porque amó mucho; pero a quien poco se le perdona, poco ama».",
+            "aporte": "legitima que un pasado lleno de muchos pecados, una vez alcanzado por la gracia, resulta útil para producir un amor y devoción mucho más profundos hacia Dios. Esta vida criminal se plasmó en la Biblia para salvar y santificar a millones."
+         }
       ],
-
-      "creencias_fundamentales_de_aplicacion":
-      [ 
+      "creencias_fundamentales_de_aplicacion": [
          "Acepta que Dios orquesta todas las cosas de la historia.",
          "Acepta que Dios orquestó cada evento de tu pasado para Su gloria.",
          "Aceptar que fuiste creado y preparado para la gloria de Dios y para traer gozo a Cristo al formar parte de Su esposa y participando en la preparación de esta.",
@@ -143,8 +259,7 @@
          "Acepta que todas las características que obtuviste por tu formación tendrán una utilidad en los hechos que Dios está orquestando para salvar y santificar el pueblo que le obsequió a Su Hijo.",
          "Acepta que todas las cosas resultarán en tu gozo actual y eterno al verte formar parte del bien eterno del plan de Dios y en el futuro al gozar de la comunión trinitaria en la nueva creación."
       ],
-
-      "aclaraciones":[
+      "aclaraciones": [
          "Dios predestina conservando la voluntad humana. Cumplimos su plan mientras intentamos hacer nuestra voluntad.",
          "El libre albedrío no existe, la Escritura enseña que el albedrío es siempre condicionado por nuestro pecado (Romanos 3, Romanos 8, 1 Corintios 1), por el abandono de Dios (Romanos 1) o por la elección y la gracia (toda la Biblia). Romanos 8 dice que la carne no puede sujetarse a la ley de Dios, en 1 Corintios 1 dice que el hombre inconverso no entiende las cosas de Dios, y también en 1 Corintios 1, que todos los no llamados rechazan el evangelio. El libre albedrío es una idea pagana.",
          "Ambas cosas son ciertas según la Escritura, la predestinación y nuestra voluntad, pero la integración lógica de ambas es misteriosa y desconocida en los 2000 años de la iglesia. Esto es coherente con Dios, que aunque nos hace a Su imagen (lo que permite comprender aspectos de Él), es infinito, lo que requiere su incomprensibilidad en ciertos aspectos. Un Dios enteramente comprensible no es infinito y por ende no es Dios.",
@@ -159,9 +274,7 @@
          "Si esta imagen de Dios te parece tiránica, recuerda que tu corazón es malo y que necesita ser renovado (Proverbios 28, Mateo 15, Romanos 12).",
          "A medida que el Espíritu Santo te ilumine y renueve el entendimiento comprenderás mejor la belleza y valor de la verdad sobre Dios."
       ],
-
-      "beneficios_de_aplicacion":
-      [
+      "beneficios_de_aplicacion": [
          "Creer la predestinación universal te fortalecerá espiritualmente y te hará más feliz por estas razones.",
          "Te ayudará a superar tus inseguridades por tu pasado.",
          "Le dará sentido a los eventos de tu vida.",
@@ -170,8 +283,7 @@
          "Te encaminará en el propósito real de tu vida, dándote sentido de progreso y acierto."
       ]
    },
-
-   "impactos_en_texto_base":[
+   "impactos_en_texto_base": [
       "Explica parte de su extraordinario dominio del Antiguo Testamento",
       "Afirma su autoridad como intérprete del Antiguo Testamento",
       "Afirma el llamamiento soberano de Pablo como apóstol",
