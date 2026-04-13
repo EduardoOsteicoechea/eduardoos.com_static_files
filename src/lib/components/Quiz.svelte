@@ -1,5 +1,6 @@
 <script lang="ts">
   import { slide } from "svelte/transition";
+  import { tick } from "svelte";
   import type { QuizQuestion } from "../../routes/bible-series-romans-paul/+page";
 
   let { questions }: { questions: QuizQuestion[] } = $props();
@@ -10,16 +11,23 @@
   let isAnswered = $state(false);
   let quizComplete = $state(false);
 
+  // Ref for the explanation box — bound in template
+  let explanationEl = $state<HTMLDivElement | null>(null);
+
   let currentQuestion = $derived(questions[currentIndex]);
 
-  function selectOption(index: number) {
-    if (isAnswered) return; // Prevent changing answer
+  async function selectOption(index: number) {
+    if (isAnswered) return;
     selectedOption = index;
     isAnswered = true;
-    
+
     if (index === currentQuestion.correctIndex) {
       score += 1;
     }
+
+    // Wait for Svelte to render the explanation box, then scroll to bottom
+    await tick();
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
   }
 
   function nextQuestion() {
@@ -68,7 +76,7 @@
       </div>
 
       {#if isAnswered}
-        <div class="explanation-box" transition:slide>
+        <div class="explanation-box" transition:slide bind:this={explanationEl}>
           <strong>
             {selectedOption === currentQuestion.correctIndex ? '¡Correcto!' : 'Incorrecto.'}
           </strong>
@@ -154,6 +162,13 @@
 
   .option-btn:disabled {
     cursor: default;
+  }
+
+  /* Gray out neutral options once answered — correct/wrong keep their colours */
+  .option-btn:disabled:not(.correct):not(.wrong) {
+    background-color: #f0f0f0;
+    border-color: #ddd;
+    color: #aaa;
   }
 
   /* Estados de respuesta */

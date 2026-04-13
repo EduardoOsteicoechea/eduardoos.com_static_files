@@ -132,7 +132,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 40px;
+    height: 50px;
     z-index: 50;
 
     display: flex;
@@ -173,7 +173,7 @@
     align-items: center;
     gap: 6px;
     padding: 0 0px;
-    height: 25px;
+    height: 35px;
     border: none;
     border-radius: 4px;
     background: transparent;
@@ -198,6 +198,9 @@
 
   /* ─── Audio button ──────────────────────────────────────────── */
   .audio-btn {
+   display:flex;
+   align-items: center;
+   justify-content: center;
     min-width: 110px;
   }
   .audio-btn:hover {

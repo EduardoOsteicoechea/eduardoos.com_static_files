@@ -43,6 +43,7 @@
 .accordion {
 	display: flex;
 	flex-direction: column;
+   gap: 5px;
 }
 
 .accordion-block {
@@ -55,13 +56,16 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 0;
-	width: 100%;
+	margin: 0 10px;
 	text-align: left;
 	padding: 10px 10px;
 	border: none;
 	cursor: pointer;
 	font-size: 18px;
 	font-weight: 600;
+   background: #fff;
+   border-radius: 4px;
+
 	border: 1px solid #ccc;
 }
 
@@ -98,7 +102,9 @@
 }
 
 .accordion-panel {
-	border-top: 1px solid currentColor;
+	/* border-top: 1px solid currentColor; */
+	padding: 0px 10px;
+   line-height: 1.2;
 }
 
 .panel-inner {
@@ -177,4 +183,4 @@
 .bullet-list li:last-child {
 	margin-bottom: 0;
 }
-
+
