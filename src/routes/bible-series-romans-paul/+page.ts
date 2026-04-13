@@ -1,30 +1,13 @@
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 
-export type TextoBiblico = {
-	libro_de_pasaje: string;
-	capitulos_de_pasaje: number[];
-	versiculos_de_pasaje: number[];
-	texto_nbla: string;
-	aporte: string[];
-};
-
-/** Introductory lines plus the list of biblical text cards. */
-export type TextosBiblicosBloque = {
-	introduccion: string[];
-	textos: TextoBiblico[];
-};
-
-export type Idea = {
-	Introducción: string[];
-	núcleo: string[];
-	impactos_en_texto_base: string[];
-	textos_biblicos_clave: TextosBiblicosBloque;
-	aplicacion: string[];
-	textos_biblicos_que_legitiman_aplicacion: TextosBiblicosBloque;
-	creencias_fundamentales_de_aplicacion: string[];
-	aclaraciones: string[];
-	beneficios_de_aplicacion: string[];
+// Opcionalmente podemos mantener los otros tipos (list, biblical) si planeas
+// expandirlo después, pero para este JSON estricto, solo requerimos 'prose'
+export type ContentSection = {
+	type: 'prose';
+	id: string;
+	title: string;
+	content: string[];
 };
 
 export type LessonJson = {
@@ -34,16 +17,14 @@ export type LessonJson = {
 	capitulos_de_pasaje: number[];
 	versiculos_de_pasaje: number[];
 	texto_nbla: string;
-	texto_rvr60?: string;
 	texto_nestleadam?: string;
 	titulo_de_enseñanza: string;
-	enfoque_sobre_texto: string[];
-	idea: Idea;
-	conclusiones: string[];
+	sections: ContentSection[];
 };
 
 export const load: PageLoad = async ({ fetch }) => {
-	const res = await fetch('/preparado_desde_la_eternidad_5.json');
+	// Asegúrate de que este nombre apunte al nuevo archivo JSON
+	const res = await fetch('/preparado_desde_la_eternidad.json');
 	if (!res.ok) {
 		error(res.status, `No se pudo cargar el contenido (${res.status})`);
 	}
