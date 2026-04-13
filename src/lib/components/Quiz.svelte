@@ -25,9 +25,8 @@
       score += 1;
     }
 
-    // Wait for Svelte to render the explanation box, then scroll to bottom
-    await tick();
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    // REMOVED: tick() and window.scrollTo() from here.
+    // The scrolling is now handled by the onintroend event in the HTML below.
   }
 
   function nextQuestion() {
@@ -76,7 +75,12 @@
       </div>
 
       {#if isAnswered}
-        <div class="explanation-box" transition:slide bind:this={explanationEl}>
+        <div 
+          class="explanation-box" 
+          transition:slide 
+          bind:this={explanationEl}
+          onintroend={() => explanationEl?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })}
+        >
           <strong>
             {selectedOption === currentQuestion.correctIndex ? '¡Correcto!' : 'Incorrecto.'}
           </strong>
