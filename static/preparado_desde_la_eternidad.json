@@ -25,13 +25,35 @@
             "Muchos requerimos aprender desde cero.",
             "Estudiar Romanos desconociendo la vida de Pablo es como mirar un partido desde el segundo tiempo.",
             "Es una película en escala de grises.",
-            "Conocemos la trama pero perdemos detalles.",
+            "Conocemos la trama perdiendo detalles.",
             "Por esto requerimos comenzar desde el principio.",
             "Quienes ya conozcan, aprenderán a ser considerados con los pequeños.",
-            "Quienes comiencen aprenderán maravillas.",
-            "Y quienes ya hemos visto, seremos animados por la Escritura.",
+            "Los principiantes, aprenderemos maravillas.",
+            "Y quienes han visto muchas cosas, serán animados por la Escritura.",
             "Dedicaremos varios estudios a conocer la persona de Pablo.",
             "Conoceremos al autor humano para leer mejor sus enseñanzas."
+         ],
+         "quiz": [
+            {
+               "question": "¿Cuál es el propósito de dedicar varios estudios a conocer la persona de Pablo?",
+               "options": [
+                  "Para aprender historia antigua solamente.",
+                  "Para conocer al autor humano y leer mejor sus enseñanzas.",
+                  "Para memorizar versículos en griego."
+               ],
+               "correctIndex": 1,
+               "explanation": "Conocer el trasfondo y origen del autor (Pablo) nos permite interpretar y entender mucho mejor el mensaje de sus cartas."
+            },
+            {
+               "question": "¿Cómo se describe el intentar estudiar Romanos ignorando la vida de Pablo?",
+               "options": [
+                  "Como mirar un partido desde el segundo tiempo.",
+                  "Como una pérdida de tiempo total.",
+                  "Como un requisito teológico avanzado."
+               ],
+               "correctIndex": 0,
+               "explanation": "El texto compara entrar directo a la carta sin conocer al autor con mirar una película en escala de grises o a la mitad, perdiendo detalles importantes."
+            }
          ]
       },
       {

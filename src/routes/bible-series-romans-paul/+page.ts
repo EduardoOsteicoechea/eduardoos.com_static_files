@@ -6,6 +6,7 @@ export type ContentSection = {
   id: string;
   title: string;
   content: string[];
+  quiz?: QuizQuestion[];
 };
 
 // Nuevos tipos para el cuestionario

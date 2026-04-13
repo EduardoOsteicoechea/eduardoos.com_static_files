@@ -2,6 +2,7 @@
   import { slide } from "svelte/transition";
   import { cubicOut } from "svelte/easing";
   import type { LessonJson } from "../../routes/bible-series-romans-paul/+page";
+  import SectionQuiz from "./SectionQuiz.svelte";
 
   let { lesson }: { lesson: LessonJson } = $props();
 
@@ -58,6 +59,10 @@
             {#each section.content as paragraph}
               <p>{paragraph}</p>
             {/each}
+
+            {#if section.quiz && section.quiz.length > 0}
+              <SectionQuiz questions={section.quiz} />
+            {/if}
           </div>
         </div>
       {/if}
