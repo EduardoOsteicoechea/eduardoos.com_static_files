@@ -2,6 +2,7 @@
   import { slide } from "svelte/transition";
   import { tick } from "svelte";
   import type { QuizQuestion } from "../../routes/bible-series-romans-paul/+page";
+  import confetti from "canvas-confetti";
 
   let { questions }: { questions: QuizQuestion[] } = $props();
 
@@ -11,12 +12,17 @@
   let selectedOption = $state<number | null>(null);
   let isAnswered = $state(false);
   let quizComplete = $state(false);
+  let showFailOverlay = $state(false);
 
   // Ref for the explanation box — bound in template
   let explanationEl = $state<HTMLDivElement | null>(null);
 
   // Progress relative to current question
-  let progressPercent = $derived(((currentIndex) / questions.length) * 100);
+  let progressPercent = $derived(
+    quizComplete 
+      ? 100 
+      : ((currentIndex + (isAnswered ? 1 : 0)) / questions.length) * 100
+  );
 
   let currentQuestion = $derived(questions[currentIndex]);
 
@@ -39,6 +45,45 @@
     await tick();
   }
 
+  function triggerSuccessStars() {
+    const duration = 2500;
+    const end = Date.now() + duration;
+
+    // Create an elegant diamond shape for the confetti
+    const diamond = confetti.shapeFromPath({ path: 'M 10 0 L 20 10 L 10 20 L 0 10 Z' });
+
+    (function frame() {
+      confetti({
+        particleCount: 5,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0, y: 0.6 },
+        colors: ['#FFD700', '#FFE400', '#F0C987', '#FFFFFF'],
+        shapes: [diamond],
+        gravity: 0.9,
+        scalar: 1,
+        ticks: 200,
+        zIndex: 9999
+      });
+      confetti({
+        particleCount: 5,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1, y: 0.6 },
+        colors: ['#FFD700', '#FFE400', '#F0C987', '#FFFFFF'],
+        shapes: [diamond],
+        gravity: 0.9,
+        scalar: 1,
+        ticks: 200,
+        zIndex: 9999
+      });
+
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    }());
+  }
+
   function nextQuestion() {
     if (currentIndex < questions.length - 1) {
       currentIndex++;
@@ -46,7 +91,19 @@
       isAnswered = false;
     } else {
       quizComplete = true;
+      if (score === questions.length) {
+        triggerSuccessStars();
+      } else {
+        triggerFailOverlay();
+      }
     }
+  }
+
+  function triggerFailOverlay() {
+    showFailOverlay = true;
+    setTimeout(() => {
+      showFailOverlay = false;
+    }, 2000);
   }
 
   function restartQuiz() {
@@ -58,6 +115,10 @@
     quizComplete = false;
   }
 </script>
+
+{#if showFailOverlay}
+  <div class="damage-overlay"></div>
+{/if}
 
 <div class="section-quiz-container">
   {#if !isStarted}
@@ -118,7 +179,9 @@
       {:else}
         <!-- Results State -->
         <div class="quiz-results" transition:slide>
-          <div class="progress-fill final-progress"></div>
+          <div class="progress-track" aria-hidden="true">
+            <div class="progress-fill final-progress"></div>
+          </div>
           <h3>¡Sección Evaluada!</h3>
           <p class="score-display">Puntaje: {score} / {questions.length}</p>
           <button class="next-btn outline" onclick={restartQuiz}>Cerrar Evaluación</button>
@@ -129,6 +192,25 @@
 </div>
 
 <style>
+  .damage-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100svh;
+    pointer-events: none;
+    z-index: 99999;
+    background: radial-gradient(circle at center, transparent 40%, rgba(200, 0, 0, 0.6) 100%);
+    box-shadow: inset 0 0 100px rgba(200, 0, 0, 0.5);
+    animation: damage-pulse 2s forwards;
+  }
+
+  @keyframes damage-pulse {
+    0% { opacity: 0; }
+    15% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 0; transform: scale(1); }
+  }
+
   .section-quiz-container {
     margin-top: 0px;
     margin-bottom: 0px;
