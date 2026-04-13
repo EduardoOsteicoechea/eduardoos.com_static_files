@@ -1,144 +1,157 @@
 {
-  "serie": "romanos",
-  "facilitador": "eduardo osteicoechea",
-  "libro_de_pasaje": "romanos",
-  "capitulos_de_pasaje": [1],
-  "versiculos_de_pasaje": [1],
-  "texto_nbla": "Pablo, siervo de Jesucristo, llamado a ser apóstol, apartado para el evangelio de Dios.",
-  "texto_nestleadam": "Παῦλος δοῦλος Χριστοῦ Ἰησοῦ, κλητὸς ἀπόστολος ἀφωρισμένος εἰς εὐαγγέλιον θεοῦ",
-  "titulo_de_enseñanza": "El Origen de Pablo",
-  "sections": [
-    {
-      "type": "prose",
-      "id": "introduccion",
-      "title": "Introducción: La Importancia de Conocer a Pablo",
-      "content": [
-        "Romanos 1:1 comienza con la palabra: «Pablo».",
-        "A veces leemos esto rápidamente y asumimos que conocemos toda la historia e importancia de este nombre.",
-        "La realidad es que todos estamos en diferentes etapas de nuestro crecimiento cristiano",
-        "Muchos requerimos aprender desde cero.",
-        "Estudiar la carta de Romanos pensando que Pablo era simplemente 'un hermano que escribía muy bien' es incorrecto.",
-        "Comprender su trasfondo afecta mucho cómo entenderemos la carta.",
-        "Por esto, necesitamos conocer de dónde viene este hombre, cuál fue su ministerio y cómo su pasado impacta lo que estudiaremos.",
-        "En esta ocasión nos enfocaremos en su origen.",
-        "Romanos es, en esencia, una clase magistral sobre cómo interpretar el Antiguo Testamento.",
-        "Y hoy descubriremos que ese conocimiento nació en parte de las raíces de este hombre."
-      ]
-    },
-    {
-      "type": "prose",
-      "id": "proposito-impacto",
-      "title": "El Propósito de Dios y el Impacto de Nuestro Pasado",
-      "content": [
-        "Mientras estudiamos la vida de Pablo, quiero hacerte una pregunta muy personal: ¿Tienes clara la razón por la cual Dios te creó y te puso en esta tierra?",
-        "Tener esta idea clara es vital. Si no entendemos nuestro propósito, nos vamos a frustrar y a confundir cada vez que enfrentemos tristezas, problemas o pruebas difíciles.",
-        "Pero quiero ir un paso más allá: ¿Tienes claro de qué manera impacta en tu presente todo ese pasado que viviste antes de conocer el Evangelio?",
-        "¿Alguna vez te has sentido perseguido por la culpa, la indignación o la frustración por las malas decisiones que tomaste hace años?",
-        "Si te sientes así, quiero decirte que no estás solo. Hoy, al ver cómo Dios usó el origen de Pablo, aprenderemos una enseñanza maravillosa para sanar nuestro propio pasado y vivir con libertad."
-      ]
-    },
-    {
-      "type": "prose",
-      "id": "origen-escogido",
-      "title": "El Origen de Pablo: Escogido Desde la Eternidad",
-      "content": [
-        "En Gálatas 1:15, Pablo nos da una pista increíble sobre su origen: «Dios me apartó desde el vientre de mi madre y me llamó por su gracia».",
-        "Piensa en eso por un momento. Mientras su madre estaba embarazada, Dios ya había señalado a ese bebé para ser el gran apóstol de los gentiles.",
-        "Pero su verdadero origen va mucho más atrás. Segunda de Timoteo 1:9 dice que Dios nos llamó «según el propósito suyo... antes de los tiempos de los siglos».",
-        "Pablo no fue elegido porque fuera un ciudadano ejemplar o un fariseo de conducta intachable. Fue escogido porque Dios diseñó un plan para él en la eternidad pasada.",
-        "Al igual que nos dice Romanos 8:28, Dios predestinó y orquestó cada detalle de la vida de Pablo —incluso antes de que el universo existiera— para cumplir un propósito soberano."
-      ]
-    },
-    {
-      "type": "prose",
-      "id": "nacimiento-crianza",
-      "title": "Nacimiento y Crianza: Un Ciudadano Romano Formado en Jerusalén",
-      "content": [
-        "Pablo era un judío de pura cepa, pero nació en Tarso, una ciudad romana muy influyente. En términos prácticos, nació con los 'papeles correctos' y una ciudadanía de altísimo valor.",
-        "Sin embargo, aunque nació en territorio grecorromano, su crianza se dio en el epicentro absoluto de la fe: la ciudad de Jerusalén.",
-        "Allí fue instruido a los pies de Gamaliel, el teólogo y maestro más brillante de su época. Fue como haber estudiado en la universidad más prestigiosa del mundo bíblico.",
-        "Como él mismo dice en Filipenses 3, era «hebreo de hebreos» y un fariseo irreprensible. Se convirtió en un erudito perfeccionista que conocía la ley al derecho y al revés."
-      ]
-    },
-    {
-      "type": "prose",
-      "id": "plan-estrategico",
-      "title": "El Plan Estratégico de Dios: De Jerusalén a la Capital del Mundo",
-      "content": [
-        "Aquí es donde vemos la majestuosa estrategia de Dios. Cuando en Hechos 22 intentan torturarlo, Pablo pregunta tranquilamente: «¿Les es lícito azotar a un ciudadano romano?»",
-        "Ese simple pasaporte de nacimiento aterrorizó a los soldados, le salvó la vida y le otorgó derechos legales que otros tenían que comprar con fortunas.",
-        "Más adelante, cuando los judíos conspiran para asesinarlo, Pablo usa su carta magna: «A César apelo». Sin esa ciudadanía, jamás habría llegado vivo al corazón del Imperio Romano.",
-        "¿Logras ver la jugada maestra? Dios tomó a un judío experto en la ley, lo transformó con Su gracia, y usó su nacionalidad para infiltrarlo en la capital política del mundo.",
-        "Gracias a ese aparente arresto, Pablo terminó viviendo dos años en Roma, predicándoles a reyes, gobernadores y a todo el que lo visitaba, llevando el Evangelio hasta lo último de la tierra."
-      ]
-    },
-    {
-      "type": "prose",
-      "id": "utilidad-pasado",
-      "title": "La Utilidad de Nuestro Pasado en el Plan de Dios",
-      "content": [
-        "Quizás estés pensando: «Claro, Dios orquestó todo en la vida de Pablo porque iba a ser un apóstol famoso, pero mi vida es demasiado común o está llena de errores».",
-        "A veces nos da miedo creer que Dios preparó meticulosamente nuestro pasado, especialmente si venimos de realidades muy oscuras. Pero la Biblia nos dice que todas las cosas nos ayudan a bien.",
-        "Tu experiencia de vida, tus caídas en el mundo y tus dolores impactan radicalmente la forma en la que hoy valoras y entiendes la gracia del Evangelio.",
-        "Piensa en el ciego de nacimiento en Juan 9. No estaba ciego por un castigo de sus padres; pasó décadas en oscuridad únicamente para que, en el momento exacto, la gloria de Cristo brillara al sanarlo.",
-        "Piensa en el ladrón en la cruz, cuyo terrible registro criminal lo llevó a morir al lado del Salvador, solo para que su salvación in extremis quedara grabada como esperanza para nosotros.",
-        "Hermanos, Dios es el máximo reciclador. Él toma la basura de nuestras peores decisiones, las tragedias que sufrimos antes de creer, y las transforma en los peldaños que nos acercan a Cristo."
-      ]
-    },
-    {
-      "type": "prose",
-      "id": "conclusion",
-      "title": "Conclusión: Abrazando Nuestro Pasado y Llamado a la Salvación",
-      "content": [
-        "Saber esto debería llenarnos de una gratitud inmensa. En las manos de Dios, nada de lo que sufriste se desperdicia; todo es material que Él usa para forjar a Cristo en ti.",
-        "Tu escasez te enseñó a depender de Dios; tu abundancia te demostró Su fidelidad inagotable; y tus pecados más vergonzosos te revelaron tu necesidad absoluta de un Salvador.",
-        "No dejes que la culpa te paralice. No fuimos creados simplemente para cumplir metas terrenales; existimos para ser el pueblo de Cristo. Acepta tu historia como una poderosa herramienta de gracia.",
-        "Si aún no entiendes el porqué de algunas de tus pruebas, dale tiempo a Dios. Y si aún no has rendido tu vida a Él, te ruego que escuches este llamado de salvación.",
-        "Dios no te promete una vida libre de problemas, pero sí promete cancelar la deuda de tus pecados y orquestar tu historia para un propósito eterno. Rinde tu vida hoy, y Él redimirá todo tu pasado."
-      ]
-    }
-  ],
-  "quiz": [
-    {
-      "question": "¿De dónde era originario Pablo y dónde fue criado?",
-      "options": [
-        "Nació en Jerusalén y fue criado en Roma.",
-        "Nació en Tarso y fue criado en Jerusalén.",
-        "Nació en Tarso y fue criado en Tarso."
-      ],
-      "correctIndex": 1,
-      "explanation": "Segun Hechos 22:3, Pablo era un judío nacido en Tarso (ciudadanía romana), pero fue criado e instruido en Jerusalén bajo el maestro Gamaliel."
-    },
-    {
-      "question": "¿De qué tribu era Pablo?",
-      "options": [
-        "Simeón.",
-        "Judá.",
-        "Rubén.",
-        "Ninguna de las anteriores."
-      ],
-      "correctIndex": 3,
-      "explanation": "Según Filipenses 3:5, Pablo era de la tribu de Benjamín."
-    },
-    {
-      "question": "Según la enseñanza, ¿cuándo fue escogido y apartado Pablo para ser apóstol?",
-      "options": [
-        "Desde antes de la fundación del mundo (la eternidad pasada).",
-        "Cuando se encontró con Jesús en el camino a Damasco.",
-        "Cuando el maestro Gamaliel lo graduó como fariseo."
-      ],
-      "correctIndex": 0,
-      "explanation": "Aunque fue apartado desde el vientre de su madre, su verdadero origen profético se remonta a la eternidad pasada, donde Dios diseñó su plan."
-    },
-    {
-      "question": "¿Cuál es el propósito principal por el que Dios permite y recicla nuestras decisiones o tragedias pasadas?",
-      "options": [
-        "Para que tengamos una vida terrenal cómoda y sin ningún problema.",
-        "Para castigarnos y asegurarnos de que aprendamos la lección.",
-        "Para forjar a Cristo en nosotros y usarlas como herramientas de gracia."
-      ],
-      "correctIndex": 2,
-      "explanation": "Dios es el máximo reciclador; utiliza incluso las peores decisiones o el sufrimiento para hacernos a la imagen de Cristo y acercarnos al Evangelio."
-    }
-  ]
+   "serie": "romanos",
+   "facilitador": "eduardo osteicoechea",
+   "libro_de_pasaje": "romanos",
+   "capitulos_de_pasaje": [
+      1
+   ],
+   "versiculos_de_pasaje": [
+      1
+   ],
+   "texto_nbla": "Pablo, siervo de Jesucristo, llamado a ser apóstol, apartado para el evangelio de Dios.",
+   "texto_nestleadam": "Παῦλος δοῦλος Χριστοῦ Ἰησοῦ, κλητὸς ἀπόστολος ἀφωρισμένος εἰς εὐαγγέλιον θεοῦ",
+   "titulo_de_enseñanza": "El Origen de Pablo",
+   "sections": [
+      {
+         "type": "prose",
+         "id": "introduccion",
+         "title": "Introducción: La Importancia de Conocer a Pablo",
+         "content": [
+            "Romanos 1:1 comienza con la palabra: «Pablo».",
+            "A veces leemos esto rápidamente y asumimos que conocemos toda la historia e importancia de este nombre.",
+            "La realidad es que todos estamos en diferentes etapas de nuestro crecimiento cristiano",
+            "Muchos requerimos aprender desde cero.",
+            "Estudiar la carta de Romanos pensando que Pablo era simplemente 'un hermano que escribía muy bien' es incorrecto.",
+            "Comprender su trasfondo afecta mucho cómo entenderemos la carta.",
+            "Por esto, necesitamos conocer de dónde viene este hombre, cuál fue su ministerio y cómo su pasado impacta lo que estudiaremos.",
+            "En esta ocasión nos enfocaremos en su origen.",
+            "Romanos es, en esencia, una clase magistral sobre cómo interpretar el Antiguo Testamento.",
+            "Y hoy descubriremos que ese conocimiento nació en parte de las raíces de este hombre."
+         ]
+      },
+      {
+         "type": "prose",
+         "id": "proposito-impacto",
+         "title": "El Propósito de Dios y el Impacto de Nuestro Pasado",
+         "content": [
+            "Mientras estudiamos la vida de Pablo, quiero hacerte una pregunta muy personal: ¿Tienes clara la razón por la cual Dios te creó y te puso en esta tierra?",
+            "Tener esta idea clara es vital. Si no entendemos nuestro propósito, nos vamos a frustrar y a confundir cada vez que enfrentemos tristezas, problemas o pruebas difíciles.",
+            "Pero quiero ir un paso más allá: ¿Tienes claro de qué manera impacta en tu presente todo ese pasado que viviste antes de conocer el Evangelio?",
+            "¿Alguna vez te has sentido perseguido por la culpa, la indignación o la frustración por las malas decisiones que tomaste hace años?",
+            "Si te sientes así, quiero decirte que no estás solo. Hoy, al ver cómo Dios usó el origen de Pablo, aprenderemos una enseñanza maravillosa para sanar nuestro propio pasado y vivir con libertad."
+         ]
+      },
+      {
+         "type": "prose",
+         "id": "origen-escogido",
+         "title": "El Origen de Pablo: Escogido Desde la Eternidad",
+         "content": [
+            "En Gálatas 1:15, Pablo nos da una pista increíble sobre su origen: «Dios me apartó desde el vientre de mi madre y me llamó por su gracia».",
+            "Piensa en eso por un momento. Mientras su madre estaba embarazada, Dios ya había señalado a ese bebé para ser el gran apóstol de los gentiles.",
+            "Pero su verdadero origen va mucho más atrás. Segunda de Timoteo 1:9 dice que Dios nos llamó «según el propósito suyo... antes de los tiempos de los siglos».",
+            "Pablo no fue elegido porque fuera un ciudadano ejemplar o un fariseo de conducta intachable. Fue escogido porque Dios diseñó un plan para él en la eternidad pasada.",
+            "Al igual que nos dice Romanos 8:28, Dios predestinó y orquestó cada detalle de la vida de Pablo —incluso antes de que el universo existiera— para cumplir un propósito soberano."
+         ]
+      },
+      {
+         "type": "prose",
+         "id": "nacimiento-crianza",
+         "title": "Nacimiento y Crianza: Un Ciudadano Romano Formado en Jerusalén",
+         "content": [
+            "Pablo era un judío de pura cepa, pero nació en Tarso, una ciudad romana muy influyente. En términos prácticos, nació con los 'papeles correctos' y una ciudadanía de altísimo valor.",
+            "Sin embargo, aunque nació en territorio grecorromano, su crianza se dio en el epicentro absoluto de la fe: la ciudad de Jerusalén.",
+            "Allí fue instruido a los pies de Gamaliel, el teólogo y maestro más brillante de su época. Fue como haber estudiado en la universidad más prestigiosa del mundo bíblico.",
+            "Como él mismo dice en Filipenses 3, era «hebreo de hebreos» y un fariseo irreprensible. Se convirtió en un erudito perfeccionista que conocía la ley al derecho y al revés."
+         ]
+      },
+      {
+         "type": "prose",
+         "id": "plan-estrategico",
+         "title": "El Plan Estratégico de Dios: De Jerusalén a la Capital del Mundo",
+         "content": [
+            "Aquí es donde vemos la majestuosa estrategia de Dios. Cuando en Hechos 22 intentan torturarlo, Pablo pregunta tranquilamente: «¿Les es lícito azotar a un ciudadano romano?»",
+            "Ese simple pasaporte de nacimiento aterrorizó a los soldados, le salvó la vida y le otorgó derechos legales que otros tenían que comprar con fortunas.",
+            "Más adelante, cuando los judíos conspiran para asesinarlo, Pablo usa su carta magna: «A César apelo». Sin esa ciudadanía, jamás habría llegado vivo al corazón del Imperio Romano.",
+            "¿Logras ver la jugada maestra? Dios tomó a un judío experto en la ley, lo transformó con Su gracia, y usó su nacionalidad para infiltrarlo en la capital política del mundo.",
+            "Gracias a ese aparente arresto, Pablo terminó viviendo dos años en Roma, predicándoles a reyes, gobernadores y a todo el que lo visitaba, llevando el Evangelio hasta lo último de la tierra."
+         ]
+      },
+      {
+         "type": "prose",
+         "id": "utilidad-pasado",
+         "title": "La Utilidad de Nuestro Pasado en el Plan de Dios",
+         "content": [
+            "Quizás estés pensando: «Claro, Dios orquestó todo en la vida de Pablo porque iba a ser un apóstol famoso, pero mi vida es demasiado común o está llena de errores».",
+            "A veces nos da miedo creer que Dios preparó meticulosamente nuestro pasado, especialmente si venimos de realidades muy oscuras. Pero la Biblia nos dice que todas las cosas nos ayudan a bien.",
+            "Tu experiencia de vida, tus caídas en el mundo y tus dolores impactan radicalmente la forma en la que hoy valoras y entiendes la gracia del Evangelio.",
+            "Piensa en el ciego de nacimiento en Juan 9. No estaba ciego por un castigo de sus padres; pasó décadas en oscuridad únicamente para que, en el momento exacto, la gloria de Cristo brillara al sanarlo.",
+            "Piensa en el ladrón en la cruz, cuyo terrible registro criminal lo llevó a morir al lado del Salvador, solo para que su salvación in extremis quedara grabada como esperanza para nosotros.",
+            "Hermanos, Dios es el máximo reciclador. Él toma la basura de nuestras peores decisiones, las tragedias que sufrimos antes de creer, y las transforma en los peldaños que nos acercan a Cristo."
+         ]
+      },
+      {
+         "type": "prose",
+         "id": "conclusion",
+         "title": "Conclusión: Abrazando Nuestro Pasado y Llamado a la Salvación",
+         "content": [
+            "Saber esto debería llenarnos de una gratitud inmensa. En las manos de Dios, nada de lo que sufriste se desperdicia; todo es material que Él usa para forjar a Cristo en ti.",
+            "Tu escasez te enseñó a depender de Dios; tu abundancia te demostró Su fidelidad inagotable; y tus pecados más vergonzosos te revelaron tu necesidad absoluta de un Salvador.",
+            "No dejes que la culpa te paralice. No fuimos creados simplemente para cumplir metas terrenales; existimos para ser el pueblo de Cristo. Acepta tu historia como una poderosa herramienta de gracia.",
+            "Si aún no entiendes el porqué de algunas de tus pruebas, dale tiempo a Dios. Y si aún no has rendido tu vida a Él, te ruego que escuches este llamado de salvación.",
+            "Dios no te promete una vida libre de problemas, pero sí promete cancelar la deuda de tus pecados y orquestar tu historia para un propósito eterno. Rinde tu vida hoy, y Él redimirá todo tu pasado."
+         ]
+      }
+   ],
+   "quiz": [
+      {
+         "question":"¿Sería correcto asumir que toda la audiencia conoce la vida y ministerio de Pablo?",
+         "options":[
+            "Sí.",
+            "No."
+         ],
+         "correctIndex": 1,
+         "explanation": "Sería incorrecto, porque incluso si todos conocieran sobre Pablo, todos necesitamos refrescar las ideas e igualmente podemos ser edificados por el Espíritu Santo al oír nuevamente la Escritura. Dicho esto, la realidad es que la mayoría de la iglesia, desconoce muchísimas cosas de la Biblia, incluso, de las más fundamentales."
+      },
+      {
+         "question": "¿De dónde era originario Pablo y dónde fue criado?",
+         "options": [
+            "Nació en Jerusalén y fue criado en Roma.",
+            "Nació en Tarso y fue criado en Jerusalén.",
+            "Nació en Tarso y fue criado en Tarso."
+         ],
+         "correctIndex": 1,
+         "explanation": "Segun Hechos 22:3, Pablo era un judío nacido en Tarso (ciudadanía romana), pero fue criado e instruido en Jerusalén bajo el maestro Gamaliel."
+      },
+      {
+         "question": "¿De qué tribu era Pablo?",
+         "options": [
+            "Simeón.",
+            "Judá.",
+            "Rubén.",
+            "Ninguna de las anteriores."
+         ],
+         "correctIndex": 3,
+         "explanation": "Según Filipenses 3:5, Pablo era de la tribu de Benjamín."
+      },
+      {
+         "question": "Según la enseñanza, ¿cuándo fue escogido y apartado Pablo para ser apóstol?",
+         "options": [
+            "Desde antes de la fundación del mundo (la eternidad pasada).",
+            "Cuando se encontró con Jesús en el camino a Damasco.",
+            "Cuando el maestro Gamaliel lo graduó como fariseo."
+         ],
+         "correctIndex": 0,
+         "explanation": "Aunque fue apartado desde el vientre de su madre, su verdadero origen profético se remonta a la eternidad pasada, donde Dios diseñó su plan."
+      },
+      {
+         "question": "¿Cuál es el propósito principal por el que Dios permite y recicla nuestras decisiones o tragedias pasadas?",
+         "options": [
+            "Para que tengamos una vida terrenal cómoda y sin ningún problema.",
+            "Para castigarnos y asegurarnos de que aprendamos la lección.",
+            "Para forjar a Cristo en nosotros y usarlas como herramientas de gracia."
+         ],
+         "correctIndex": 2,
+         "explanation": "Dios es el máximo reciclador; utiliza incluso las peores decisiones o el sufrimiento para hacernos a la imagen de Cristo y acercarnos al Evangelio."
+      }
+   ]
 }
