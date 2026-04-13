@@ -1,4 +1,4 @@
-/* src/app.css */
+src/app.css
 
 .page-shell {
 	position: relative;
@@ -55,13 +55,13 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: 0;
-	margin: 0 10px;
+	gap: 5px;
+	margin: 0 15px;
 	text-align: left;
 	padding: 10px 10px;
 	border: none;
 	cursor: pointer;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 600;
    background: #fff;
    border-radius: 4px;
@@ -115,7 +115,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
-	font-size: 18px;
+	font-size: 16px;
 }
 
 .prose p:last-child {

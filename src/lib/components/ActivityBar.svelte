@@ -32,10 +32,7 @@
 <svelte:window onscroll={onScroll} />
 
 <div class="activity-bar" role="toolbar" aria-label="Barra de actividad">
-  <!-- Scroll progress line at the very top of the bar -->
-  <div class="scroll-track">
-    <div class="scroll-fill" style="width: {scrollPercent}%"></div>
-  </div>
+
 
   <!-- Divider -->
   <div class="bar-divider" aria-hidden="true"></div>
@@ -123,6 +120,14 @@
     {/if}
     <span class="btn-label">{isPaused ? "Reproducir" : "Pausar"}</span>
   </button>
+   
+  <!-- Scroll progress line -->
+  <!-- Scroll progress line -->
+  <!-- Scroll progress line -->
+  <!-- Scroll progress line -->
+  <div class="scroll-track">
+    <div class="scroll-fill" style="width: {scrollPercent}%"></div>
+  </div>
 </div>
 
 <style>
@@ -140,9 +145,9 @@
     align-items: center;
     justify-content: space-between;
     gap: 5px;
-    padding: 0 5px;
+    padding: 0 5px 5px 5px;
 
-    background-color: #f0f0f0;
+    background-color: #fff;
     color: #000;
 
     /* Subtle top border instead of box-shadow so it doesn't bleed */
@@ -152,7 +157,7 @@
   /* ─── Scroll progress ───────────────────────────────────────── */
   .scroll-track {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 3px;

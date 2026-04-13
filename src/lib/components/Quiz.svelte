@@ -114,7 +114,7 @@
 <style>
   .quiz-container {
     /* margin-top: 2rem; */
-    padding: 15px 10px;
+    padding: 15px 15px;
     /* background-color: #f8f9fa; */
     /* border-radius: 4px; */
     /* border: 1px solid #e9ecef; */
@@ -122,7 +122,7 @@
 
   .quiz-title {
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 18px;
     color: #212529;
   }
@@ -130,13 +130,13 @@
   .quiz-progress {
     font-size: 0.875rem;
     color: #6c757d;
-    margin-bottom: 0.5rem;
+    margin-bottom: 10px;
   }
 
   .question-text {
     font-size: 18px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     color: #212529;
   }
 
