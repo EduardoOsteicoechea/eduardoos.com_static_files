@@ -102,7 +102,18 @@
         "Nació en Tarso y fue criado en Tarso."
       ],
       "correctIndex": 1,
-      "explanation": "Pablo era un judío nacido en Tarso (ciudadanía romana), pero fue criado e instruido en Jerusalén bajo el maestro Gamaliel."
+      "explanation": "Segun Hechos 22:3, Pablo era un judío nacido en Tarso (ciudadanía romana), pero fue criado e instruido en Jerusalén bajo el maestro Gamaliel."
+    },
+    {
+      "question": "¿De qué tribu era Pablo?",
+      "options": [
+        "Simeón.",
+        "Judá.",
+        "Rubén.",
+        "Ninguna de las anteriores."
+      ],
+      "correctIndex": 4,
+      "explanation": "Según Filipenses 3:5, Pablo era de la tribu de Benjamín."
     },
     {
       "question": "Según la enseñanza, ¿cuándo fue escogido y apartado Pablo para ser apóstol?",
