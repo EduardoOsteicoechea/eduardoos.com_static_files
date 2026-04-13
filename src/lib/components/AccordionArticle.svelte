@@ -42,7 +42,7 @@
         id={`trigger-${i}`}
         onclick={() => toggleSection(i)}
       >
-        <span class="accordion-label">{section.title}</span>
+        <span class="accordion-label">{i + 1}. {section.title}</span>
         <span class="chevron" aria-hidden="true"></span>
       </button>
       
