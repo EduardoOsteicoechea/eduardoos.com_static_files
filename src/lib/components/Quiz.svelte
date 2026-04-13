@@ -62,7 +62,7 @@
             disabled={isAnswered}
             onclick={() => selectOption(index)}
           >
-            {option}
+            <b>{index + 1}.</b> {option}
           </button>
         {/each}
       </div>
@@ -101,17 +101,17 @@
 
 <style>
   .quiz-container {
-    margin-top: 2rem;
-    padding: 1.5rem 1rem;
-    background-color: #f8f9fa;
-    border-radius: 4px;
-    border: 1px solid #e9ecef;
+    /* margin-top: 2rem; */
+    padding: 15px 10px;
+    /* background-color: #f8f9fa; */
+    /* border-radius: 4px; */
+    /* border: 1px solid #e9ecef; */
   }
 
   .quiz-title {
     margin-top: 0;
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-size: 18px;
     color: #212529;
   }
 
@@ -122,28 +122,29 @@
   }
 
   .question-text {
-    font-size: 1.125rem;
+    font-size: 18px;
     font-weight: 600;
-    margin-bottom: 1.5rem;
+    margin-bottom: 10px;
     color: #212529;
   }
 
   .options {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 5px;
   }
 
   .option-btn {
     text-align: left;
-    padding: 1rem;
-    border: 2px solid #dee2e6;
+    padding: 8px 10px;
+    border: 1px solid #dee2e6;
     background-color: white;
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 16px;
     cursor: pointer;
     transition: all 0.2s;
     color: #495057;
+    font-family: inherit;
   }
 
   .option-btn:not(:disabled):hover {
@@ -179,7 +180,7 @@
   .explanation-box p {
     margin-top: 0.5rem;
     margin-bottom: 1rem;
-    font-size: 0.95rem;
+    font-size: 16px;
     color: #495057;
   }
 
@@ -206,7 +207,7 @@
   }
 
   .score-display {
-    font-size: 2rem;
+    font-size: 20px;
     font-weight: bold;
     color: #0d6efd;
     margin: 1rem 0;

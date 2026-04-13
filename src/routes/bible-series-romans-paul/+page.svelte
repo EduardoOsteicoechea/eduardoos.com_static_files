@@ -2,15 +2,15 @@
   import type { PageProps } from "./$types";
   import AccordionArticle from "$lib/components/AccordionArticle.svelte";
   import Quiz from "$lib/components/Quiz.svelte";
+  import ActivityBar from "$lib/components/ActivityBar.svelte";
   import "../../app.css";
 
   let { data }: PageProps = $props();
 
-  // Controladores de estado para el audio
+  // Audio state
   let audioEl = $state<HTMLAudioElement | null>(null);
   let isPaused = $state(true);
 
-  // Función para el widget flotante
   function toggleAudio() {
     if (!audioEl) return;
     if (isPaused) {
@@ -37,7 +37,7 @@
 <div class="page-shell">
   <div class="page-glass" aria-hidden="true"></div>
   <main class="page">
-    
+
     <header class="page-header">
       <p class="eyebrow">Serie bíblica · {titleCaseBook(data.lesson.serie)}</p>
       <h1 class="title">{data.lesson.titulo_de_enseñanza}</h1>
@@ -63,20 +63,16 @@
   </main>
 </div>
 
-<button class="audio-widget" onclick={toggleAudio} aria-label={isPaused ? "Reproducir" : "Pausar"}>
-  {#if isPaused}
-    <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26">
-      <path d="M8 5v14l11-7z"/>
-    </svg>
-  {:else}
-    <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26">
-      <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-    </svg>
-  {/if}
-</button>
+<!-- Activity bar: fixed at bottom, receives audio state as props -->
+<ActivityBar {isPaused} {toggleAudio} />
 
 <style>
-  /* Contenedor del audio principal */
+  /* Extra bottom padding so the last content isn't hidden behind the 50px bar */
+  .page {
+    padding-bottom: 66px;
+  }
+
+  /* Audio player */
   .audio-container {
     margin-bottom: 20px;
     padding: 0 10px;
@@ -87,34 +83,5 @@
     border-radius: 8px;
     outline: none;
     background-color: #f1f3f4;
-  }
-
-  /* Widget flotante para control global */
-  .audio-widget {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 50;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 50%;
-    background-color: #1a1a1a;
-    color: white;
-    border: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    cursor: pointer;
-    transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1), background-color 0.2s ease;
-  }
-
-  .audio-widget:hover {
-    transform: scale(1.08);
-    background-color: #333;
-  }
-
-  .audio-widget svg {
-    margin-left: 2px;
   }
 </style>
