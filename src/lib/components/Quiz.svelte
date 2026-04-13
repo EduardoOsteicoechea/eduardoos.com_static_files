@@ -123,18 +123,18 @@
   .quiz-title {
     margin-top: 0;
     margin-bottom: 15px;
-    font-size: 18px;
+    font-size: calc(18px * var(--text-zoom, 1));
     color: #212529;
   }
 
   .quiz-progress {
-    font-size: 0.875rem;
+    font-size: calc(0.875rem * var(--text-zoom, 1));
     color: #6c757d;
     margin-bottom: 10px;
   }
 
   .question-text {
-    font-size: 18px;
+    font-size: calc(18px * var(--text-zoom, 1));
     font-weight: 600;
     margin-bottom: 15px;
     color: #212529;
@@ -152,7 +152,7 @@
     border: 1px solid #dee2e6;
     background-color: white;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: calc(16px * var(--text-zoom, 1));
     cursor: pointer;
     transition: all 0.2s;
     color: #495057;
@@ -199,7 +199,7 @@
   .explanation-box p {
     margin-top: 0.5rem;
     margin-bottom: 1rem;
-    font-size: 16px;
+    font-size: calc(16px * var(--text-zoom, 1));
     color: #495057;
   }
 
@@ -226,7 +226,7 @@
   }
 
   .score-display {
-    font-size: 20px;
+    font-size: calc(20px * var(--text-zoom, 1));
     font-weight: bold;
     color: #0d6efd;
     margin: 1rem 0;

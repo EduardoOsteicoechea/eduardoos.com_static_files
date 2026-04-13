@@ -25,6 +25,21 @@
     window.scrollTo({ top: document.body.scrollHeight, behavior: "instant" });
   }
 
+  // --- Text zoom ---
+  let textZoom = $state(1);
+
+  function increaseFontSize() {
+    textZoom = Math.min(2.0, textZoom + 0.1);
+  }
+
+  function decreaseFontSize() {
+    textZoom = Math.max(0.7, textZoom - 0.1);
+  }
+
+  $effect(() => {
+    document.documentElement.style.setProperty('--text-zoom', textZoom.toString());
+  });
+
   // WhatsApp link
   const waUrl = "https://wa.me/+584147281033";
 </script>
@@ -70,6 +85,9 @@
   <div class="bar-divider" aria-hidden="true"></div>
 
   <!-- Scroll to top -->
+  <!-- Scroll to top -->
+  <!-- Scroll to top -->
+  <!-- Scroll to top -->
   <button
     class="bar-btn nav-btn"
     onclick={scrollToTop}
@@ -82,7 +100,9 @@
       <polyline points="18 15 12 9 6 15" />
     </svg>
   </button>
-
+  <!-- Scroll to bottom -->
+  <!-- Scroll to bottom -->
+  <!-- Scroll to bottom -->
   <!-- Scroll to bottom -->
   <button
     class="bar-btn nav-btn"
@@ -94,6 +114,33 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
       stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">
       <polyline points="6 9 12 15 18 9" />
+    </svg>
+  </button>
+
+  <!-- Increase Font -->
+  <button
+    class="bar-btn nav-btn"
+    onclick={increaseFontSize}
+    aria-label="Aumentar tamaño de texto"
+    title="Aumentar texto"
+  >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">
+      <line x1="12" y1="5" x2="12" y2="19"></line>
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+    </svg>
+  </button>
+
+  <!-- Decrease Font -->
+  <button
+    class="bar-btn nav-btn"
+    onclick={decreaseFontSize}
+    aria-label="Reducir tamaño de texto"
+    title="Reducir texto"
+  >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">
+      <line x1="5" y1="12" x2="19" y2="12"></line>
     </svg>
   </button>
 
