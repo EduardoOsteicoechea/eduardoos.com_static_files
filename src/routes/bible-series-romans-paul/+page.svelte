@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { PageProps } from "./$types";
   import AccordionArticle from "$lib/components/AccordionArticle.svelte";
+  import ArticleActions from "$lib/components/ArticleActions.svelte";
   import Quiz from "$lib/components/Quiz.svelte";
   import ActivityBar from "$lib/components/ActivityBar.svelte";
   import "../../app.css";
@@ -54,6 +55,7 @@
       ></audio>
     </div>
 
+    <ArticleActions lesson={data.lesson} />
     <AccordionArticle lesson={data.lesson} />
 
     {#if data.lesson.quiz && data.lesson.quiz.length > 0}
@@ -74,8 +76,8 @@
 
   /* Audio player */
   .audio-container {
-    margin-bottom: 20px;
-    padding: 0 10px;
+    margin-bottom: 10px;
+    padding: 0 15px;
   }
 
   .audio-container audio {

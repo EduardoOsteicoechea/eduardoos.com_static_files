@@ -26,6 +26,7 @@ export type LessonJson = {
   texto_nbla: string;
   texto_nestleadam?: string;
   titulo_de_enseñanza: string;
+  youtube_url?: string;
   sections: ContentSection[];
   quiz: QuizQuestion[]; // Incluimos el quiz
 };
