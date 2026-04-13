@@ -104,7 +104,7 @@
     margin-top: 2rem;
     padding: 1.5rem 1rem;
     background-color: #f8f9fa;
-    border-radius: 12px;
+    border-radius: 4px;
     border: 1px solid #e9ecef;
   }
 
@@ -139,7 +139,7 @@
     padding: 1rem;
     border: 2px solid #dee2e6;
     background-color: white;
-    border-radius: 8px;
+    border-radius: 4px;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.2s;
@@ -172,7 +172,7 @@
     margin-top: 1.5rem;
     padding: 1rem;
     background-color: white;
-    border-radius: 8px;
+    border-radius: 4px;
     border-left: 4px solid #0d6efd;
   }
 
@@ -190,7 +190,7 @@
     background-color: #0d6efd;
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 4px;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.2s;
