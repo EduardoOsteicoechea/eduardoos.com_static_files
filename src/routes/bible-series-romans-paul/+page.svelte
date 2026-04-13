@@ -86,6 +86,4 @@
     outline: none;
     background-color: #f1f3f4;
   }
-
-  
 </style>

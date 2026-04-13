@@ -2,11 +2,12 @@ import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 
 export type ContentSection = {
-  type: 'prose';
-  id: string;
-  title: string;
-  content: string[];
+  type: 'prose' | 'youtube';
+  id?: string;
+  title?: string;
+  content?: string[];
   quiz?: QuizQuestion[];
+  youtube_url?: string;
 };
 
 // Nuevos tipos para el cuestionario
@@ -26,7 +27,6 @@ export type LessonJson = {
   texto_nbla: string;
   texto_nestleadam?: string;
   titulo_de_enseñanza: string;
-  youtube_url?: string;
   sections: ContentSection[];
   quiz: QuizQuestion[]; // Incluimos el quiz
 };

@@ -31,7 +31,7 @@
 </script>
 
 <div class="accordion" role="presentation">
-  {#each lesson.sections as section, i}
+  {#each lesson.sections.filter(s => s.type === 'prose') as section, i}
     <section class="accordion-block">
       <button
         type="button"
