@@ -120,7 +120,7 @@
             "Antes de crear el universo, Pablo había sido apartado para un llamamiento santo.",
             "Pero este pasaje comunica otro detalle importante.",
             "Pablo fue elegido \"según la gracia\".",
-            "Él nos ha salvado y nos ha llamado con un llamamiento santo, no según nuestras obras, sino según Su propósito y según la gracia que nos fue dada en Cristo Jesús desde la eternidad...",
+            "...según la gracia que nos fue dada en Cristo Jesús desde la eternidad...",
             "Pablo no fue elegido por ser un ciudadano ejemplar o un fariseo intachable.",
             "No fue elegido por su fe futura.",
             "No fue elegido por su desempeño en el ministerio.",
@@ -140,7 +140,13 @@
                "reference": "2 Timoteo 1:9",
                "text": "Él nos ha salvado y nos ha llamado con un llamamiento santo, no según nuestras obras, sino según Su propósito y según la gracia que nos fue dada en Cristo Jesús desde la eternidad...",
                "emphasized": [
-                  "según Su propósito y según la gracia que nos fue dada en Cristo Jesús desde la eternidad",
+                  "según Su propósito y según la gracia que nos fue dada en Cristo Jesús desde la eternidad"
+               ]
+            },
+            {
+               "reference": "2 Timoteo 1:9",
+               "text": "Él nos ha salvado y nos ha llamado con un llamamiento santo, no según nuestras obras, sino según Su propósito y según la gracia que nos fue dada en Cristo Jesús desde la eternidad...",
+               "emphasized": [
                   "según la gracia que nos fue dada en Cristo Jesús desde la eternidad"
                ]
             },
