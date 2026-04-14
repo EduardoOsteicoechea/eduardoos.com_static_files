@@ -169,7 +169,7 @@
             "Como dijo en su defensa ante los judíos:",
             "Yo soy judío de Tarso de Cilicia, ciudadano de una ciudad no sin importancia.",
             "Nacer en una ciudad romana era muy valioso en ese tiempo.",
-            "Esto te otorgaba la ciudadanía romana.",
+            "Esto le otorgó la ciudadanía romana.",
             "La ciudadanía romana era una condición protegida y privilegiada por el sistema legal romano.",
             "La ciudadanía romana era tan importante que el libro de hechos dice:",
             "Entonces los que iban a someterlo a azotes, al instante lo soltaron. También el comandante tuvo temor cuando supo que Pablo era ciudadano romano, y porque lo había atado con cadenas.",
@@ -181,10 +181,10 @@
             "Ante el tribunal de Cesar estoy, que es donde debo ser juzgado. Ningún agravio he hecho a los judíos, como también usted muy bien sabe. Si soy, pues, un malechor y he hecho algo digno de muerte, no rehuso morir. Pero si ninguna de esas cosas de que estos me acusan es verdad, nadie puede entregarme a ellos. Apelo a César.",
             "Entonces Festo, habiendo deliberado con el consejo, respondió: 'A César has apelado, a César irás'.",
             "Pero los beneficios de esta ciudadanía llegaron incluso más lejos que librarle la vida.",
-            "Estando bajo la protección de las leyes de Roman, Pablo llegó a predicar el evangelio en la capital del mundo.",
+            "Bajo la protección de las leyes romanas, Pablo llegó a predicar el evangelio en la capital del mundo.",
             "Cuando entramos en Roma, el centurión entregó los presos al prefecto militar, pero a Pablo se le permitió vivir aparte, con el soldado que lo custodiaba.",
             "Pablo se quedó por dos años enteros en la habitacion que alquilaba, y recibía a todos los que iban a verlo, predicando el reino de Dios y enseñando todo lo conceniente al Señor Jesucristo con toda libertad, sin estorbo.",
-            "Gracias a esta ciudadanía, Dios llevó el evangelio hasta el centro y hasta lo último de la tierra por medio del apóstol Pablo."
+            "Gracias a esta ciudadanía, Dios llevó el evangelio hasta lo último de la tierra por medio de Pablo."
          ],
          "biblical_quotes": [
             {
@@ -220,7 +220,7 @@
             {
                "reference": "Hechos 25:10-11",
                "text": "Ante el tribunal de Cesar estoy, que es donde debo ser juzgado. Ningún agravio he hecho a los judíos, como también usted muy bien sabe. Si soy, pues, un malechor y he hecho algo digno de muerte, no rehuso morir. Pero si ninguna de esas cosas de que estos me acusan es verdad, nadie puede entregarme a ellos. Apelo a César.",
-               "emphasized": ["nadie puede entregarme a ellos"]
+               "emphasized": ["nadie puede entregarme a ellos. Apelo a César."]
             },
             {
                "reference": "Hechos 25:12",
