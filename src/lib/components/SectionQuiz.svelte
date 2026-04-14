@@ -46,35 +46,42 @@
   }
 
   function triggerSuccessStars() {
-    const duration = 2500;
-    const end = Date.now() + duration;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const saveData = "connection" in navigator && (navigator as Navigator & {
+      connection?: { saveData?: boolean };
+    }).connection?.saveData;
+    const lowCpu = (navigator.hardwareConcurrency ?? 8) <= 4;
+    const lowMemory = "deviceMemory" in navigator && ((navigator as Navigator & {
+      deviceMemory?: number;
+    }).deviceMemory ?? 8) <= 4;
+    const shouldUseLightEffect = prefersReducedMotion || !!saveData || lowCpu || lowMemory;
 
-    // Create an elegant diamond shape for the confetti
-    const diamond = confetti.shapeFromPath({ path: 'M 10 0 L 20 10 L 10 20 L 0 10 Z' });
+    const duration = shouldUseLightEffect ? 900 : 1800;
+    const end = Date.now() + duration;
+    const particleCount = shouldUseLightEffect ? 2 : 4;
+    const tickCount = shouldUseLightEffect ? 120 : 170;
 
     (function frame() {
       confetti({
-        particleCount: 5,
+        particleCount,
         angle: 60,
         spread: 55,
         origin: { x: 0, y: 0.6 },
         colors: ['#FFD700', '#FFE400', '#F0C987', '#FFFFFF'],
-        shapes: [diamond],
         gravity: 0.9,
         scalar: 1,
-        ticks: 200,
+        ticks: tickCount,
         zIndex: 9999
       });
       confetti({
-        particleCount: 5,
+        particleCount,
         angle: 120,
         spread: 55,
         origin: { x: 1, y: 0.6 },
         colors: ['#FFD700', '#FFE400', '#F0C987', '#FFFFFF'],
-        shapes: [diamond],
         gravity: 0.9,
         scalar: 1,
-        ticks: 200,
+        ticks: tickCount,
         zIndex: 9999
       });
 
