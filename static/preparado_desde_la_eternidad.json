@@ -39,22 +39,31 @@
             {
                "question": "¿Cuál es el propósito de dedicar varios estudios a conocer la persona de Pablo?",
                "options": [
-                  "Para aprender historia antigua solamente.",
-                  "Para conocer al autor humano y leer mejor sus enseñanzas.",
-                  "Para memorizar versículos en griego."
+                  "Únicamente aprender historia antigua.",
+                  "Leer mejor las enseñanzas del autor al conocer aspectos relevantes de su vida.",
+                  "Memorizar versículos en griego."
                ],
                "correctIndex": 1,
-               "explanation": "Conocer el trasfondo y origen del autor (Pablo) nos permite interpretar y entender mucho mejor el mensaje de sus cartas."
+               "explanation": "Conocer el trasfondo y origen del autor (Pablo) nos permitirá interpretar y entender mejor sus escritos."
             },
             {
-               "question": "¿Cómo se describe el intentar estudiar Romanos ignorando la vida de Pablo?",
+               "question": "¿A qué se asemeja el intentar estudiar Romanos ignorando la vida de Pablo?",
                "options": [
-                  "Como mirar un partido desde el segundo tiempo.",
-                  "Como una pérdida de tiempo total.",
-                  "Como un requisito teológico avanzado."
+                  "A mirar un partido desde el segundo tiempo.",
+                  "A una pérdida de tiempo total.",
+                  "A un requisito teológico avanzado."
                ],
                "correctIndex": 0,
-               "explanation": "El texto compara entrar directo a la carta sin conocer al autor con mirar una película en escala de grises o a la mitad, perdiendo detalles importantes."
+               "explanation": "Estudiar Romanos sin conocer al autor es como ver un partido desde el segundo tiempo."
+            },
+            {
+               "question": "Esta enseñanza es improductiva para lectores avanzados, ¿Verdadero o Falso?",
+               "options": [
+                  "Verdadero. Estudiar desde cero la vida de Pablo es improductivo para personas que ya conocen la historia.",
+                  "Falso. La palabra de Dios es viva y eficaz, y edifica constantemente nuestra alma aunque ya la conozcamos."
+               ],
+               "correctIndex": 1,
+               "explanation": "El Espíritu Santo enseña que recordar las mismas cosas edificantes es provechoso para nuestra alma (Romanos 15:14-16, Filipenses 3:1 , 2 Pedro 1:12-15, Hebreos 4:12-13)."
             }
          ]
       },
