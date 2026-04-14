@@ -82,8 +82,6 @@
 
   .audio-container audio {
     width: 100%;
-    border-radius: 8px;
     outline: none;
-    background-color: var(--audio-bg);
   }
 </style>
