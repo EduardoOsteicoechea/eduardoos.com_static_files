@@ -315,7 +315,7 @@
       color: var(--text-color);
 
       /* Subtle top border instead of box-shadow so it doesn't bleed */
-      border-top: 1px solid var(--print-btn-border);
+      border-top: 1px solid var(--border-clear);
    }
 
    /* ─── Scroll progress ───────────────────────────────────────── */
@@ -347,7 +347,7 @@
       gap: 0px;
    }
    .activity-bar-item-with-border {
-      /* border: solid 1px var(--print-btn-border) !important; */
+      /* border: solid 1px var(--border-clear) !important; */
       border-radius: 4px;
    }
 
@@ -444,3 +444,4 @@
       } */
    }
 </style>
+

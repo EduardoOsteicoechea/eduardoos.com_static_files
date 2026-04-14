@@ -54,7 +54,7 @@
 <style>
   /* Extra bottom padding so the last content isn't hidden behind the 50px bar */
   .page {
-    padding-bottom: 66px;
+    padding-bottom:25px;
   }
 
   /* Audio player */

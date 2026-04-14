@@ -113,7 +113,7 @@
 {/if}
 
 <div class="quiz-container">
-  <h2 class="quiz-title">Repaso de la Lección</h2>
+  <h2 class="quiz-title">Repaso</h2>
 
   {#if !quizComplete}
     <div class="quiz-card" transition:slide>
@@ -186,4 +186,9 @@
     </div>
   {/if}
 </div>
-
+
+<style>
+   .quiz-container {
+    margin: 20px 0 0 0;
+  }
+</style>
