@@ -395,6 +395,7 @@
   transition: all 0.2s;
   color: var(--text-main);
   font-family: inherit;
+  justify-content: flex-start;
 }
 
 .option-btn:not(:disabled):hover {
@@ -522,7 +523,6 @@ button {
   /* Strict enforcement of size and padding */
   min-height: 35px !important;
    min-width: 35px !important;
-  padding: 0 10px !important;
   
   display: flex;
   align-items: center;

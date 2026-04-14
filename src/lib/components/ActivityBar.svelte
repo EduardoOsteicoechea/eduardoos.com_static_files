@@ -351,8 +351,7 @@
       display: flex;
       align-items: center;
       height: 100%;
-      border: none;
-      background: transparent;
+      background-color: var(--start-btn-bg);
       color: inherit;
       cursor: pointer;
       font-family: inherit;
