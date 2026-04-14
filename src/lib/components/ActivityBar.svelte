@@ -11,9 +11,12 @@
    let scrollPercent = $state(0);
 
    function onScroll() {
-      const el = document.documentElement;
-      const scrollable = el.scrollHeight - el.clientHeight;
-      scrollPercent = scrollable > 0 ? (el.scrollTop / scrollable) * 100 : 0;
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+      const clientHeight = window.innerHeight || document.documentElement.clientHeight;
+      const scrollable = scrollHeight - clientHeight;
+      let percent = scrollable > 0 ? (scrollTop / scrollable) * 100 : 0;
+      scrollPercent = Math.min(100, Math.max(0, percent));
    }
 
    // --- Scroll jump helpers ---
@@ -46,6 +49,7 @@
    let isDarkMode = $state(false);
 
    $effect(() => {
+      // In sync with app.html logic
       isDarkMode = document.documentElement.classList.contains("dark");
    });
 
@@ -53,6 +57,7 @@
       if (typeof document !== "undefined") {
          document.documentElement.classList.toggle("dark");
          isDarkMode = document.documentElement.classList.contains("dark");
+         localStorage.setItem("theme", isDarkMode ? "dark" : "light");
       }
    }
 
