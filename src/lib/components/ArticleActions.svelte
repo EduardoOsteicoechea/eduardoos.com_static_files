@@ -246,16 +246,17 @@
     color: #155724;
   }
 
-  /* YouTube Button (red brand style) */
+  /* YouTube Button (grayscale style) */
   .yt-btn {
-    background-color: #FF0000;
-    color: #ffffff;
-    /* border: 1px solid #cc0000; */
+    background-color: var(--copy-btn-bg);
+    color: var(--copy-btn-color);
+    border: 1px solid var(--copy-btn-border);
   }
 
   .yt-btn:hover {
-    background-color: #cc0000;
-    /* border-color: #aa0000; */
+    background-color: var(--copy-btn-hover-bg);
+    border-color: var(--copy-btn-hover-border);
+    color: var(--copy-btn-hover-color);
   }
 
   /* Print Button */

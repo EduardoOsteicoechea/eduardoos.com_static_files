@@ -300,16 +300,12 @@
 
   /* ─── WhatsApp button ───────────────────────────────────────── */
   .wa-btn {
-    color: #25d366;
-    /* min-width: 120px; */
-    /* width: auto; */
+    color: var(--btn-nav-color);
     margin-right: auto;
-    /* border: solid 1px red */
   }
 
   .wa-btn:hover {
-    /* background: rgba(37, 211, 102, 0.12);
-    color: #2eeb72; */
+    color: var(--btn-nav-hover);
   }
 
   /* ─── Nav buttons ───────────────────────────────────────────── */
@@ -340,12 +336,21 @@
     letter-spacing: 0.01em;
   }
 
+  @media (max-width: 768px) {
+    .wa-btn .btn-label {
+      display: none;
+    }
+    .wa-btn {
+      min-width: 30px;
+      padding: 0 0px;
+    }
+  }
+
   @media (max-width: 360px) {
     .btn-label {
       display: none;
     }
-    .audio-btn,
-    .wa-btn {
+    .audio-btn {
       min-width: 30px;
       padding: 0 0px;
     }

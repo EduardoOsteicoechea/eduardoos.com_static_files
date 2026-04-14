@@ -219,12 +219,12 @@
     margin-top: 0;
     margin-bottom: 15px;
     font-size: calc(18px * var(--text-zoom, 1));
-    color: #212529;
+    color: var(--text-main);
   }
 
   .quiz-card {
-    background-color: #fff;
-    border: 1px solid #e9ecef;
+    background-color: var(--quiz-bg);
+    border: 1px solid var(--quiz-border);
     border-radius: 4px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
@@ -233,18 +233,18 @@
   .progress-track {
     width: 100%;
     height: 4px;
-    background-color: #f1f3f5;
+    background-color: var(--track-bg);
   }
 
   .progress-fill {
     height: 100%;
-    background-color: #0d6efd;
+    background-color: var(--primary-color);
     transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .progress-fill.final-progress {
     width: 100%;
-    background-color: #28a745;
+    background-color: var(--success-color);
   }
 
   .quiz-header {
@@ -253,7 +253,7 @@
 
   .quiz-progress {
     font-size: calc(0.875rem * var(--text-zoom, 1));
-    color: #6c757d;
+    color: var(--text-muted);
     font-weight: 500;
   }
 
@@ -262,7 +262,7 @@
     font-size: calc(18px * var(--text-zoom, 1));
     font-weight: 600;
     margin-bottom: 15px;
-    color: #212529;
+    color: var(--text-main);
   }
 
   .options {
@@ -275,19 +275,19 @@
   .option-btn {
     text-align: left;
     padding: 8px 10px;
-    border: 1px solid #dee2e6;
-    background-color: white;
+    border: 1px solid var(--option-border);
+    background-color: var(--option-bg);
     border-radius: 4px;
     font-size: calc(16px * var(--text-zoom, 1));
     cursor: pointer;
     transition: all 0.2s;
-    color: #495057;
+    color: var(--text-main);
     font-family: inherit;
   }
 
   .option-btn:not(:disabled):hover {
-    background-color: #f1f3f5;
-    border-color: #ced4da;
+    background-color: var(--option-hover-bg);
+    border-color: var(--option-hover-border);
   }
 
   .option-btn:disabled {
@@ -296,44 +296,44 @@
 
   /* Gray out neutral options once answered — correct/wrong keep their colours */
   .option-btn:disabled:not(.correct):not(.wrong) {
-    background-color: #f0f0f0;
-    border-color: #ddd;
-    color: #aaa;
+    background-color: var(--track-bg);
+    border-color: var(--border-color);
+    color: var(--text-disabled);
   }
 
   /* Estados de respuesta */
   .option-btn.correct {
-    background-color: #d4edda;
-    border-color: #28a745;
-    color: #155724;
+    background-color: var(--option-correct-bg);
+    border-color: var(--option-correct-border);
+    color: var(--option-correct-color);
   }
 
   .option-btn.wrong {
-    background-color: #f8d7da;
-    border-color: #dc3545;
-    color: #721c24;
+    background-color: var(--option-wrong-bg);
+    border-color: var(--option-wrong-border);
+    color: var(--option-wrong-color);
   }
 
   .explanation-box {
     margin-top: 1.5rem;
     padding: 1rem;
-    background-color: white;
+    background-color: var(--explanation-bg);
     border-radius: 4px;
-    border-left: 4px solid #0d6efd;
+    border-left: 4px solid var(--primary-color);
   }
 
   .explanation-box p {
     margin-top: 0.5rem;
     margin-bottom: 1rem;
     font-size: calc(16px * var(--text-zoom, 1));
-    color: #495057;
+    color: var(--text-main);
   }
 
   .next-btn {
     display: inline-block;
     width: 100%;
     padding: 0.75rem;
-    background-color: #0d6efd;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 4px;
@@ -343,13 +343,13 @@
   }
 
   .next-btn:hover {
-    background-color: #0b5ed7;
+    background-color: var(--primary-hover);
   }
 
   .quiz-results {
     text-align: center;
-    background-color: #fff;
-    border: 1px solid #e9ecef;
+    background-color: var(--quiz-bg);
+    border: 1px solid var(--quiz-border);
     border-radius: 4px;
     overflow: hidden;
     padding: 10px;
@@ -358,18 +358,18 @@
   .results-title {
     margin-top: 2rem;
     font-size: calc(22px * var(--text-zoom, 1));
-    color: #212529;
+    color: var(--text-main);
   }
 
   .score-display {
     font-size: calc(20px * var(--text-zoom, 1));
     font-weight: bold;
-    color: #0d6efd;
+    color: var(--primary-color);
     margin: 1rem 0;
   }
 
   .score-message {
-    color: #495057;
+    color: var(--text-main);
     margin-bottom: 2rem;
     padding: 0 1rem;
   }

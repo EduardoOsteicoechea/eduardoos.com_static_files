@@ -225,10 +225,10 @@
     gap: 8px;
     width: 100%;
     padding: 12px;
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
+    background-color: var(--start-btn-bg);
+    border: 1px solid var(--option-border);
     border-radius: 4px;
-    color: #495057;
+    color: var(--text-muted);
     font-size: calc(15px * var(--text-zoom, 1));
     font-weight: 600;
     cursor: pointer;
@@ -236,14 +236,14 @@
   }
 
   .start-btn:hover {
-    background-color: #e9ecef;
-    border-color: #ced4da;
-    color: #212529;
+    background-color: var(--start-btn-hover-bg);
+    border-color: var(--option-hover-border);
+    color: var(--text-main);
   }
 
   .quiz-card {
-    background-color: #fff;
-    border: 1px solid #e9ecef;
+    background-color: var(--quiz-bg);
+    border: 1px solid var(--quiz-border);
     border-radius: 4px;
     overflow: hidden;
     /* Box shadow to subtly differentiate it from the white accordion background */
@@ -253,18 +253,18 @@
   .progress-track {
     width: 100%;
     height: 4px;
-    background-color: #f1f3f5;
+    background-color: var(--track-bg);
   }
 
   .progress-fill {
     height: 100%;
-    background-color: #0d6efd;
+    background-color: var(--primary-color);
     transition: width 0.3s ease;
   }
 
   .progress-fill.final-progress {
     width: 100%;
-    background-color: #28a745;
+    background-color: var(--success-color);
   }
 
   .quiz-header {
@@ -273,7 +273,7 @@
 
   .quiz-progress-text {
     font-size: calc(0.8rem * var(--text-zoom, 1));
-    color: #6c757d;
+    color: var(--text-muted);
     font-weight: 500;
   }
 
@@ -281,7 +281,7 @@
     padding: 10px 15px;
     font-size: calc(16px * var(--text-zoom, 1));
     font-weight: 600;
-    color: #212529;
+    color: var(--text-main);
     margin: 0;
   }
 
@@ -295,19 +295,19 @@
   .option-btn {
     text-align: left;
     padding: 10px 12px;
-    border: 1px solid #dee2e6;
-    background-color: #fff;
+    border: 1px solid var(--option-border);
+    background-color: var(--option-bg);
     border-radius: 4px;
     font-size: calc(15px * var(--text-zoom, 1));
     cursor: pointer;
     transition: all 0.2s;
-    color: #495057;
+    color: var(--text-main);
     font-family: inherit;
   }
 
   .option-btn:not(:disabled):hover {
-    background-color: #f8f9fa;
-    border-color: #ced4da;
+    background-color: var(--option-hover-bg);
+    border-color: var(--option-hover-border);
   }
 
   .option-btn:disabled {
@@ -315,28 +315,28 @@
   }
 
   .option-btn:disabled:not(.correct):not(.wrong) {
-    background-color: #f8f9fa;
-    border-color: #e9ecef;
-    color: #adb5bd;
+    background-color: var(--track-bg);
+    border-color: var(--border-color);
+    color: var(--text-disabled);
     opacity: 0.8;
   }
 
   .option-btn.correct {
-    background-color: #d4edda;
-    border-color: #28a745;
-    color: #155724;
+    background-color: var(--option-correct-bg);
+    border-color: var(--option-correct-border);
+    color: var(--option-correct-color);
   }
 
   .option-btn.wrong {
-    background-color: #f8d7da;
-    border-color: #dc3545;
-    color: #721c24;
+    background-color: var(--option-wrong-bg);
+    border-color: var(--option-wrong-border);
+    color: var(--option-wrong-color);
   }
 
   .explanation-box {
     padding: 15px;
-    background-color: #f8f9fa;
-    border-top: 1px solid #e9ecef;
+    background-color: var(--explanation-bg);
+    border-top: 1px solid var(--quiz-border);
   }
 
   .explanation-box strong {
@@ -348,14 +348,14 @@
   .explanation-box p {
     margin: 0 0 15px 0;
     font-size: calc(15px * var(--text-zoom, 1));
-    color: #495057;
+    color: var(--text-main);
   }
 
   .next-btn {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #0d6efd;
+    background-color: var(--primary-color);
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -366,19 +366,19 @@
   }
 
   .next-btn:hover {
-    background-color: #0b5ed7;
+    background-color: var(--primary-hover);
   }
 
   .next-btn.outline {
     background-color: transparent;
-    color: #495057;
-    border: 1px solid #ced4da;
+    color: var(--text-main);
+    border: 1px solid var(--option-border);
     margin-top: 15px;
   }
 
   .next-btn.outline:hover {
-    background-color: #f8f9fa;
-    color: #212529;
+    background-color: var(--option-hover-bg);
+    color: var(--text-main);
   }
 
   .quiz-results {
@@ -389,13 +389,13 @@
   .quiz-results h3 {
     margin: 20px 0 10px;
     font-size: calc(18px * var(--text-zoom, 1));
-    color: #212529;
+    color: var(--text-main);
   }
 
   .score-display {
     font-size: calc(20px * var(--text-zoom, 1));
     font-weight: 700;
-    color: #0d6efd;
+    color: var(--primary-color);
     margin: 0 0 15px;
   }
 </style>
