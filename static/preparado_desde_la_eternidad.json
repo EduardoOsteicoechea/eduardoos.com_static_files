@@ -254,16 +254,16 @@
          "id": "plan-estrategico",
          "title": "Fariseo consumado",
          "content": [
-            "Pero la nacionalidad y crecimiento judió de Pablo fue igualmente importante.",
-            "El origen étnico de este hombre explica mucho de su erudición en el Antiguo Testamento.",
+            "Pero la nacionalidad y crecimiento judió de Pablo fueron igualmente importantes.",
+            "El origen étnico de este hombre explica mucho de su erudición del Antiguo Testamento.",
             "...circuncidado a los ocho días de nacer, del linaje de Israel, de la tribu de Benjamín, hebreo de hebreos; en cuanto a la ley, fariseo; en cuanto al celo, perseguidor de la iglesia; en cuanto a la justicia de la ley, hallado irreprensible.",
-            "Aunque nacido en una ciudad romana, Pablo provino bajo un linaje puramente judío.",
-            "Esto era muy importante para ser considerado un fiel observante de la ley.",
-            "De igual manera, el libro de Hechos muestra que Pablo recibió la educación judáica más rigurosa.",
+            "Pablo provino de un linaje puramente judío.",
+            "Esto era muy importante para ser considerado observante de la ley.",
+            "De igual manera, Hechos muestra que Pablo recibió la educación judáica más rigurosa.",
             "Yo soy judío, nacido en Tarso de Cilicia, pero criado en esta ciudad, educado bajo Gamaliel en estricta conformidad con la ley de nuestros padres, siendo tan celoso de Dios como todos ustedes lo son hoy.",
-            "Gamaliel era el máximo erudito de su tiempo.",
+            "Gamaliel era el máximo judío.",
             "Y Pablo creció bajo esta escuela de pensamiento.",
-            "En este ambiente desarrolló una tremenda capacidad intelectual y erudición que le permitiría debatir con filósofos griegos.",
+            "En este ambiente desarrolló una tremenda capacidad intelectual que le permitiría debatir con filósofos griegos.",
             "19:9-10 ... Pablo se apartó de ellos llevándose a los discípulos, y discutía diáriamente en la escuela de Tirano. Esto continuó por dos años, de manera que todos los que vivían en Asia oyeron la palabra del Señor, tanto judíos como griegos.",
             "Pero igulamente importante fue el hecho de que fue un fariseo consumado.",
             "Entonces Pablo, dándose cuenta de que una parte eran saduceos y otra fariseos, alzó la voz en el concilio: 'Hermanos, yo soy fariseo, hijo de fariseos.",
@@ -283,12 +283,12 @@
             {
                "reference": "Filipenses 3:5-6",
                "text": "...circuncidado a los ocho días de nacer, del linaje de Israel, de la tribu de Benjamín, hebreo de hebreos; en cuanto a la ley, fariseo; en cuanto al celo, perseguidor de la iglesia; en cuanto a la justicia de la ley, hallado irreprensible.",
-               "emphasized": []
+               "emphasized": ["del linaje de Israel, de la tribu de Benjamín, hebreo de hebreos"]
             },
             {
                "reference": "Hechos 22:3",
                "text": "Yo soy judío, nacido en Tarso de Cilicia, pero criado en esta ciudad, educado bajo Gamaliel en estricta conformidad con la ley de nuestros padres, siendo tan celoso de Dios como todos ustedes lo son hoy.",
-               "emphasized": []
+               "emphasized": ["educado bajo Gamaliel"]
             },
             {
                "reference": "Hechos 23:6",
@@ -316,8 +316,13 @@
                "emphasized": []
             },
             {
-               "reference": "Efesion 3:3",
+               "reference": "Efesios 3:3",
                "text": "... por revelación me fue dado a conocer el misterio, tal como antes les escribí brevemente.",
+               "emphasized": []
+            }
+            {
+               "reference": "Hechos 19:9-10",
+               "text": "... Pablo se apartó de ellos llevándose a los discípulos, y discutía diáriamente en la escuela de Tirano. Esto continuó por dos años, de manera que todos los que vivían en Asia oyeron la palabra del Señor, tanto judíos como griegos.",
                "emphasized": []
             }
          ]
