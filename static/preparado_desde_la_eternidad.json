@@ -117,17 +117,7 @@
             "Su verdadero origen es la eternidad.",
             "Él nos ha salvado y nos ha llamado con un llamamiento santo, no según nuestras obras, sino según Su propósito y según la gracia que nos fue dada en Cristo Jesús desde la eternidad...",
             "Pablo fue elegido antes de que el mundo se fundara.",
-            "Antes de crear el universo, Pablo había sido apartado para un llamamiento santo.",
-            "Pero este pasaje comunica otro detalle importante.",
-            "Pablo fue elegido \"según la gracia\".",
-            "...según la gracia que nos fue dada en Cristo Jesús desde la eternidad...",
-            "Pablo no fue elegido por ser un ciudadano ejemplar o un fariseo intachable.",
-            "No fue elegido por su fe.",
-            "No fue elegido por su desempeño en el ministerio.",
-            "Antes bien he trabajado mucho más que todos ellos, aunque no yo, sino la gracia de Dios en mí.",
-            "Pablo fue escogido porque Dios diseñó un plan de gracia con él.",
-            "Este es el caso con todos los creyentes del evangelio.",
-            "Porque a los que de antemano conoció, también los predestinó a ser hechos conforme a la imagen de Su Hijo, para que Él sea el primogénito entre muchos hermanos."
+            "Antes de crear el universo, Pablo había sido apartado para un llamamiento santo."
          ],
          "biblical_quotes": [
             {
@@ -143,7 +133,26 @@
                "emphasized": [
                   "según Su propósito y según la gracia que nos fue dada en Cristo Jesús desde la eternidad"
                ]
-            },
+            }
+         ]
+      },
+      {
+         "type": "prose",
+         "id": "origen-escogido",
+         "title": "Escogido por gracia",
+         "content": [
+            "Pero este pasaje comunica otro detalle importante.",
+            "Pablo fue elegido \"según la gracia\".",
+            "...según la gracia que nos fue dada en Cristo Jesús desde la eternidad...",
+            "Pablo no fue elegido por ser un ciudadano ejemplar o un fariseo intachable.",
+            "No fue elegido por su fe.",
+            "No fue elegido por su desempeño en el ministerio.",
+            "Antes bien he trabajado mucho más que todos ellos, aunque no yo, sino la gracia de Dios en mí.",
+            "Pablo fue escogido porque Dios diseñó un plan de gracia con él.",
+            "Este es el caso con todos los creyentes del evangelio.",
+            "Porque a los que de antemano conoció, también los predestinó a ser hechos conforme a la imagen de Su Hijo, para que Él sea el primogénito entre muchos hermanos."
+         ],
+         "biblical_quotes": [
             {
                "reference": "2 Timoteo 1:9",
                "text": "...según la gracia que nos fue dada en Cristo Jesús desde la eternidad...",
