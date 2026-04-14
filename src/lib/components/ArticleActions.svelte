@@ -5,6 +5,7 @@
 
   let isCopied = $state(false);
 
+
   // Calculate total words and reading time based on article prose
   let wordCount = $derived.by(() => {
     let count = 0;
@@ -30,8 +31,10 @@
     
     for (const section of lesson.sections) {
       text += `## ${section.title}\n\n`;
-      for (const paragraph of section.content) {
-        text += `${paragraph}\n\n`;
+      if (Array.isArray(section.content)) {
+        for (const paragraph of section.content) {
+          text += `${paragraph}\n\n`;
+        }
       }
     }
 
@@ -69,8 +72,10 @@
 
     for (const section of lesson.sections) {
       html += `<h2>${section.title}</h2>`;
-      for (const paragraph of section.content) {
-        html += `<p>${paragraph}</p>`;
+      if (Array.isArray(section.content)) {
+        for (const paragraph of section.content) {
+          html += `<p>${paragraph}</p>`;
+        }
       }
     }
 
@@ -114,6 +119,8 @@
   </div>
 
   <div class="actions-group">
+
+
     <!-- Copy Article -->
     <button 
     class="action-btn copy-btn" 
@@ -180,12 +187,12 @@
     align-items: center;
     gap: 6px;
     font-size: calc(13.5px * var(--text-zoom, 1));
-    color: #868e96;
+    color: var(--meta-color, #868e96);
     font-weight: 500;
   }
   
   .dot {
-    color: #ced4da;
+    color: var(--dot-color, #ced4da);
     font-size: calc(11px * var(--text-zoom, 1));
   }
 
@@ -218,17 +225,19 @@
     transform: scale(1.1);
   }
 
+
+
   /* Copy Button (neutral/gray style) */
   .copy-btn {
-    background-color: #f1f3f5;
-    color: #495057;
-    border: 1px solid #dee2e6;
+    background-color: var(--copy-btn-bg);
+    color: var(--copy-btn-color);
+    border: 1px solid var(--copy-btn-border);
   }
 
   .copy-btn:hover {
-    background-color: #e9ecef;
-    border-color: #ced4da;
-    color: #212529;
+    background-color: var(--copy-btn-hover-bg);
+    border-color: var(--copy-btn-hover-border);
+    color: var(--copy-btn-hover-color);
   }
 
   .copy-btn.copied {
@@ -251,14 +260,14 @@
 
   /* Print Button */
   .print-btn {
-    background-color: #ffffff;
-    color: #495057;
-    border: 1px solid #ced4da;
+    background-color: var(--print-btn-bg);
+    color: var(--print-btn-color);
+    border: 1px solid var(--print-btn-border);
   }
 
   .print-btn:hover {
-    background-color: #f8f9fa;
-    border-color: #adb5bd;
-    color: #212529;
+    background-color: var(--print-btn-hover-bg);
+    border-color: var(--print-btn-hover-border);
+    color: var(--print-btn-hover-color);
   }
 </style>

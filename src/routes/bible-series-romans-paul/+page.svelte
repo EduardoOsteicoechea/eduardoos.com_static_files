@@ -84,6 +84,6 @@
     width: 100%;
     border-radius: 8px;
     outline: none;
-    background-color: #f1f3f4;
+    background-color: var(--audio-bg);
   }
 </style>

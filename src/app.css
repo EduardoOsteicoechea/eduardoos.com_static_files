@@ -1,4 +1,4 @@
-src/app.css
+@import "./theme.css";
 
 .page-shell {
 	position: relative;
@@ -10,7 +10,7 @@ src/app.css
 	inset: 0;
 	z-index: 0;
 	pointer-events: none;
-	background: rgba(255,255,255,.95);
+	background: var(--glass-bg);
 	backdrop-filter: blur(10px);
 }
 
@@ -66,10 +66,10 @@ src/app.css
 	cursor: pointer;
 	font-size: calc(16px * var(--text-zoom, 1));
 	font-weight: 600;
-   background: #fff;
+   background: var(--accordion-bg);
    border-radius: 4px;
 
-	border: 1px solid #ccc;
+	border: 1px solid var(--border-color);
 }
 
 .accordion-trigger:focus-visible {
@@ -139,7 +139,7 @@ src/app.css
 
 .biblio-card {
 	padding: 0 0 30px 0;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid var(--border-color);
 }
 
 .biblio-card:first-child {
@@ -159,7 +159,7 @@ src/app.css
 	margin: 0 0 0.85rem;
 	padding-left: 1rem;
 	border-left: 3px solid currentColor;
-	color: rgb(201, 114, 0);
+	color: var(--biblio-quote-color);
 }
 
 .biblio-aporte {
