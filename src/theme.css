@@ -61,6 +61,17 @@
   
   --start-btn-bg: #f8f9fa;
   --start-btn-hover-bg: #e9ecef;
+
+  /* Typography Scale */
+  --font-size-1: calc(0.5rem * var(--text-zoom, 1));
+  --font-size-2: calc(0.625rem * var(--text-zoom, 1));
+  --font-size-3: calc(0.75rem * var(--text-zoom, 1));
+  --font-size-4: calc(0.875rem * var(--text-zoom, 1));
+  --font-size-5: calc(1rem * var(--text-zoom, 1));
+  --font-size-6: calc(1.25rem * var(--text-zoom, 1));
+  --font-size-7: calc(1.5rem * var(--text-zoom, 1));
+  --font-size-8: calc(1.75rem * var(--text-zoom, 1));
+  --font-size-9: calc(2rem * var(--text-zoom, 1));
 }
 
 :root.dark {

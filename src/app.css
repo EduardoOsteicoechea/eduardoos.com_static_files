@@ -24,29 +24,28 @@
 }
 
 .page-header {
-	margin: 0 5px 25px 5px;
-	padding: 0 10px;
+	padding: 5px 15px 25px;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
 }
 
 .eyebrow {
-	margin: 0 0 0.5rem;
-	font-size: calc(0.9rem * var(--text-zoom, 1));
+	font-size: var(--font-size-4);
 }
 
 .title {
-	margin: 0;
-	font-size: calc(2em * var(--text-zoom, 1));
+	font-size: var(--font-size-9);
 }
 
 .subtitle {
-	margin: 0.5rem 0 0;
-	font-size: calc(1.1rem * var(--text-zoom, 1));
+	font-size: var(--font-size-5);
 }
 
 .accordion {
 	display: flex;
 	flex-direction: column;
-   gap: 5px;
+   gap: 10px;
 }
 
 .accordion-block {
@@ -64,7 +63,7 @@
 	padding: 10px 10px;
 	border: none;
 	cursor: pointer;
-	font-size: calc(16px * var(--text-zoom, 1));
+	font-size: var(--font-size-5);
 	font-weight: 600;
    background: var(--accordion-bg);
    border-radius: 4px;
@@ -118,7 +117,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
-	font-size: calc(16px * var(--text-zoom, 1));
+	font-size: var(--font-size-5);
 }
 
 .prose p:last-child {
@@ -134,7 +133,7 @@
 }
 
 .meta {
-	font-size: calc(12px * var(--text-zoom, 1));
+	font-size: var(--font-size-3);
 }
 
 .biblio-card {
@@ -204,14 +203,14 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: calc(13.5px * var(--text-zoom, 1));
+  font-size: var(--font-size-4);
   color: var(--meta-color, #868e96);
   font-weight: 500;
 }
 
 .dot {
   color: var(--dot-color, #ced4da);
-  font-size: calc(11px * var(--text-zoom, 1));
+  font-size: var(--font-size-2);
 }
 
 .actions-group {
@@ -316,7 +315,7 @@
   border: 1px solid var(--option-border);
   border-radius: 4px;
   color: var(--text-muted);
-  font-size: calc(15px * var(--text-zoom, 1));
+  font-size: var(--font-size-5);
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s, border-color 0.2s;
@@ -331,7 +330,7 @@
 .quiz-title {
   margin-top: 0;
   margin-bottom: 15px;
-  font-size: calc(18px * var(--text-zoom, 1));
+  font-size: var(--font-size-6);
   color: var(--text-main);
 }
 
@@ -365,14 +364,14 @@
 }
 
 .quiz-progress, .quiz-progress-text {
-  font-size: calc(0.875rem * var(--text-zoom, 1));
+  font-size: var(--font-size-4);
   color: var(--text-muted);
   font-weight: 500;
 }
 
 .question-text {
   padding: 10px 15px;
-  font-size: calc(18px * var(--text-zoom, 1));
+  font-size: var(--font-size-6);
   font-weight: 600;
   margin-bottom: 15px;
   color: var(--text-main);
@@ -391,7 +390,7 @@
   border: 1px solid var(--option-border);
   background-color: var(--option-bg);
   border-radius: 4px;
-  font-size: calc(16px * var(--text-zoom, 1));
+  font-size: var(--font-size-5);
   cursor: pointer;
   transition: all 0.2s;
   color: var(--text-main);
@@ -437,13 +436,13 @@
 .explanation-box strong {
   display: block;
   margin-bottom: 8px;
-  font-size: calc(15px * var(--text-zoom, 1));
+  font-size: var(--font-size-5);
 }
 
 .explanation-box p {
   margin-top: 0.5rem;
   margin-bottom: 1rem;
-  font-size: calc(16px * var(--text-zoom, 1));
+  font-size: var(--font-size-5);
   color: var(--text-main);
 }
 
@@ -458,7 +457,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s;
-  font-size: calc(15px * var(--text-zoom, 1));
+  font-size: var(--font-size-5);
 }
 
 .next-btn:hover {
@@ -488,12 +487,12 @@
 
 .results-title, .quiz-results h3 {
   margin-top: 2rem;
-  font-size: calc(22px * var(--text-zoom, 1));
+  font-size: var(--font-size-7);
   color: var(--text-main);
 }
 
 .score-display {
-  font-size: calc(20px * var(--text-zoom, 1));
+  font-size: var(--font-size-6);
   font-weight: bold;
   color: var(--primary-color);
   margin: 1rem 0;
@@ -504,4 +503,36 @@
   margin-bottom: 2rem;
   padding: 0 1rem;
 }
+
+
+
+
+/* -------------------------------------- */
+/* Strict Button Enforcements             */
+/* -------------------------------------- */
+
+button {
+  font-family: inherit;
+  font-size: var(--font-size-5);
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  
+  /* Strict enforcement of size and padding */
+  min-height: 35px !important;
+   min-width: 35px !important;
+  padding: 0 10px !important;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+  font-size: var(--font-size-5);
+}
+
 

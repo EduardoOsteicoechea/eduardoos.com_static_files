@@ -6,8 +6,8 @@
   import Links from "$lib/components/global/links/Links.svelte";
   import Modal from "$lib/components/global/modal/Modal.svelte";
   import Payment from "$lib/components/global/payment/Payment.svelte";
-//   import "../app.css";
-//   import "../theme.css";
+  import ActivityBar from "$lib/components/ActivityBar.svelte";
+  import "../app.css";
 
   let { children } = $props();
 </script>
@@ -28,7 +28,7 @@
   {@render children()}
 </main>
 
-<!-- <Links />
+<ActivityBar />
 <Chat />
 <Controls />
 <Modal />

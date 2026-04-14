@@ -1,11 +1,5 @@
 <script lang="ts">
-   // Props from parent
-   interface Props {
-      isPaused: boolean;
-      toggleAudio: () => void;
-   }
-
-   let { isPaused, toggleAudio }: Props = $props();
+   import { audioState, toggleAudio } from "$lib/state/audio.svelte";
 
    // --- Scroll progress ---
    let scrollPercent = $state(0);
@@ -255,10 +249,10 @@
    <button
       class="bar-btn audio-btn activity-bar-item"
       onclick={toggleAudio}
-      aria-label={isPaused ? "Reproducir audio" : "Pausar audio"}
-      title={isPaused ? "Reproducir" : "Pausar"}
+      aria-label={audioState.paused ? "Reproducir audio" : "Pausar audio"}
+      title={audioState.paused ? "Reproducir" : "Pausar"}
    >
-      {#if isPaused}
+      {#if audioState.paused}
          <!-- Play -->
          <svg
             viewBox="0 0 24 24"
@@ -281,7 +275,7 @@
             <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
          </svg>
       {/if}
-      <span class="btn-label">{isPaused ? "Reproducir" : "Pausar"}</span>
+      <!-- <span class="btn-label">{audioState.paused ? "Reproducir" : "Pausar"}</span> -->
    </button>
 
    <!-- Scroll progress line -->
@@ -300,13 +294,14 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 50px;
+      height: 55px;
       z-index: 50;
 
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 10px;
       padding: 0 10px 2px 10px;
 
       background-color: var(--activity-bar-bg);
