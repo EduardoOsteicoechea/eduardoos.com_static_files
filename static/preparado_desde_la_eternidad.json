@@ -163,12 +163,26 @@
          "id": "nacimiento-crianza",
          "title": "Un Ciudadano Romano en Jerusalén",
          "content": [
-            "Lo siguiente es que Pablo era de ascendencia judía y ciudadano romano.",
+            "Saulo, llamado también Pablo...",
+            "Era de ascendencia judía y ciudadano romano.",
+            "Pablo respondió: «Yo soy judío de Tarso de Cilicia, ciudadano de una ciudad no sin importancia.",
             "Pablo nació en Tarso, una ciudad romana muy influyente.",
             "En términos prácticos, nació con los 'papeles correctos' y una ciudadanía de altísimo valor.",
             "Sin embargo, aunque nació en territorio grecorromano, su crianza se dio en el epicentro absoluto de la fe: la ciudad de Jerusalén.",
             "Allí fue instruido a los pies de Gamaliel, el teólogo y maestro más brillante de su época. Fue como haber estudiado en la universidad más prestigiosa del mundo bíblico.",
             "Como él mismo dice en Filipenses 3, era «hebreo de hebreos» y un fariseo irreprensible. Se convirtió en un erudito perfeccionista que conocía la ley al derecho y al revés."
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "Hechos 13:9",
+               "text": "Saulo, llamado también Pablo...",
+               "emphasized": []
+            },
+            {
+               "reference": "Hechos 21:38",
+               "text": "Pablo respondió: «Yo soy judío de Tarso de Cilicia, ciudadano de una ciudad no sin importancia.",
+               "emphasized": ["judío de Tarso de Cilicia, ciudadano"]
+            }
          ]
       },
       {
