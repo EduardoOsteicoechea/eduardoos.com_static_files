@@ -46,7 +46,7 @@
 	display: flex;
 	flex-direction: column;
    gap: 10px;
-   margin: 50px 0 0px 0;
+    margin-top: var(--big-top-margin);
 }
 
 .accordion-block {
@@ -521,4 +521,19 @@ input {
 
 
 
+
+
+
+/* -------------------------------------- */
+/* Audio Player                           */
+/* -------------------------------------- */
+.audio-container {
+  margin-bottom: 10px;
+  padding: 0 15px;
+}
+
+.audio-container audio {
+  width: 100%;
+  outline: none;
+}
 

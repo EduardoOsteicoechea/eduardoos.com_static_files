@@ -3,43 +3,21 @@
   import AccordionArticle from "$lib/components/AccordionArticle.svelte";
   import ArticleActions from "$lib/components/ArticleActions.svelte";
   import Quiz from "$lib/components/Quiz.svelte";
-  import { audioState } from "$lib/state/audio.svelte";
+  import LessonHeader from "$lib/components/LessonHeader.svelte";
 
   let { data }: PageProps = $props();
-
-  function titleCaseBook(name: string) {
-    return name
-      .split(/\s+/)
-      .map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
-      .join(" ");
-  }
 </script>
 
 <svelte:head>
   <title>
-    {data.lesson.titulo_de_enseñanza} — {titleCaseBook(data.lesson.libro_de_pasaje)}
+    {data.lesson.titulo_de_enseñanza}
   </title>
 </svelte:head>
 
 <div class="page-shell">
   <div class="page-glass" aria-hidden="true"></div>
   <main class="page">
-
-    <header class="page-header">
-      <p class="eyebrow">Serie bíblica · {titleCaseBook(data.lesson.serie)}</p>
-      <h1 class="title">{data.lesson.titulo_de_enseñanza}</h1>
-      <p class="subtitle">{data.lesson.facilitador}</p>
-    </header>
-
-    <div class="audio-container">
-      <audio
-        bind:this={audioState.element}
-        bind:paused={audioState.paused}
-        src="/preparado_desde_la_eternidad.mp4"
-        controls
-        preload="metadata"
-      ></audio>
-    </div>
+    <LessonHeader lesson={data.lesson} />
 
     <ArticleActions lesson={data.lesson} />
     <AccordionArticle lesson={data.lesson} />
@@ -50,21 +28,3 @@
 
   </main>
 </div>
-
-<style>
-  /* Extra bottom padding so the last content isn't hidden behind the 50px bar */
-  .page {
-    padding-bottom:25px;
-  }
-
-  /* Audio player */
-  .audio-container {
-    margin-bottom: 10px;
-    padding: 0 15px;
-  }
-
-  .audio-container audio {
-    width: 100%;
-    outline: none;
-  }
-</style>

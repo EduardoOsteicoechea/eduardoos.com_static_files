@@ -189,6 +189,6 @@
 
 <style>
    .quiz-container {
-    margin: 50px 0 0 0;
+    margin-top: var(--big-top-margin);
   }
 </style>
