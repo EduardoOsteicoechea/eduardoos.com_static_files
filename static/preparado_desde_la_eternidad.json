@@ -162,16 +162,29 @@
       {
          "type": "prose",
          "id": "nacimiento-crianza",
-         "title": "Un Ciudadano Romano en Jerusalén",
+         "title": "Ciudadano romano",
          "content": [
             "Saulo, llamado también Pablo...",
             "Era de ascendencia judía y ciudadano romano.",
-            "Pablo respondió: «Yo soy judío de Tarso de Cilicia, ciudadano de una ciudad no sin importancia.",
-            "Pablo nació en Tarso, una ciudad romana muy influyente.",
-            "En términos prácticos, nació con los 'papeles correctos' y una ciudadanía de altísimo valor.",
-            "Sin embargo, aunque nació en territorio grecorromano, su crianza se dio en el epicentro absoluto de la fe: la ciudad de Jerusalén.",
-            "Allí fue instruido a los pies de Gamaliel, el teólogo y maestro más brillante de su época. Fue como haber estudiado en la universidad más prestigiosa del mundo bíblico.",
-            "Como él mismo dice en Filipenses 3, era «hebreo de hebreos» y un fariseo irreprensible. Se convirtió en un erudito perfeccionista que conocía la ley al derecho y al revés."
+            "Como dijo en su defensa ante los judíos:",
+            "Yo soy judío de Tarso de Cilicia, ciudadano de una ciudad no sin importancia.",
+            "Nacer en una ciudad romana era muy valioso en ese tiempo.",
+            "Esto te otorgaba la ciudadanía romana.",
+            "La ciudadanía romana era una condición protegida y privilegiada por el sistema legal romano.",
+            "La ciudadanía romana era tan importante que el libro de hechos dice:",
+            "Entonces los que iban a someterlo a azotes, al instante lo soltaron. También el comandante tuvo temor cuando supo que Pablo era ciudadano romano, y porque lo había atado con cadenas.",
+            "Esto incluso fue usado por Dios para librarlo de la muerte en más de una ocasión.",
+            "Primero, cuando fue trasladado de Jerusalén a Cesarea:",
+            "Los judíos se han puesto de acuerdo en pedirle que mañana lleva a Pablo al Concilio con el pretexto de hacer una indagación más a fondo sobre él. Pero no les preste atención, porque más de cuarenta hombres de ellos, que se han comprometido bajo juramento a no comer ni beber hasta que lo hayan matado, esperan emboscados.",
+            "Entonces el comandante... llamando a dos centuriones, dijo: 'Prepara 200 soldados para las nueve de la noche, con setenta jinetes y 200 lanceros, para que vayan a Cesarea'. Debían preparar también cabalgaduras para Pablo y llevarlo a salvo al gobernador Félix.",
+            "Y luego, cuando fue designado a ser llevado de Cesarea a Roma:",
+            "Ante el tribunal de Cesar estoy, que es donde debo ser juzgado. Ningún agravio he hecho a los judíos, como también usted muy bien sabe. Si soy, pues, un malechor y he hecho algo digno de muerte, no rehuso morir. Pero si ninguna de esas cosas de que estos me acusan es verdad, nadie puede entregarme a ellos. Apelo a César.",
+            "Entonces Festo, habiendo deliberado con el consejo, respondió: 'A César has apelado, a César irás'.",
+            "Pero los beneficios de esta ciudadanía llegaron incluso más lejos que librarle la vida.",
+            "Estando bajo la protección de las leyes de Roman, Pablo llegó a predicar el evangelio en la capital del mundo.",
+            "Cuando entramos en Roma, el centurión entregó los presos al prefecto militar, pero a Pablo se le permitió vivir aparte, con el soldado que lo custodiaba.",
+            "Pablo se quedó por dos años enteros en la habitacion que alquilaba, y recibía a todos los que iban a verlo, predicando el reino de Dios y enseñando todo lo conceniente al Señor Jesucristo con toda libertad, sin estorbo.",
+            "Gracias a esta ciudadanía, Dios llevó el evangelio hasta el centro y hasta lo último de la tierra por medio del apóstol Pablo."
          ],
          "biblical_quotes": [
             {
@@ -181,8 +194,48 @@
             },
             {
                "reference": "Hechos 21:38",
-               "text": "Pablo respondió: «Yo soy judío de Tarso de Cilicia, ciudadano de una ciudad no sin importancia.",
+               "text": "Yo soy judío de Tarso de Cilicia, ciudadano de una ciudad no sin importancia.",
                "emphasized": ["judío de Tarso de Cilicia, ciudadano"]
+            },
+            {
+               "reference": "Hechos 22:29",
+               "text": "Entonces los que iban a someterlo a azotes, al instante lo soltaron. También el comandante tuvo temor cuando supo que Pablo era ciudadano romano, y porque lo había atado con cadenas.",
+               "emphasized": ["tuvo temor cuando supo que Pablo era ciudadano romano"]
+            },
+            {
+               "reference": "Hechos 20:21-22",
+               "text": "Los judíos se han puesto de acuerdo en pedirle que mañana lleva a Pablo al Concilio con el pretexto de hacer una indagación más a fondo sobre él. Pero no les preste atención, porque más de cuarenta hombres de ellos, que se han comprometido bajo juramento a no comer ni beber hasta que lo hayan matado, esperan emboscados.",
+               "emphasized": []
+            },
+            {
+               "reference": "Hechos 20:22-24",
+               "text": "Entonces el comandante... llamando a dos centuriones, dijo: 'Prepara 200 soldados para las nueve de la noche, con setenta jinetes y 200 lanceros, para que vayan a Cesarea'. Debían preparar también cabalgaduras para Pablo y llevarlo a salvo al gobernador Félix.",
+               "emphasized": []
+            },
+            {
+               "reference": "Hechos 25:2",
+               "text": "Y los principales sacerdotes y los judíos más influyentes le presentaron acusaciones contra Pablo, perparando ellos, al mismo tiempo, una emboscada para matarlo en el camino.",
+               "emphasized": []
+            },
+            {
+               "reference": "Hechos 25:10-11",
+               "text": "Ante el tribunal de Cesar estoy, que es donde debo ser juzgado. Ningún agravio he hecho a los judíos, como también usted muy bien sabe. Si soy, pues, un malechor y he hecho algo digno de muerte, no rehuso morir. Pero si ninguna de esas cosas de que estos me acusan es verdad, nadie puede entregarme a ellos. Apelo a César.",
+               "emphasized": ["nadie puede entregarme a ellos"]
+            },
+            {
+               "reference": "Hechos 25:12",
+               "text": "Entonces Festo, habiendo deliberado con el consejo, respondió: 'A César has apelado, a César irás'.",
+               "emphasized": ["A César has apelado, a César irás"]
+            },
+            {
+               "reference": "Hechos 28:16",
+               "text": "Cuando entramos en Roma, el centurión entregó los presos al prefecto militar, pero a Pablo se le permitió vivir aparte, con el soldado que lo custodiaba.",
+               "emphasized": []
+            },
+            {
+               "reference": "Hechos 28:30-31",
+               "text": "Pablo se quedó por dos años enteros en la habitacion que alquilaba, y recibía a todos los que iban a verlo, predicando el reino de Dios y enseñando todo lo conceniente al Señor Jesucristo con toda libertad, sin estorbo.",
+               "emphasized": []
             }
          ]
       },
