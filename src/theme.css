@@ -18,20 +18,14 @@
    --dot-color: #ced4da;
    --biblio-quote-color: rgb(201, 114, 0);
 
-   --btn-nav-color: rgb(0, 0, 0);
-   --btn-nav-hover: #003cff;
-
+      
    --activity-bar-bg: #fff;
 
    --audio-bg: #f1f3f4;
-   --copy-btn-color: #495057;
-
-   --copy-btn-hover-color: #212529;
-
-   --print-btn-color: #495057;
-
-   --print-btn-hover-color: #212529;
-
+   
+   
+   
+   
    /* Quiz & General Semantic Colors */
    --quiz-bg: #ffffff;
    --track-bg: #f1f3f5;
@@ -86,21 +80,15 @@
    --dot-color: #5f6368;
    --biblio-quote-color: rgb(255, 167, 38);
 
-   --btn-nav-color: #e0e0e0;
-   --btn-nav-hover: #66b2ff;
-
+      
    --activity-bar-bg: #1e1e1e;
 
    --audio-bg: #2d2d2d;
 
-   --copy-btn-color: #e0e0e0;
-
-   --copy-btn-hover-color: #ffffff;
-
-   --print-btn-color: #e0e0e0;
-
-   --print-btn-hover-color: #ffffff;
-
+   
+   
+   
+   
    /* Quiz & General Semantic Colors */
    --quiz-bg: #1e1e1e;
    --track-bg: #2d2d2d;
