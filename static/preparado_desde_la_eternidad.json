@@ -110,7 +110,7 @@
             "Gálatas 1:15, tiene una pista increíble del origen de Pablo:",
             "Dios me apartó desde el vientre de mi madre y me llamó por su gracia.",
             "Piensa en eso por un momento. Mientras su madre estaba embarazada, Dios ya había señalado a ese bebé para ser el gran apóstol de los gentiles.",
-            "Pero su verdadero origen va mucho más atrás. Segunda de Timoteo 1:9 dice que Dios nos llamó «según el propósito suyo... antes de los tiempos de los siglos».",
+            "Pero su verdadero origen va mucho más atrás. 2 Timoteo 1:9 dice que Dios nos llamó «según el propósito suyo... antes de los tiempos de los siglos».",
             "Pablo no fue elegido porque fuera un ciudadano ejemplar o un fariseo de conducta intachable. Fue escogido porque Dios diseñó un plan para él en la eternidad pasada.",
             "Al igual que nos dice Romanos 8:28, Dios predestinó y orquestó cada detalle de la vida de Pablo —incluso antes de que el universo existiera— para cumplir un propósito soberano."
          ],
@@ -118,6 +118,11 @@
             {
                "reference":"Gálatas 1:15",
                "text":"Dios me apartó desde el vientre de mi madre y me llamó por su gracia.",
+               "emphasized":["me apartó desde el vientre de mi madre"]
+            },
+            {
+               "reference":"2 Timoteo 1:9",
+               "text":"",
                "emphasized":[""]
             }
          ]

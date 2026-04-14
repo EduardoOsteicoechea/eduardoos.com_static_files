@@ -36,6 +36,60 @@
 
     return section.biblical_quotes.find((quote) => quote.text === paragraph) ?? null;
   }
+
+  function escapeRegExp(text: string) {
+    return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  }
+
+  function splitByTerms(paragraph: string, terms: string[]) {
+    if (terms.length === 0) {
+      return [paragraph];
+    }
+
+    const uniqueSortedTerms = [...new Set(terms)].sort(
+      (a, b) => b.length - a.length,
+    );
+    const termPattern = uniqueSortedTerms.map(escapeRegExp).join("|");
+    const splitter = new RegExp(`(${termPattern})`, "g");
+
+    return paragraph
+      .split(splitter)
+      .filter((part) => part.length > 0);
+  }
+
+  function splitByQuoteReferences(section: LessonJson["sections"][number], paragraph: string) {
+    const references = section.biblical_quotes
+      ?.map((quote) => quote.reference.trim())
+      .filter((reference): reference is string => reference.length > 0) ?? [];
+
+    const splitParts = splitByTerms(paragraph, references);
+
+    return splitParts.map((part) => ({
+      text: part,
+      isReference: references.includes(part),
+    }));
+  }
+
+  function splitQuoteByEmphasisAndReferences(
+    section: LessonJson["sections"][number],
+    paragraph: string,
+    quote: NonNullable<ReturnType<typeof findBiblicalQuote>>,
+  ) {
+    const references = section.biblical_quotes
+      ?.map((q) => q.reference.trim())
+      .filter((reference): reference is string => reference.length > 0) ?? [];
+    const emphasized = quote.emphasized
+      ?.map((item) => item.trim())
+      .filter((item): item is string => item.length > 0) ?? [];
+
+    const splitParts = splitByTerms(paragraph, [...references, ...emphasized]);
+
+    return splitParts.map((part) => ({
+      text: part,
+      isReference: references.includes(part),
+      isEmphasized: emphasized.includes(part),
+    }));
+  }
 </script>
 
 <div class="accordion" role="presentation">
@@ -66,13 +120,35 @@
           <div class="panel-inner prose">
             {#each section.content as paragraph}
               {@const biblicalQuote = findBiblicalQuote(section, paragraph)}
+              {@const paragraphParts = splitByQuoteReferences(section, paragraph)}
               {#if biblicalQuote}
+                {@const quoteParts = splitQuoteByEmphasisAndReferences(section, paragraph, biblicalQuote)}
                 <blockquote class="biblical-quote">
-                  <p>{paragraph}</p>
+                  <p>
+                    {#each quoteParts as part}
+                      {#if part.isReference && part.isEmphasized}
+                        <strong><u>{part.text}</u></strong>
+                      {:else if part.isReference}
+                        <strong>{part.text}</strong>
+                      {:else if part.isEmphasized}
+                        <u>{part.text}</u>
+                      {:else}
+                        {part.text}
+                      {/if}
+                    {/each}
+                  </p>
                   <cite>{biblicalQuote.reference}</cite>
                 </blockquote>
               {:else}
-                <p>{paragraph}</p>
+                <p>
+                  {#each paragraphParts as part}
+                    {#if part.isReference}
+                      <strong>{part.text}</strong>
+                    {:else}
+                      {part.text}
+                    {/if}
+                  {/each}
+                </p>
               {/if}
             {/each}
 
@@ -85,28 +161,3 @@
     </section>
   {/each}
 </div>
-
-<style>
-  .biblical-quote {
-    margin: 1rem 0;
-    padding: 0.85rem 1rem;
-    border-left: 4px solid hsl(49 97% 56%);
-    background-color: hsl(220 23% 96% / 0.8);
-    border-radius: 0.4rem;
-  }
-
-  .biblical-quote :global(p) {
-    margin: 0;
-    font-style: italic;
-  }
-
-  .biblical-quote cite {
-    display: block;
-    margin-top: 0.45rem;
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    color: hsl(220 9% 35%);
-    font-style: normal;
-  }
-</style>

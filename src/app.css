@@ -32,14 +32,17 @@
 
 .eyebrow {
 	font-size: var(--font-size-4);
+	line-height: var(--line-height-4);
 }
 
 .title {
 	font-size: var(--font-size-9);
+	line-height: var(--line-height-9);
 }
 
 .subtitle {
 	font-size: var(--font-size-5);
+	line-height: var(--line-height-5);
 }
 
 .accordion {
@@ -65,9 +68,10 @@
 	border: none;
 	cursor: pointer;
 	font-size: var(--font-size-5);
+	line-height: var(--line-height-5);
 	font-weight: 600;
    background: var(--accordion-bg);
-   border-radius: 4px;
+   border-radius: var(--radius-1);
 
 	border: 1px solid var(--border-clear);
 }
@@ -107,7 +111,7 @@
 .accordion-panel {
 	/* border-top: 1px solid currentColor; */
 	padding: 0px 10px;
-   line-height: 1.2;
+   line-height: var(--line-height-5);
 }
 
 .panel-inner {
@@ -119,6 +123,7 @@
 	flex-direction: column;
 	gap: 20px;
 	font-size: var(--font-size-5);
+	line-height: var(--line-height-5);
 }
 
 .prose p:last-child {
@@ -135,6 +140,7 @@
 
 .meta {
 	font-size: var(--font-size-3);
+	line-height: var(--line-height-3);
 }
 
 .biblio-card {
@@ -160,6 +166,32 @@
 	padding-left: 1rem;
 	border-left: 3px solid currentColor;
 	color: var(--biblio-quote-color);
+	line-height: var(--line-height-5);
+}
+
+.biblical-quote {
+  margin: 1rem 0;
+  padding: 0.85rem 1rem;
+  border-left: 4px solid var(--biblical-quote-accent);
+  background-color: var(--biblical-quote-bg);
+  border-radius: var(--radius-1);
+}
+
+.biblical-quote p {
+  margin: 0;
+  font-style: italic;
+  line-height: var(--line-height-5);
+}
+
+.biblical-quote cite {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: var(--font-size-4);
+  line-height: var(--line-height-4);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--biblical-quote-reference-color);
+  font-style: normal;
 }
 
 .biblio-aporte {
@@ -205,6 +237,7 @@
   align-items: center;
   gap: 6px;
   font-size: var(--font-size-4);
+  line-height: var(--line-height-4);
   color: var(--meta-color, #868e96);
   font-weight: 500;
 }
@@ -212,6 +245,7 @@
 .dot {
   color: var(--dot-color, #ced4da);
   font-size: var(--font-size-2);
+  line-height: var(--line-height-2);
 }
 
 .actions-group {
@@ -227,7 +261,7 @@
   justify-content: center;
   width: 35px;
   height: 35px;
-  border-radius: 4px;
+  border-radius: var(--radius-1);
   cursor: pointer;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -302,9 +336,10 @@
   padding: 12px;
   background-color: var(--btn-hover-bg);
   border: 1px solid var(--border-clear);
-  border-radius: 4px;
+  border-radius: var(--radius-1);
   color: var(--text-muted);
   font-size: var(--font-size-5);
+  line-height: var(--line-height-5);
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s, border-color 0.2s;
@@ -314,13 +349,14 @@
   margin-top: 0;
   margin-bottom: 15px;
   font-size: var(--font-size-6);
+  line-height: var(--line-height-6);
   color: var(--text-main);
 }
 
 .quiz-card {
   background-color: var(--quiz-bg);
   border: 1px solid var(--border-clear);
-  border-radius: 4px;
+  border-radius: var(--radius-1);
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
@@ -348,6 +384,7 @@
 
 .quiz-progress, .quiz-progress-text {
   font-size: var(--font-size-4);
+  line-height: var(--line-height-4);
   color: var(--text-muted);
   font-weight: 500;
 }
@@ -355,6 +392,7 @@
 .question-text {
   padding: 10px 15px;
   font-size: var(--font-size-5);
+  line-height: var(--line-height-5);
   font-weight: 600;
   margin-bottom: 15px;
   color: var(--text-main);
@@ -372,8 +410,9 @@
   padding: 10px 12px;
   border: 1px solid var(--border-clear);
   background-color: var(--btn-bg);
-  border-radius: 4px;
+  border-radius: var(--radius-1);
   font-size: var(--font-size-5);
+  line-height: var(--line-height-5);
   cursor: pointer;
   transition: all 0.2s;
   color: var(--text-main);
@@ -408,7 +447,7 @@
   margin-top: 1.5rem;
   padding: 1rem;
   background-color: var(--explanation-bg);
-  border-radius: 4px;
+  border-radius: var(--radius-1);
   border-left: 4px solid var(--primary-color);
 }
 
@@ -416,12 +455,14 @@
   display: block;
   margin-bottom: 8px;
   font-size: var(--font-size-5);
+  line-height: var(--line-height-5);
 }
 
 .explanation-box p {
   margin-top: 0.5rem;
   margin-bottom: 1rem;
   font-size: var(--font-size-5);
+  line-height: var(--line-height-5);
   color: var(--text-main);
 }
 
@@ -432,11 +473,12 @@
   background-color: var(--primary-color);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: var(--radius-1);
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s;
   font-size: var(--font-size-5);
+  line-height: var(--line-height-5);
 }
 
 .next-btn:hover {
@@ -459,7 +501,7 @@
   text-align: center;
   background-color: var(--quiz-bg);
   border: 1px solid var(--border-clear);
-  border-radius: 4px;
+  border-radius: var(--radius-1);
   overflow: hidden;
   padding: 10px;
 }
@@ -467,6 +509,7 @@
 .results-title, .quiz-results h3 {
   margin-top: 2rem;
   font-size: var(--font-size-5);
+  line-height: var(--line-height-5);
   color: var(--text-main);
 }
 
@@ -493,10 +536,11 @@
 button {
   font-family: inherit;
   font-size: var(--font-size-5);
+  line-height: var(--line-height-5);
   box-sizing: border-box;
   background-color: transparent;
   border: 1px solid var(--border-clear);
-  border-radius: 4px;
+  border-radius: var(--radius-1);
   
   /* Strict enforcement of size and padding */
   min-height: 35px !important;
@@ -516,6 +560,7 @@ button:hover {
 input {
   font-family: inherit;
   font-size: var(--font-size-5);
+  line-height: var(--line-height-5);
 }
 
 

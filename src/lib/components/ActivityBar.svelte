@@ -335,7 +335,7 @@
          --biblio-quote-color
       ); /* matches .biblio-quote accent colour in app.css */
       transition: width 0.1s linear;
-      border-radius: 0 2px 2px 0;
+      border-radius: 0 var(--radius-1) var(--radius-1) 0;
    }
 
    /* ─── Activity Bar Item ───────────────────────────────────── */
@@ -348,7 +348,7 @@
    }
    .activity-bar-item-with-border {
       /* border: solid 1px var(--border-clear) !important; */
-      border-radius: 4px;
+      border-radius: var(--radius-1);
    }
 
    /* ─── Shared button reset ───────────────────────────────────── */
@@ -420,6 +420,7 @@
    /* ─── Label (hide on very small screens) ────────────────────── */
    .btn-label {
       font-size: 13px;
+      line-height: var(--line-height-4);
       font-weight: 500;
       letter-spacing: 0.01em;
    }
