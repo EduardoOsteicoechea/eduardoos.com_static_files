@@ -7,6 +7,7 @@ export type ContentSection = {
   title?: string;
   content?: string[];
   quiz?: QuizQuestion[];
+  biblical_quotes?: BiblicalQuote[];
   youtube_url?: string;
 };
 
@@ -16,6 +17,12 @@ export type QuizQuestion = {
   options: string[];
   correctIndex: number;
   explanation: string;
+};
+
+export type BiblicalQuote = {
+  reference: string;
+  text: string;
+  emphasized?: string[];
 };
 
 export type LessonJson = {

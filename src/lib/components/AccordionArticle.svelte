@@ -28,6 +28,14 @@
   function isOpen(index: number) {
     return !!open[index];
   }
+
+  function findBiblicalQuote(section: LessonJson["sections"][number], paragraph: string) {
+    if (!section.biblical_quotes || section.biblical_quotes.length === 0) {
+      return null;
+    }
+
+    return section.biblical_quotes.find((quote) => quote.text === paragraph) ?? null;
+  }
 </script>
 
 <div class="accordion" role="presentation">
@@ -57,7 +65,15 @@
         >
           <div class="panel-inner prose">
             {#each section.content as paragraph}
-              <p>{paragraph}</p>
+              {@const biblicalQuote = findBiblicalQuote(section, paragraph)}
+              {#if biblicalQuote}
+                <blockquote class="biblical-quote">
+                  <p>{paragraph}</p>
+                  <cite>{biblicalQuote.reference}</cite>
+                </blockquote>
+              {:else}
+                <p>{paragraph}</p>
+              {/if}
             {/each}
 
             {#if section.quiz && section.quiz.length > 0}
@@ -70,3 +86,27 @@
   {/each}
 </div>
 
+<style>
+  .biblical-quote {
+    margin: 1rem 0;
+    padding: 0.85rem 1rem;
+    border-left: 4px solid hsl(49 97% 56%);
+    background-color: hsl(220 23% 96% / 0.8);
+    border-radius: 0.4rem;
+  }
+
+  .biblical-quote :global(p) {
+    margin: 0;
+    font-style: italic;
+  }
+
+  .biblical-quote cite {
+    display: block;
+    margin-top: 0.45rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: hsl(220 9% 35%);
+    font-style: normal;
+  }
+</style>
