@@ -106,23 +106,41 @@
          "id": "origen-escogido",
          "title": "Escogido Desde la Eternidad",
          "content": [
-            "Gálatas 1:15, tiene una pista increíble sobre el origen de Pablo:",
-            "Dios me apartó desde el vientre de mi madre y me llamó por su gracia.",
-            "Piensa en eso por un momento. Mientras su madre estaba embarazada, Dios ya había señalado a ese bebé para ser el gran apóstol de los gentiles.",
-            "Pero su verdadero origen va mucho más atrás. 2 Timoteo 1:9 dice que Dios nos llamó «según el propósito suyo... antes de los tiempos de los siglos».",
-            "Pablo no fue elegido porque fuera un ciudadano ejemplar o un fariseo de conducta intachable. Fue escogido porque Dios diseñó un plan para él en la eternidad pasada.",
-            "Al igual que nos dice Romanos 8:28, Dios predestinó y orquestó cada detalle de la vida de Pablo —incluso antes de que el universo existiera— para cumplir un propósito soberano."
+            "Gálatas 1:15-16, tiene una pista increíble sobre el origen de Pablo:",
+            "Pero cuando Dios, que me apartó desde el vientre de mi madre y me llamó por su gracia, tuvo a bien revelar a Su Hijo en mí para que yo lo anunciara entre los gentiles...",
+            "Piensa en eso por un momento.",
+            "Mientras su madre estaba embarazada, Dios ya había señalado a ese bebé para ser apóstol de los gentiles.",
+            "Pero su verdadero origen ocurre mucho antes.",
+            "2 Timoteo 1:9 dice:",
+            "Él nos ha salvado y nos ha llamado con un llamamiento santo, no según nuestras obras, sino según Su propósito y según la gracia que nos fue dada en Cristo Jesús desde la eternidad...",
+            "Pablo no fue elegido porque fuera un ciudadano ejemplar o un fariseo de conducta intachable.",
+            "Pablo fue escogido porque Dios diseñó un plan para él en la eternidad pasada.",
+            "Como también enseña Romanos 8:28-29:",
+            "Y sabemos que a los que aman a Dios, todas las cosas cooperan para bien, esto es, para los que son llamados conforme a Su propósito. Porque a los que de antemano conoció, también los predestinó a ser hechos conforme a la imagen de Su Hijo, para que Él sea el primogénito entre muchos hermanos.",
+            "Dios predestinó y orquestó cada detalle de la vida de Pablo —incluso antes de que el universo existiera— para cumplir un propósito eterno."
          ],
-         "biblical_quotes":[
+         "biblical_quotes": [
             {
-               "reference":"Gálatas 1:15",
-               "text":"Dios me apartó desde el vientre de mi madre y me llamó por su gracia.",
-               "emphasized":["me apartó desde el vientre de mi madre"]
+               "reference": "Gálatas 1:15-16",
+               "text": "Pero cuando Dios, que me apartó desde el vientre de mi madre y me llamó por su gracia, tuvo a bien revelar a Su Hijo en mí para que yo lo anunciara entre los gentiles...",
+               "emphasized": [
+                  "me apartó desde el vientre de mi madre"
+               ]
             },
             {
-               "reference":"2 Timoteo 1:9",
-               "text":"",
-               "emphasized":[""]
+               "reference": "2 Timoteo 1:9",
+               "text": "Él nos ha salvado y nos ha llamado con un llamamiento santo, no según nuestras obras, sino según Su propósito y según la gracia que nos fue dada en Cristo Jesús desde la eternidad...",
+               "emphasized": [
+                  "según Su propósito y según la gracia que nos fue dada en Cristo Jesús desde la eternidad"
+               ]
+            },
+            {
+               "reference": "Romanos 8:28-29",
+               "text": "Y sabemos que a los que aman a Dios, todas las cosas cooperan para bien, esto es, para los que son llamados conforme a Su propósito. Porque a los que de antemano conoció, también los predestinó a ser hechos conforme a la imagen de Su Hijo, para que Él sea el primogénito entre muchos hermanos.",
+               "emphasized": [
+                  "llamados conforme a Su propósito",
+                  "los predestinó a ser hechos conforme a la imagen de Su Hijo"
+               ]
             }
          ]
       },
@@ -177,8 +195,8 @@
    ],
    "quiz": [
       {
-         "question":"¿Sería correcto asumir que toda la audiencia conoce la vida y ministerio de Pablo?",
-         "options":[
+         "question": "¿Sería correcto asumir que toda la audiencia conoce la vida y ministerio de Pablo?",
+         "options": [
             "Sí.",
             "No."
          ],
