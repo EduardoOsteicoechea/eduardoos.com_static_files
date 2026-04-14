@@ -244,13 +244,13 @@
 }
 
 .copy-btn, .yt-btn {
-  background-color: var(--copy-btn-bg);
+  background-color: var(--btn-secondary-bg);
   color: var(--copy-btn-color);
   border: 1px solid var(--border-clear);
 }
 
 .copy-btn:hover, .yt-btn:hover {
-  background-color: var(--copy-btn-hover-bg);
+  background-color: var(--btn-active-bg);
   border-color: var(--border-dark);
   color: var(--copy-btn-hover-color);
 }
@@ -262,13 +262,13 @@
 }
 
 .print-btn {
-  background-color: var(--print-btn-bg);
+  background-color: var(--btn-bg);
   color: var(--print-btn-color);
   border: 1px solid var(--border-clear);
 }
 
 .print-btn:hover {
-  background-color: var(--print-btn-hover-bg);
+  background-color: var(--btn-hover-bg);
   border-color: var(--border-dark);
   color: var(--print-btn-hover-color);
 }
@@ -312,7 +312,7 @@
   gap: 8px;
   width: 100%;
   padding: 12px;
-  background-color: var(--start-btn-bg);
+  background-color: var(--btn-hover-bg);
   border: 1px solid var(--border-clear);
   border-radius: 4px;
   color: var(--text-muted);
@@ -323,7 +323,7 @@
 }
 
 .start-btn:hover {
-  background-color: var(--start-btn-hover-bg);
+  background-color: var(--btn-active-bg);
   border-color: var(--border-dark);
   color: var(--text-main);
 }
@@ -389,7 +389,7 @@
   text-align: left;
   padding: 10px 12px;
   border: 1px solid var(--border-clear);
-  background-color: var(--option-bg);
+  background-color: var(--btn-bg);
   border-radius: 4px;
   font-size: var(--font-size-5);
   cursor: pointer;
@@ -400,7 +400,7 @@
 }
 
 .option-btn:not(:disabled):hover {
-  background-color: var(--option-hover-bg);
+  background-color: var(--btn-hover-bg);
   border-color: var(--border-dark);
 }
 
@@ -474,7 +474,7 @@
 }
 
 .next-btn.outline:hover {
-  background-color: var(--option-hover-bg);
+  background-color: var(--btn-hover-bg);
   color: var(--text-main);
 }
 
@@ -535,6 +535,7 @@ input {
   font-family: inherit;
   font-size: var(--font-size-5);
 }
+
 
 
 

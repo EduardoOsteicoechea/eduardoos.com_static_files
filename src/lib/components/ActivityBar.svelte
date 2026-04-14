@@ -355,7 +355,7 @@
    .bar-btn {
       display: flex;
       align-items: center;
-      background-color: var(--start-btn-bg);
+      background-color: var(--btn-hover-bg);
       color: inherit;
       cursor: pointer;
       font-family: inherit;
@@ -444,4 +444,5 @@
       } */
    }
 </style>
+
 
