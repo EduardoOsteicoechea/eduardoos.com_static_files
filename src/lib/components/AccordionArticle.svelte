@@ -7,6 +7,7 @@
   let { lesson }: { lesson: LessonJson } = $props();
 
   let open = $state<Record<number, boolean>>({});
+  let copiedSection = $state<Record<number, boolean>>({});
   const slideOpts = { duration: 320, easing: cubicOut, axis: "y" as const };
 
   const stickySectionIndex = $derived.by(() => {
@@ -27,6 +28,24 @@
 
   function isOpen(index: number) {
     return !!open[index];
+  }
+
+  function buildSectionCopyText(section: LessonJson["sections"][number]) {
+    const heading = section.title?.trim() ?? "";
+    const content = section.content?.join("\n").trim() ?? "";
+    return `${heading}\n\n${content}`.trim();
+  }
+
+  async function copySectionToClipboard(index: number, section: LessonJson["sections"][number]) {
+    const text = buildSectionCopyText(section);
+    if (!text) return;
+
+    await navigator.clipboard.writeText(text);
+    copiedSection[index] = true;
+
+    setTimeout(() => {
+      copiedSection[index] = false;
+    }, 1800);
   }
 
   function findBiblicalQuote(section: LessonJson["sections"][number], paragraph: string) {
@@ -155,6 +174,18 @@
             {#if section.quiz && section.quiz.length > 0}
               <SectionQuiz questions={section.quiz} />
             {/if}
+
+            <div class="section-copy-actions">
+              <button
+                type="button"
+                class="section-copy-btn"
+                class:section-copy-btn--copied={copiedSection[i]}
+                aria-label="Copiar título y texto de esta sección"
+                onclick={() => copySectionToClipboard(i, section)}
+              >
+                {copiedSection[i] ? "Copiado" : "Copiar sección"}
+              </button>
+            </div>
           </div>
         </div>
       {/if}
