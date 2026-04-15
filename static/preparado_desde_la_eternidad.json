@@ -31,7 +31,7 @@
             "Estudiar Romanos ignorando a Pablo es como mirar un partido desde el segundo tiempo.",
             "Conocemos el marcador, pero perdemos los detalles.",
             "Debemos comenzar desde el principio.",
-            "Así los principiantes aprendemos y los informados afianzan.",
+            "Así los principiantes aprendemos y los avanzados afianzan.",
             "Dedicaremos varios estudios a la persona de Pablo.",
             "Conoceremos al autor humano para entender sus enseñanzas."
          ],
@@ -92,7 +92,7 @@
             "Piensa en eso por un momento...",
             "\"Me apartó desde el vientre de mi madre\".",
             "Mientras su madre estaba embarazada, ya Dios había señalado al bebé como apóstol.",
-            "Sin embargo, este no es su momento más antiguo.",
+            "Pero este no es su momento más antiguo.",
             "Su origen es la eternidad.",
             "Él nos ha salvado y nos ha llamado con un llamamiento santo, no según nuestras obras, sino según Su propósito y según la gracia que nos fue dada en Cristo Jesús desde la eternidad...",
             "Pablo fue elegido antes de que el mundo se fundara.",
@@ -283,16 +283,11 @@
                ]
             },
             {
-               "reference": "Hechos 23:6",
-               "text": "Entonces Pablo, dándose cuenta de que una parte eran saduceos y otra fariseos, alzó la voz en el concilio: 'Hermanos, yo soy fariseo, hijo de fariseos.",
+               "reference": "Hechos 19:9-10",
+               "text": "... Pablo se apartó de ellos llevándose a los discípulos, y discutía diáriamente en la escuela de Tirano. Esto continuó por dos años, de manera que todos los que vivían en Asia oyeron la palabra del Señor, tanto judíos como griegos.",
                "emphasized": [
-                  "soy fariseo, hijo de fariseos."
+                  "discutía diáriamente en la escuela de Tirano"
                ]
-            },
-            {
-               "reference": "Hechos 23:6-7",
-               "text": "Entonces Pablo, dándose cuenta de que una parte eran saduceos y otra fariseos, alzó la voz en el concilio: 'Hermanos, yo soy fariseo, hijo de fariseos. Se me juzga a causa de la esperanza de la resurrección de los muertos'. Cuando dijo esto, se produjo un altercado entre los fariseos y los saduceos y la asamblea se dividió.",
-               "emphasized": []
             },
             {
                "reference": "Hechos 26:28",
@@ -311,7 +306,7 @@
          "id": "plan-estrategico",
          "title": "Fariseo consumado",
          "content": [
-            "Pero igulamente importante fue su devoción farisea.",
+            "Pero igualmente importante fue su formación farisea.",
             "Entonces Pablo, dándose cuenta de que una parte eran saduceos y otra fariseos, alzó la voz en el concilio: 'Hermanos, yo soy fariseo, hijo de fariseos.",
             "Siendo fariseo y de padres fariseos, y además siendo un enérgico observante de la ley formado bajo Gamaliel, Pablo acumulaba credenciales importantes para los eventos que enfrentaría.",
             "Esto le libraría de la muerte cuando se encontrara rodeado por el concilio de Jerusalén.",
@@ -325,6 +320,18 @@
          ],
          "biblical_quotes": [
             {
+               "reference": "Hechos 23:6",
+               "text": "Entonces Pablo, dándose cuenta de que una parte eran saduceos y otra fariseos, alzó la voz en el concilio: 'Hermanos, yo soy fariseo, hijo de fariseos.",
+               "emphasized": [
+                  "soy fariseo, hijo de fariseos."
+               ]
+            },
+            {
+               "reference": "Hechos 23:6-7",
+               "text": "Entonces Pablo, dándose cuenta de que una parte eran saduceos y otra fariseos, alzó la voz en el concilio: 'Hermanos, yo soy fariseo, hijo de fariseos. Se me juzga a causa de la esperanza de la resurrección de los muertos'. Cuando dijo esto, se produjo un altercado entre los fariseos y los saduceos y la asamblea se dividió.",
+               "emphasized": []
+            },
+            {
                "reference": "Hechos 23:9-10",
                "text": "Se produjo entonces un gran alboroto. Y levantándose algunos de los escribas del grupo de los fariseos, discutían enérgicamente, diciendo: 'No encontramos nada malo en este hombre; pero ¿y si un espíritu o angel le ha hablado?'. Al surgir un gran altercado, el comandante tuvo temor de que Pablo fuera despedazado por ellos, y ordenó que las tropas descendieran, lo sacaran de entre ellos a la fuerza y lo llevaran al cuartel.",
                "emphasized": []
@@ -337,19 +344,12 @@
             {
                "reference": "2 Corintios 11:13, 22-23",
                "text": "Porque los tales son falsos apóstoles, obreros fraudulentos, que se disfrazan como apóstoles de Cristo...¿Son ellos hebreos? Yo también. ¿Son servidores de Cristo? (Hablo como si hubiera perdido el juicio). Yo más...",
-               "emphasized": []
+               "emphasized": ["¿Son ellos hebreos? Yo también."]
             },
             {
                "reference": "Efesios 3:3",
                "text": "... por revelación me fue dado a conocer el misterio, tal como antes les escribí brevemente.",
                "emphasized": []
-            },
-            {
-               "reference": "Hechos 19:9-10",
-               "text": "... Pablo se apartó de ellos llevándose a los discípulos, y discutía diáriamente en la escuela de Tirano. Esto continuó por dos años, de manera que todos los que vivían en Asia oyeron la palabra del Señor, tanto judíos como griegos.",
-               "emphasized": [
-                  "discutía diáriamente en la escuela de Tirano"
-               ]
             }
          ]
       },
