@@ -379,7 +379,31 @@
             "Solo cuando recibimos este llamado venimos a Cristo.",
             "Por esto sabemos que el momento de nuestra conversión fue planeado.",
             "Y por esto también sabemos que todo lo que hicimos antes fue parte del plan.",
-            "Fuimos salvos a la edad que creímos porque ése fue el momento escogido por Dios.",
+            "Fuimos salvos a la edad que creímos porque ése fue el momento escogido por Dios."
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "Juan 6:44",
+               "text": "Nadie puede venir a Mí si no lo trae el Padre que me envió, y Yo lo resucitaré en el día final.",
+               "emphasized": ["Nadie puede venir a Mí si no lo trae"]
+            },
+            {
+               "reference": "Hechos 13:48",
+               "text": "Oyendo esto los gentiles, se regocijaban y glorificaban la palabra del Señor; y creyeron cuantos estaban ordenados a vida eterna.",
+               "emphasized": ["creyeron cuantos estaban ordenados"]
+            },
+            {
+               "reference": "Romanos 8:28-29",
+               "text": "Y sabemos que a para los que aman a Dios, todas las cosas cooperan para bien, esto es, para los que son llamados conforme a Su propósito. Porque a los que de antemano conoció, también los predestinó a ser hechos conforme a la imagen de Su Hijo.",
+               "emphasized": ["todas las cosas cooperan para bien"]
+            }
+         ]
+      },
+      {
+         "type": "prose",
+         "id": "utilidad-pasado",
+         "title": "No podemos tomar el pecado a la ligera",
+         "content": [
             "Pero esto no justifica tu pecado.",
             "Esto no hace nuestro mal sea menos malo.",
             "Como también dijo Pablo.",
@@ -403,21 +427,6 @@
             "De la misma manera que la pecadora que lavó los pies de Jesús, que el ladrón en la cruz, que el publicano arrepentido y que Saulo de Tarso, nuestro pecado será una historia de gracia de Jesucristo."
          ],
          "biblical_quotes": [
-            {
-               "reference": "Juan 6:44",
-               "text": "Nadie puede venir a Mí si no lo trae el Padre que me envió, y Yo lo resucitaré en el día final.",
-               "emphasized": ["Nadie puede venir a Mí si no lo trae"]
-            },
-            {
-               "reference": "Hechos 13:48",
-               "text": "Oyendo esto los gentiles, se regocijaban y glorificaban la palabra del Señor; y creyeron cuantos estaban ordenados a vida eterna.",
-               "emphasized": ["creyeron cuantos estaban ordenados"]
-            },
-            {
-               "reference": "Romanos 8:28-29",
-               "text": "Y sabemos que a para los que aman a Dios, todas las cosas cooperan para bien, esto es, para los que son llamados conforme a Su propósito. Porque a los que de antemano conoció, también los predestinó a ser hechos conforme a la imagen de Su Hijo.",
-               "emphasized": ["todas las cosas cooperan para bien"]
-            },
             {
                "reference": "1 Corintios 15:9",
                "text": "... soy el más insignificante de los apóstoles, que no soy digno de ser llamado apóstol, pues perseguí a la iglesia de Dios.",
@@ -448,7 +457,7 @@
       {
          "type": "prose",
          "id": "conclusion",
-         "title": "Abrazando Nuestro Pasado y Llamado a la Salvación",
+         "title": "El poder de la gracia sobre nuestro pasado",
          "content": [
             "Debemos tener un agradecimiento máximo ante Dios por esta doctrina.",
             "Dios hace que incluso nuestro pecado sea útil para un buen propósito.",
