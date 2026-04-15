@@ -75,8 +75,7 @@
          "content": [
             "En esta ocasión abordaremos su origen.",
             "Abordaremos su nacimiento, genealogía, crianza y elección.",
-            "Esto impactará nuestra comprensión de Romanos.",
-            "Romanos es una interpretación erudita del Antiguo Testamento.",
+            "Esto impactará nuestra comprensión de Romanos porque esta carta es una interpretación erudita del Antiguo Testamento.",
             "Hoy descubriremos cómo ese conocimiento brota de las raíces del autor.",
             "Pero también trascenderemos la historia.",
             "Aprenderemos como el pasado de Pablo nos enseña a gestionar la culpa y enfocar el presente.",
@@ -258,17 +257,20 @@
             "...circuncidado a los ocho días de nacer, del linaje de Israel, de la tribu de Benjamín, hebreo de hebreos...",
             "Pablo provino de un linaje puramente judío.",
             "Esto era muy importante para ser considerado fiel a la ley.",
-            "De igual manera, Hechos muestra que Pablo recibió la educación judáica más rigurosa.",
+            "De igual manera, Pablo recibió la educación judáica más rigurosa.",
             "Yo soy judío, nacido en Tarso de Cilicia, pero criado en esta ciudad, educado bajo Gamaliel en estricta conformidad con la ley de nuestros padres, siendo tan celoso de Dios como todos ustedes lo son hoy.",
             "Gamaliel era el máximo erudito judío.",
             "Fue el fundador de una escuela farisea de corte popular y enfocada en la santidad y devoción a la ley.",
             "Pablo creció bajo esta escuela de pensamiento.",
             "En este ambiente desarrolló una tremenda capacidad intelectual que le permitiría debatir con filósofos griegos.",
             "... Pablo se apartó de ellos llevándose a los discípulos, y discutía diáriamente en la escuela de Tirano. Esto continuó por dos años, de manera que todos los que vivían en Asia oyeron la palabra del Señor, tanto judíos como griegos.",
-            "Pero igulamente importante fue el hecho de que fuera un fariseo consumado.",
+            "La potencia intelectual de Pablo era tan notable que era persuasivo para Reyes e incluso considerado delirante por un gobernante romano.",
+            "Entonces Agripa II le dijo a Pablo: 'En poco tiempo me persuadirás a que me haga cristiano'.",
+            "Mientras Pablo decía esto en su defensa, Festo dijo a gran voz: '¡Pablo, estás loco! ¡Tu mucho saber te está haciendo perder la cabeza!'.",
+            "Pero igulamente importante fue su devoción farisea.",
             "Entonces Pablo, dándose cuenta de que una parte eran saduceos y otra fariseos, alzó la voz en el concilio: 'Hermanos, yo soy fariseo, hijo de fariseos.",
             "Siendo fariseo y de padres fariseos, y además siendo un enérgico observante de la ley formado bajo Gamaliel, Pablo acumulaba credenciales importantes para los eventos que enfrentaría.",
-            "Por una parte, esto le libraría de la muerte cuando se encontraba rodeado por el concilio de Jerusalén",
+            "Esto le libraría de la muerte cuando se encontrara rodeado por el concilio de Jerusalén.",
             "Entonces Pablo, dándose cuenta de que una parte eran saduceos y otra fariseos, alzó la voz en el concilio: 'Hermanos, yo soy fariseo, hijo de fariseos. Se me juzga a causa de la esperanza de la resurrección de los muertos'. Cuando dijo esto, se produjo un altercado entre los fariseos y los saduceos y la asamblea se dividió.",
             "Se produjo entonces un gran alboroto. Y levantándose algunos de los escribas del grupo de los fariseos, discutían enérgicamente, diciendo: 'No encontramos nada malo en este hombre; pero ¿y si un espíritu o angel le ha hablado?'. Al surgir un gran altercado, el comandante tuvo temor de que Pablo fuera despedazado por ellos, y ordenó que las tropas descendieran, lo sacaran de entre ellos a la fuerza y lo llevaran al cuartel.",
             "De igual manera, ser un fariseo consumado le permitió defender a las iglesias gentiles de los falsos maestros judaizantes (muchos de ellos fariseos).",
@@ -281,21 +283,37 @@
             {
                "reference": "Filipenses 3:5-6",
                "text": "...circuncidado a los ocho días de nacer, del linaje de Israel, de la tribu de Benjamín, hebreo de hebreos...",
-               "emphasized": ["del linaje de Israel, de la tribu de Benjamín, hebreo de hebreos"]
+               "emphasized": [
+                  "del linaje de Israel, de la tribu de Benjamín, hebreo de hebreos"
+               ]
             },
             {
                "reference": "Hechos 22:3",
                "text": "Yo soy judío, nacido en Tarso de Cilicia, pero criado en esta ciudad, educado bajo Gamaliel en estricta conformidad con la ley de nuestros padres, siendo tan celoso de Dios como todos ustedes lo son hoy.",
-               "emphasized": ["educado bajo Gamaliel"]
+               "emphasized": [
+                  "educado bajo Gamaliel"
+               ]
             },
             {
                "reference": "Hechos 23:6",
                "text": "Entonces Pablo, dándose cuenta de que una parte eran saduceos y otra fariseos, alzó la voz en el concilio: 'Hermanos, yo soy fariseo, hijo de fariseos.",
-               "emphasized": ["soy fariseo, hijo de fariseos."]
+               "emphasized": [
+                  "soy fariseo, hijo de fariseos."
+               ]
             },
             {
                "reference": "Hechos 23:6-7",
                "text": "Entonces Pablo, dándose cuenta de que una parte eran saduceos y otra fariseos, alzó la voz en el concilio: 'Hermanos, yo soy fariseo, hijo de fariseos. Se me juzga a causa de la esperanza de la resurrección de los muertos'. Cuando dijo esto, se produjo un altercado entre los fariseos y los saduceos y la asamblea se dividió.",
+               "emphasized": []
+            },
+            {
+               "reference": "Hechos 26:28",
+               "text": "Entonces Agripa II le dijo a Pablo: 'En poco tiempo me persuadirás a que me haga cristiano'.",
+               "emphasized": []
+            },
+            {
+               "reference": "Hechos 26:24",
+               "text": "Mientras Pablo decía esto en su defensa, Festo dijo a gran voz: '¡Pablo, estás loco! ¡Tu mucho saber te está haciendo perder la cabeza!'.",
                "emphasized": []
             },
             {
@@ -321,7 +339,9 @@
             {
                "reference": "Hechos 19:9-10",
                "text": "... Pablo se apartó de ellos llevándose a los discípulos, y discutía diáriamente en la escuela de Tirano. Esto continuó por dos años, de manera que todos los que vivían en Asia oyeron la palabra del Señor, tanto judíos como griegos.",
-               "emphasized": ["discutía diáriamente en la escuela de Tirano"]
+               "emphasized": [
+                  "discutía diáriamente en la escuela de Tirano"
+               ]
             }
          ]
       },
@@ -330,11 +350,16 @@
          "id": "plan-estrategico",
          "title": "La utilidad del pasado de Pablo",
          "content": [
-            "Aquí es donde vemos la majestuosa estrategia de Dios. Cuando en Hechos 22 intentan torturarlo, Pablo pregunta tranquilamente: «¿Les es lícito azotar a un ciudadano romano?»",
-            "Ese simple pasaporte de nacimiento aterrorizó a los soldados, le salvó la vida y le otorgó derechos legales que otros tenían que comprar con fortunas.",
-            "Más adelante, cuando los judíos conspiran para asesinarlo, Pablo usa su carta magna: «A César apelo». Sin esa ciudadanía, jamás habría llegado vivo al corazón del Imperio Romano.",
-            "¿Logras ver la jugada maestra? Dios tomó a un judío experto en la ley, lo transformó con Su gracia, y usó su nacionalidad para infiltrarlo en la capital política del mundo.",
-            "Gracias a ese aparente arresto, Pablo terminó viviendo dos años en Roma, predicándoles a reyes, gobernadores y a todo el que lo visitaba, llevando el Evangelio hasta lo último de la tierra."
+            "El origen y formación de Pablo fueron críticos para la obra de Dios.",
+            "Dios llevó el evangelio ante Reyes y gobernantes, judíos, pero principalmente ante los gentiles, a través de las carácterísticas originarias de este hombre.",
+            "Su lugar de nacimiento, formación, nacionalidad y capacidades fueron instrumentos útiles para la predicación del evangelio.",
+            "Pero no debemos perder de vista que Pablo fue escogido desde la eternidad.",
+            "Estas características no son accidentales.",
+            "Recuerda que el llamamiento apostólico le fue dado por gracia desde antes de la fundación del mundo.",
+            "Estas capacidades fueron planeadas y concedidas por Dios para Su plan.",
+            "Esto nos enseña que Dios orquestó el pasado de Pablo para Su gloria.",
+            "Como veremos en las próximas sesiones, incluso la maldad con la que llegó a ser asesino de creyentes fue utilizada por Dios para el evangelio.",
+            "Todo lo que vivió Pablo fue un instrumento de Dios para engrandecer a Cristo."
          ]
       },
       {
@@ -342,12 +367,82 @@
          "id": "utilidad-pasado",
          "title": "La Utilidad de Nuestro Pasado",
          "content": [
-            "Quizás estés pensando: «Claro, Dios orquestó todo en la vida de Pablo porque iba a ser un apóstol famoso, pero mi vida es demasiado común o está llena de errores».",
-            "A veces nos da miedo creer que Dios preparó meticulosamente nuestro pasado, especialmente si venimos de realidades muy oscuras. Pero la Biblia nos dice que todas las cosas nos ayudan a bien.",
-            "Tu experiencia de vida, tus caídas en el mundo y tus dolores impactan radicalmente la forma en la que hoy valoras y entiendes la gracia del Evangelio.",
-            "Piensa en el ciego de nacimiento en Juan 9. No estaba ciego por un castigo de sus padres; pasó décadas en oscuridad únicamente para que, en el momento exacto, la gloria de Cristo brillara al sanarlo.",
-            "Piensa en el ladrón en la cruz, cuyo terrible registro criminal lo llevó a morir al lado del Salvador, solo para que su salvación in extremis quedara grabada como esperanza para nosotros.",
-            "Hermanos, Dios es el máximo reciclador. Él toma la basura de nuestras peores decisiones, las tragedias que sufrimos antes de creer, y las transforma en los peldaños que nos acercan a Cristo."
+            "Pero este no es el fin de la historia.",
+            "El pasado de cada creyente ha sido igualmente predestinado para ser un instrumento de gracia.",
+            "Y sabemos que a para los que aman a Dios, todas las cosas cooperan para bien, esto es, para los que son llamados conforme a Su propósito. Porque a los que de antemano conoció, también los predestinó a ser hechos conforme a la imagen de Su Hijo.",
+            "Dios ha planeado utilizar todas nuestras circunstancias para asemejarnos a Cristo.",
+            "Pero también es cierto que Dios ha planeado regenerarnos en un momento específico de nuestra vida para ser salvos.",
+            "Como dijo el Señor Jesucristo y también el libro de Hechos:",
+            "Nadie puede venir a Mí si no lo trae el Padre que me envió, y Yo lo resucitaré en el día final.",
+            "Oyendo esto los gentiles, se regocijaban y glorificaban la palabra del Señor; y creyeron cuantos estaban ordenados a vida eterna.",
+            "Solo cuando Dios nos atrae eficazmente creemos el evangelio.",
+            "Solo cuando recibimos este llamado venimos a Cristo.",
+            "Por esto sabemos que el momento de nuestra conversión fue planeado.",
+            "Y por esto también sabemos que todo lo que hicimos antes fue parte del plan.",
+            "Fuimos salvos a la edad que creímos porque ése fue el momento escogido por Dios.",
+            "Pero esto no justifica tu pecado.",
+            "Esto no hace nuestro mal sea menos malo.",
+            "Como también dijo Pablo.",
+            "... soy el más insignificante de los apóstoles, que no soy digno de ser llamado apóstol, pues perseguí a la iglesia de Dios.",
+            "Pablo no se enorgullecía de su pecado.",
+            "Pablo recordaba su pasado solo para exaltar la gracia.",
+            "Pero por la gracia de Dios soy lo que soy, y Su gracia para conmigo no resultó vana. Antes bien he trabajado mucho más que todos ellos, aunque no yo, sino la gracia de Dios en mí.",
+            "Dios ha planeado sacar algo bueno de tu pasado malo por medio del evangelio.",
+            "Este es el consuelo que tenemos de nuestros malos hechos.",
+            "De igual manera, saber que Dios redimirá nuestro pecado no justifica tomarlo a la ligera.",
+            "Dios mantiene muchas de sus consecuencias para disciplinarnos.",
+            "Porque el Señor al que ama disciplina, y azota a todo el que recibe por hijo.",
+            "Dios azota a todo hijo que toma ligeramente su pecado.",
+            "Y no solo esto, sino que también sabemos que Dios condena a todo el que permanece sin arrepentimiento.",
+            "Que nadie los engañe con palabras vanas, pues por causa de estas cosas la ira de Dios viene sobre los hijos de desobediencia. Por tanto no sean partícipes con ellos.",
+            "Sin embargo, sí que Cristo trae provecho incluso nuestros hechos vergonzosos.",
+            "La salvación del evangelio es tan extraordinaria que puede sacar oro de nuestro barro.",
+            "Como dijo el apósotol:",
+            "Palabra fiel y digna de ser aceptada por todos: Cristo Jesús vino al mundo para salvar a los pecadores, entre los cuales yo soy el primero. Sin embargo, por esto hallé misericordia, para que en mí, como el primero, Jesucristo demostrara toda Su paciencia como un ejemplo para los que habrían de creen en Él para vida eterna.",
+            "Y de la misma manera que Pablo, nuestro pasado será una herramienta para engrandecer a Jesucristo.",
+            "De la misma manera que la mujer que lavo los pies de Jesús, que el ladrón en la cruz, que el publicano arrepentido y que Saulo de Tarso, nuestro pecado anterior sera una historia de la inmensa gracia de Jesucristo."
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "Juan 6:44",
+               "text": "Nadie puede venir a Mí si no lo trae el Padre que me envió, y Yo lo resucitaré en el día final.",
+               "emphasized": []
+            },
+            {
+               "reference": "Hechos 13:48",
+               "text": "Oyendo esto los gentiles, se regocijaban y glorificaban la palabra del Señor; y creyeron cuantos estaban ordenados a vida eterna.",
+               "emphasized": []
+            },
+            {
+               "reference": "Romanos 8:28-29",
+               "text": "Y sabemos que a para los que aman a Dios, todas las cosas cooperan para bien, esto es, para los que son llamados conforme a Su propósito. Porque a los que de antemano conoció, también los predestinó a ser hechos conforme a la imagen de Su Hijo.",
+               "emphasized": []
+            },
+            {
+               "reference": "1 Corintios 15:9",
+               "text": "... soy el más insignificante de los apóstoles, que no soy digno de ser llamado apóstol, pues perseguí a la iglesia de Dios.",
+               "emphasized": []
+            },
+            {
+               "reference": "1 Corintios 15:10",
+               "text": "Pero por la gracia de Dios soy lo que soy, y Su gracia para conmigo no resultó vana. Antes bien he trabajado mucho más que todos ellos, aunque no yo, sino la gracia de Dios en mí.",
+               "emphasized": []
+            },
+            {
+               "reference": "Hebreos 12:6",
+               "text": "Porque el Señor al que ama disciplina, y azota a todo el que recibe por hijo.",
+               "emphasized": []
+            },
+            {
+               "reference": "Efesios 5:6-7",
+               "text": "Que nadie los engañe con palabras vanas, pues por causa de estas cosas la ira de Dios viene sobre los hijos de desobediencia. Por tanto no sean partícipes con ellos.",
+               "emphasized": []
+            },
+            {
+               "reference": "1 Timoteo 1:15-16",
+               "text": "Palabra fiel y digna de ser aceptada por todos: Cristo Jesús vino al mundo para salvar a los pecadores, entre los cuales yo soy el primero. Sin embargo, por esto hallé misericordia, para que en mí, como el primero, Jesucristo demostrara toda Su paciencia como un ejemplo para los que habrían de creen en Él para vida eterna.",
+               "emphasized": []
+            }
          ]
       },
       {
@@ -355,11 +450,31 @@
          "id": "conclusion",
          "title": "Abrazando Nuestro Pasado y Llamado a la Salvación",
          "content": [
-            "Saber esto debería llenarnos de una gratitud inmensa. En las manos de Dios, nada de lo que sufriste se desperdicia; todo es material que Él usa para forjar a Cristo en ti.",
-            "Tu escasez te enseñó a depender de Dios; tu abundancia te demostró Su fidelidad inagotable; y tus pecados más vergonzosos te revelaron tu necesidad absoluta de un Salvador.",
-            "No dejes que la culpa te paralice. No fuimos creados simplemente para cumplir metas terrenales; existimos para ser el pueblo de Cristo. Acepta tu historia como una poderosa herramienta de gracia.",
-            "Si aún no entiendes el porqué de algunas de tus pruebas, dale tiempo a Dios. Y si aún no has rendido tu vida a Él, te ruego que escuches este llamado de salvación.",
-            "Dios no te promete una vida libre de problemas, pero sí promete cancelar la deuda de tus pecados y orquestar tu historia para un propósito eterno. Rinde tu vida hoy, y Él redimirá todo tu pasado."
+            "Debemos tener un agradecimiento máximo ante Dios por esta doctrina.",
+            "Dios hace que incluso nuestro pecado sea útil para un buen propósito.",
+            "El propósito de nuestra vida es engrandecer a Jesucristo y edificar a otros.",
+            "Y Dios utilizará todas las cosas para lograrlo.",
+            "Otra de las conclusiones de esta enseñanza es no caer bajo el peso de la culpa.",
+            "Recuerda que Dios te ha aceptado en Cristo.",
+            "No hay nada que probar ni añadir.",
+            "Si has creído y acudido en arrepentimiento, eres aceptado.",
+            "Y recuerda que Dios incluso engrandecerá a Su Hijo a través de tu pasado.",
+            "Dios utilizará tu testimonio para salvar y edificar a otros con el evangelio.",
+            "No te paralices.",
+            "La utilidad de tu vida no dependerá de tu pasado ni de tus obras.",
+            "Dependerá de gracia de Dios obrará a través de tu vida para cumplir su plan.",
+            "Descansa y extiéndete hacia adelante.",
+            "Y esto es muy importante.",
+            "Dios nos salva de nuestro pecado para transformarnos.",
+            "... Pero una cosa hago: olvidando lo que queda atrás y extendiéndome a lo que está adelante, prosigo hacia la meta para obtener el premio del supremo llamamiento de Dios en Cristo Jesús.",
+            "Suelta la culpa y abraza la justicia del presente."
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "Filipenses 3:13-16",
+               "text": "... Pero una cosa hago: olvidando lo que queda atrás y extendiéndome a lo que está adelante, prosigo hacia la meta para obtener el premio del supremo llamamiento de Dios en Cristo Jesús.",
+               "emphasized": []
+            }
          ]
       }
    ],
