@@ -29,15 +29,7 @@
 </main>
 
 <ActivityBar />
-<!-- <Chat />
-<Controls />
-<Modal />
-<Payment /> -->
 
-<!-- STYLES -->
-<!-- -->
-<!-- -->
-<!-- -->
 
 <style>
   :global(body) {

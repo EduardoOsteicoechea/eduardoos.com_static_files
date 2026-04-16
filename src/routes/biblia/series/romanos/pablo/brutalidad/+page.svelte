@@ -18,15 +18,7 @@
 <div class="page-shell">
   <div class="page-glass" aria-hidden="true"></div>
   <main class="page">
-    <Breadcrumb
-      items={[
-        { label: "Biblia", href: "/biblia" },
-        { label: "Series", href: "/biblia/series" },
-        { label: "Romanos", href: "/biblia/series/romanos" },
-        { label: "Pablo", href: "/biblia/series/romanos/pablo" },
-        { label: "Brutalidad" }
-      ]}
-    />
+    <Breadcrumb />
 
     {#if data.lesson}
       <LessonHeader
