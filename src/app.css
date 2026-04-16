@@ -545,6 +545,9 @@
 }
 
 .option-btn {
+  display: flex;
+  align-items: start;
+  justify-content: start;
   text-align: left;
   padding: 10px 12px;
   border: 1px solid var(--border-clear);
@@ -556,7 +559,6 @@
   transition: all 0.2s;
   color: var(--text-main);
   font-family: inherit;
-  justify-content: flex-start;
 }
 
 .option-btn:disabled {
