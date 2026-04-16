@@ -158,7 +158,7 @@
               disabled={isAnswered}
               onclick={() => selectOption(index)}
             >
-              <b>{index + 1}. </b> {option}
+              {index + 1}. {option}
             </button>
           {/each}
         </div>
