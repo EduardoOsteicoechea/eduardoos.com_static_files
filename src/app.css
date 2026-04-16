@@ -14,6 +14,16 @@
 	backdrop-filter: blur(10px);
 }
 
+.page-content {
+	box-sizing: border-box;
+}
+
+@media (min-width: 769px) {
+	.page-content {
+		padding-left: var(--activity-bar-width);
+	}
+}
+
 .page {
 	position: relative;
 	z-index: 1;
@@ -21,6 +31,12 @@
 	max-width: 42rem;
 	margin: 0 auto;
 	padding: 10px 0 75px 0;
+}
+
+@media (min-width: 769px) {
+	.page {
+		padding-bottom: 30px;
+	}
 }
 
 .page-header {
