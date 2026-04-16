@@ -19,7 +19,7 @@
 
 <svelte:head>
   <link rel="icon" href={favicon} />
-  <title>BIM Software for Cloud, Web and Desktop</title>
+  <title>Eduardo Osteicoechea</title>
 </svelte:head>
 
 <PersonalPhoto />
