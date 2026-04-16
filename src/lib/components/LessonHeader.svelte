@@ -11,6 +11,16 @@
     sermonUrl?: string | null;
     heroUrl?: string | null;
   } = $props();
+  let showHero = $state(false);
+  let showAudio = $state(false);
+
+  $effect(() => {
+    showHero = !!heroUrl;
+  });
+
+  $effect(() => {
+    showAudio = !!sermonUrl;
+  });
 
   function titleCaseBook(name: string) {
     if (!name) return "";
@@ -27,13 +37,19 @@
   <p class="subtitle">{lesson.facilitador}</p>
 </header>
 
-{#if heroUrl}
+{#if heroUrl && showHero}
   <div class="hero-container">
-    <img class="hero-image" src={heroUrl} alt={`Portada de ${lesson.titulo_de_enseñanza}`} loading="lazy" />
+    <img
+      class="hero-image"
+      src={heroUrl}
+      alt={`Portada de ${lesson.titulo_de_enseñanza}`}
+      loading="lazy"
+      onerror={() => (showHero = false)}
+    />
   </div>
 {/if}
 
-{#if sermonUrl}
+{#if sermonUrl && showAudio}
   <div class="audio-container">
     <audio
       bind:this={audioState.element}
@@ -41,6 +57,7 @@
       src={sermonUrl}
       controls
       preload="metadata"
+      onerror={() => (showAudio = false)}
     ></audio>
   </div>
 {/if}

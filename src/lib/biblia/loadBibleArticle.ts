@@ -28,11 +28,7 @@ export async function loadBibleArticle({
   const sermonUrl = `${assetDirectory}sermon.mp4`;
   const heroUrl = `${assetDirectory}hero.png`;
 
-  const [dataRes, sermonRes, heroRes] = await Promise.all([
-    fetch(dataJsonUrl),
-    fetch(sermonUrl, { method: "HEAD" }),
-    fetch(heroUrl, { method: "HEAD" }),
-  ]);
+  const dataRes = await fetch(dataJsonUrl);
 
   if (!dataRes.ok) {
     throw error(
@@ -58,8 +54,8 @@ export async function loadBibleArticle({
     assets: {
       directory: assetDirectory,
       dataJsonUrl,
-      sermonUrl: sermonRes.ok ? sermonUrl : null,
-      heroUrl: heroRes.ok ? heroUrl : null,
+      sermonUrl,
+      heroUrl,
     },
   };
 }
