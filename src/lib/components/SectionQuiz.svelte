@@ -1,7 +1,6 @@
 <script lang="ts">
   import { slide } from "svelte/transition";
-  import { tick } from "svelte";
-  import type { QuizQuestion } from "../../routes/bible-series-romans-paul/+page";
+  import type { QuizQuestion } from "$lib/components/AticleAssets";
   import confetti from "canvas-confetti";
 
   let { questions }: { questions: QuizQuestion[] } = $props();
@@ -30,7 +29,7 @@
     isStarted = true;
   }
 
-  async function selectOption(index: number) {
+  function selectOption(index: number) {
     if (isAnswered) return;
     selectedOption = index;
     isAnswered = true;
@@ -39,10 +38,6 @@
       score += 1;
     }
 
-    // Wait for Svelte to render the explanation box, but don't scroll into view wildly
-    // scrollIntoView can push the user around during accordion reading, 
-    // so we just let it appear smoothly.
-    await tick();
   }
 
   function triggerSuccessStars() {

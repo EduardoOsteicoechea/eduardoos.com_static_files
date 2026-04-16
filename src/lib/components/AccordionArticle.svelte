@@ -1,7 +1,7 @@
 <script lang="ts">
   import { slide } from "svelte/transition";
   import { cubicOut } from "svelte/easing";
-  import type { LessonJson } from "../../routes/bible-series-romans-paul/+page";
+  import type { LessonJson } from "$lib/components/AticleAssets";
   import SectionQuiz from "./SectionQuiz.svelte";
 
   let { lesson }: { lesson: LessonJson } = $props();

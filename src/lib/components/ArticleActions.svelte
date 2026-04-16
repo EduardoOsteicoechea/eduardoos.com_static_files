@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { LessonJson } from "../../routes/bible-series-romans-paul/+page";
+  import type { LessonJson } from "$lib/components/AticleAssets";
 
   let { lesson }: { lesson: LessonJson } = $props();
 

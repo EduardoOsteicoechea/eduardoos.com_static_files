@@ -29,7 +29,7 @@
 </main>
 
 <ActivityBar />
-<Chat />
+<!-- <Chat />
 <Controls />
 <Modal />
 <Payment /> -->

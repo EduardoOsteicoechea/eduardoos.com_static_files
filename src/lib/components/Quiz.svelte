@@ -1,6 +1,6 @@
 <script lang="ts">
   import { slide } from "svelte/transition";
-  import type { QuizQuestion } from "../../routes/bible-series-romans-paul/+page";
+  import type { QuizQuestion } from "$lib/components/AticleAssets";
   import confetti from "canvas-confetti";
 
   let { questions }: { questions: QuizQuestion[] } = $props();
@@ -24,7 +24,7 @@
       : ((currentIndex + (isAnswered ? 1 : 0)) / questions.length) * 100
   );
 
-  async function selectOption(index: number) {
+  function selectOption(index: number) {
     if (isAnswered) return;
     selectedOption = index;
     isAnswered = true;
