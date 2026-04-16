@@ -13,7 +13,7 @@
     const clientHeight =
       window.innerHeight || document.documentElement.clientHeight;
     const scrollable = scrollHeight - clientHeight;
-    let percent = scrollable > 0 ? (scrollTop / scrollable) * 100 : 0;
+    const percent = scrollable > 0 ? (scrollTop / scrollable) * 100 : 0;
     scrollPercent = Math.min(100, Math.max(0, percent));
   }
 
@@ -71,14 +71,6 @@
   role="toolbar"
   aria-label="Barra de actividad"
 >
-  <!-- Scroll progress line -->
-  <!-- Scroll progress line -->
-  <!-- Scroll progress line -->
-  <!-- Scroll progress line -->
-  <div class="scroll-track">
-    <div class="scroll-fill"></div>
-  </div>
-
   <!-- WhatsApp CTA -->
   <!-- WhatsApp CTA -->
   <!-- WhatsApp CTA -->
@@ -299,6 +291,10 @@
     {/if}
     <!-- <span class="btn-label">{audioState.paused ? "Reproducir" : "Pausar"}</span> -->
   </button>
+
+  <div class="scroll-track" aria-hidden="true">
+    <div class="scroll-fill"></div>
+  </div>
 </div>
 
 <style>
@@ -317,6 +313,10 @@
     justify-content: center;
     gap: 10px;
     padding: 0 10px 2px 10px;
+    /* Hide native scrollbar; scroll progress is .scroll-track / .scroll-fill */
+    overflow: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
     background-color: var(--activity-bar-bg);
     color: var(--text-color);
@@ -325,7 +325,11 @@
     border-top: 1px solid var(--border-clear);
   }
 
-  /* ─── Scroll progress ───────────────────────────────────────── */
+  .activity-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ─── Scroll progress (not the browser scrollbar) ───────────── */
   .scroll-track {
     position: absolute;
     bottom: 0;
@@ -334,6 +338,7 @@
     height: 3px;
     background: rgba(255, 255, 255, 0.12);
     overflow: hidden;
+    pointer-events: none;
   }
 
   .scroll-fill {
@@ -481,8 +486,8 @@
 
     .scroll-track {
       bottom: auto;
-      left: auto;
-      right: 0;
+      left: 0;
+      right: auto;
       top: 0;
       width: 3px;
       height: 100%;
