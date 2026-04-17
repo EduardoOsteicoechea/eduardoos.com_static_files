@@ -19,7 +19,7 @@
 
 <style>
   .section-image-wrapper {
-    margin: 1rem 0;
+    margin: 0rem 0;
     display: grid;
     gap: 0.45rem;
   }
