@@ -19,15 +19,20 @@
 
 <style>
   .section-image-wrapper {
+   display: flex;
+   align-items: center;
+   justify-content: center;
     margin: 0rem 0;
     display: grid;
     gap: 0.45rem;
+    max-height: 400px;
   }
 
   .section-image {
-    width: 100%;
-    height: auto;
-    border-radius: 0.65rem;
+    height: 100%;
+    max-height: 400px;
+    width: auto;
+    border-radius: var(--radius-1);
     display: block;
   }
 

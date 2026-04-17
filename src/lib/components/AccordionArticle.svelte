@@ -81,12 +81,16 @@
     const references = section.biblical_quotes
       ?.map((quote) => quote.reference.trim())
       .filter((reference): reference is string => reference.length > 0) ?? [];
+    const sectionEmphasis = section.emphasyzed_phrases
+      ?.map((item) => item.trim())
+      .filter((item): item is string => item.length > 0) ?? [];
 
-    const splitParts = splitByTerms(paragraph, references);
+    const splitParts = splitByTerms(paragraph, [...references, ...sectionEmphasis]);
 
     return splitParts.map((part) => ({
       text: part,
       isReference: references.includes(part),
+      isSectionEmphasis: sectionEmphasis.includes(part),
     }));
   }
 
@@ -101,13 +105,17 @@
     const emphasized = quote.emphasized
       ?.map((item) => item.trim())
       .filter((item): item is string => item.length > 0) ?? [];
+    const sectionEmphasis = section.emphasyzed_phrases
+      ?.map((item) => item.trim())
+      .filter((item): item is string => item.length > 0) ?? [];
 
-    const splitParts = splitByTerms(paragraph, [...references, ...emphasized]);
+    const splitParts = splitByTerms(paragraph, [...references, ...emphasized, ...sectionEmphasis]);
 
     return splitParts.map((part) => ({
       text: part,
       isReference: references.includes(part),
       isEmphasized: emphasized.includes(part),
+      isSectionEmphasis: sectionEmphasis.includes(part),
     }));
   }
 
@@ -158,7 +166,9 @@
                 <blockquote class="biblical-quote">
                   <p>
                     {#each quoteParts as part}
-                      {#if part.isReference && part.isEmphasized}
+                      {#if part.isSectionEmphasis}
+                        <strong class="phrase-accent-highlight">{part.text}</strong>
+                      {:else if part.isReference && part.isEmphasized}
                         <strong><u>{part.text}</u></strong>
                       {:else if part.isReference}
                         <strong>{part.text}</strong>
@@ -174,7 +184,9 @@
               {:else}
                 <p>
                   {#each paragraphParts as part}
-                    {#if part.isReference}
+                    {#if part.isSectionEmphasis}
+                      <strong class="phrase-accent-highlight">{part.text}</strong>
+                    {:else if part.isReference}
                       <strong>{part.text}</strong>
                     {:else}
                       {part.text}
@@ -205,3 +217,9 @@
     </section>
   {/each}
 </div>
+
+<style>
+  .phrase-accent-highlight {
+    color: var(--accent-article-emphazysed-text);
+  }
+</style>

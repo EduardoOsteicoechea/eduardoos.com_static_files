@@ -3,6 +3,7 @@ export type ContentSection = {
   id?: string;
   title?: string;
   content?: string[];
+  emphasyzed_phrases?: string[];
   images?: SectionImage[];
   quiz?: QuizQuestion[];
   biblical_quotes?: BiblicalQuote[];
