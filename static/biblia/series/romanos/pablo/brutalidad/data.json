@@ -22,44 +22,50 @@
          "title": "La primera aparición de Pablo",
          "content": [
             "La primera aparacición de Pablo ocurre durante un homicidio:",
-            "Entonces ellos gritaron a gran voz, y tapándose los oídos se lanzaron a una contra él. Echándolo fuera de la ciudad, comenzaron a apedrearlo; y los testigos pusieron sus mantos a los pies de un joven llamado Saulo.",
-            "Y mientras lo apedreaban, Esteban invocaba al Señor y decía: 'Señor Jesús, recibe mi espíritu'. Cayendo de rodillas, clamó en alta voz: 'Señor, no les tomes en cuenta este pecado'. Habiendo dicho esto, durmió. Y Saulo estaba de completo acuerdo con ellos en su muerte.",
+            "Entonces ellos gritaron a gran voz, y tapándose los oídos se lanzaron a una contra él.",
+            "Echándolo fuera de la ciudad, comenzaron a apedrearlo; y los testigos pusieron sus mantos a los pies de un joven llamado Saulo.",
+            "Cayendo de rodillas, clamó en alta voz: 'Señor, no les tomes en cuenta este pecado'. Habiendo dicho esto, durmió.",
+            "Y mientras lo apedreaban, Esteban invocaba al Señor y decía: 'Señor Jesús, recibe mi espíritu'.",
+            "Y Saulo estaba de completo acuerdo con ellos en su muerte.",
             "Las historias bíblicas son selectivas.",
-            "Dios solo escogió lo que quiso remarcar.",
-            "El hecho de que Pablo comience la historia como partícipe de un homicidio dice mucho.",
-            "De hecho, lo próximo que vemos es aún más atemorizante.",
+            "Dios incluyu solo que procura remarcar.",
+            "El hecho de que Pablo comience la historia partícipando de un homicidio dice mucho.",
+            "De hecho...",
+            "Lo próximo que vemos es igualmente atemorizante.",
             "Pero Saulo hacía estragos en la iglesia entrando de casa en casa, y arrastrando a hombres y mujeres, los echaba en la cárcel.",
-            "Saulo recorría las calles de Jerusalén derribando puertas, agrediendo y apresando con brutalidad a todo el profesara seguir a Jesucristo.",
+            "Saulo recorría las calles de Jerusalén, derribando puertas, agrediendo y apresando violentamente a todo el profesara seguir a Jesucristo.",
             "Piensa en esto por un momento.",
             "¿Qué ocurría cuando por ejemplo, un padre se rehusaba dejar a su familia para ir con Saulo cuando éste derribada la puerta de su casa?",
             "Podemos imaginar a Saulo golpeando a este hombre, mientras su mujer y niños gritaban aterrorizados.",
-            "Sabemos incluso de las mujeres creyentes eran arrastradas fuera de sus casas para ser apresadas.",
+            "Incluso de las mujeres creyentes eran arrastradas fuera de sus casas para ser apresadas.",
             "entrando de casa en casa, y arrastrando a hombres y mujeres, los echaba en la cárcel.",
-            "Y considerando que la iglesia tenía miles de miembros en este punto, podemos imaginar la dimensión de esta violencia y conmoción en Jerusalén.",
-            "Pero su persecusión no se limitó a los creyentes de Jerusalén.",
-            "Saulo, todavía respirando amenazas y muerte contra los discípulos del Señor, fue al sumo sacerdote, y le pidió cartas para las sinagogas de Damasco, para que si encontraba algunos que pertenecieran al Camino, tanto hombres como mujeres, los pudiera llevar a tados a Jerusalén.",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            "Considerando que la iglesia tenía miles de miembros en este punto, podemos imaginar la dimensión de esta violencia y conmoción en Jerusalén.",
+            "Pero esta persecusión no se limitó a Jerusalén."
          ],
          "biblical_quotes": [           
             {
                "reference": "Hechos 7.54-60",
-               "text": "Entonces ellos gritaron a gran voz, y tapándose los oídos se lanzaron a una contra él. Echándolo fuera de la ciudad, comenzaron a apedrearlo; y los testigos pusieron sus mantos a los pies de un joven llamado Saulo.",
+               "text": "Entonces ellos gritaron a gran voz, y tapándose los oídos se lanzaron a una contra él.",
+               "emphasized": []
+            }
+            ,{
+               "reference": "Hechos 7.54-60",
+               "text": "Echándolo fuera de la ciudad, comenzaron a apedrearlo; y los testigos pusieron sus mantos a los pies de un joven llamado Saulo.",
                "emphasized": ["un joven llamado Saulo"]
             }
             ,{
                "reference": "Hechos 7:60-8:1",
-               "text": "Y mientras lo apedreaban, Esteban invocaba al Señor y decía: 'Señor Jesús, recibe mi espíritu'. Cayendo de rodillas, clamó en alta voz: 'Señor, no les tomes en cuenta este pecado'. Habiendo dicho esto, durmió. Y Saulo estaba de completo acuerdo con ellos en su muerte.",
+               "text": "Y mientras lo apedreaban, Esteban invocaba al Señor y decía: 'Señor Jesús, recibe mi espíritu'.",
+               "emphasized": []
+            }
+            ,{
+               "reference": "Hechos 7:60-8:1",
+               "text": "Cayendo de rodillas, clamó en alta voz: 'Señor, no les tomes en cuenta este pecado'. Habiendo dicho esto, durmió.",
+               "emphasized": []
+            }
+            ,{
+               "reference": "Hechos 7:60-8:1",
+               "text": "Y Saulo estaba de completo acuerdo con ellos en su muerte.",
                "emphasized": ["Y Saulo estaba de completo acuerdo con ellos en su muerte."]
             }
             ,{
@@ -71,11 +77,6 @@
                "reference": "Hechos 8:3",
                "text": "entrando de casa en casa, y arrastrando a hombres y mujeres, los echaba en la cárcel.",
                "emphasized": ["arrastrando a hombres y mujeres"]
-            }
-            ,{
-               "reference": "Hechos 9:1-2",
-               "text": "Saulo, todavía respirando amenazas y muerte contra los discípulos del Señor, fue al sumo sacerdote, y le pidió cartas para las sinagogas de Damasco, para que si encontraba algunos que pertenecieran al Camino, tanto hombres como mujeres, los pudiera llevar a tados a Jerusalén.",
-               "emphasized": []
             }
          ],
          "quiz": [
@@ -91,5 +92,59 @@
             }
          ]
       }
+      ,{
+         "type": "prose",
+         "id": "introduccion",
+         "title": "La primera aparición de Pablo",
+         "content": [
+            "Saulo, todavía respirando amenazas y muerte contra los discípulos del Señor, fue al sumo sacerdote, y le pidió cartas para las sinagogas de Damasco, para que si encontraba algunos que pertenecieran al Camino, tanto hombres como mujeres, los pudiera llevar a tados a Jerusalén.",
+            "Saulo estaba tan determinado a acabar con el cristianismo, que llegó a perseguirlo hasta damasco.",
+            "300km_de_persecusion_de_jerusalen_a_damasco.webp",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "Hechos 9:1-2",
+               "text": "Saulo, todavía respirando amenazas y muerte contra los discípulos del Señor, fue al sumo sacerdote, y le pidió cartas para las sinagogas de Damasco, para que si encontraba algunos que pertenecieran al Camino, tanto hombres como mujeres, los pudiera llevar a tados a Jerusalén.",
+               "emphasized": []
+            }
+         ]
+         ,"images": [
+            {
+               "image_name": "300km_de_persecusion_de_jerusalen_a_damasco.webp",
+               "uri": "/300km_de_persecusion_de_jerusalen_a_damasco.webp"
+            }
+         ]
+         ,"quiz": [
+            {
+               "question": "¿Cuál es el propósito de dedicar varios estudios a conocer la persona de Pablo?",
+               "options": [
+                  "Únicamente aprender historia antigua.",
+                  "Leer mejor las enseñanzas del autor al conocer aspectos relevantes de su vida.",
+                  "Memorizar versículos en griego."
+               ],
+               "correctIndex": 1,
+               "explanation": "Conocer el trasfondo y origen del autor (Pablo) nos permitirá interpretar y entender mejor sus escritos."
+            }
+         ]
+      }
+
+
+
+
+
+
+
+
+
+
    ]
 }

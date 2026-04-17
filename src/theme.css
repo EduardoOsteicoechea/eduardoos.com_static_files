@@ -159,3 +159,11 @@ body {
 :root.dark {
    color-scheme: dark;
 }
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   position: relative;
+   font-size: var(--font-size-5);
+}

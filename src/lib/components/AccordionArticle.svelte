@@ -3,6 +3,7 @@
   import { cubicOut } from "svelte/easing";
   import type { LessonJson } from "$lib/components/AticleAssets";
   import SectionQuiz from "./SectionQuiz.svelte";
+  import SectionImage from "./SectionImage.svelte";
 
   let { lesson }: { lesson: LessonJson } = $props();
 
@@ -109,6 +110,15 @@
       isEmphasized: emphasized.includes(part),
     }));
   }
+
+  function findSectionImage(section: LessonJson["sections"][number], paragraph: string) {
+    const normalizedParagraph = paragraph.trim();
+    if (!normalizedParagraph || !section.images || section.images.length === 0) {
+      return null;
+    }
+
+    return section.images.find((img) => img.image_name === normalizedParagraph) ?? null;
+  }
 </script>
 
 <div class="accordion" role="presentation">
@@ -139,8 +149,11 @@
           <div class="panel-inner prose">
             {#each section.content as paragraph}
               {@const biblicalQuote = findBiblicalQuote(section, paragraph)}
+              {@const matchedImage = findSectionImage(section, paragraph)}
               {@const paragraphParts = splitByQuoteReferences(section, paragraph)}
-              {#if biblicalQuote}
+              {#if matchedImage}
+                <SectionImage src={matchedImage.uri} alt={matchedImage.image_name} />
+              {:else if biblicalQuote}
                 {@const quoteParts = splitQuoteByEmphasisAndReferences(section, paragraph, biblicalQuote)}
                 <blockquote class="biblical-quote">
                   <p>

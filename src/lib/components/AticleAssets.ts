@@ -3,6 +3,7 @@ export type ContentSection = {
   id?: string;
   title?: string;
   content?: string[];
+  images?: SectionImage[];
   quiz?: QuizQuestion[];
   biblical_quotes?: BiblicalQuote[];
   youtube_url?: string;
@@ -20,6 +21,11 @@ export type BiblicalQuote = {
   reference: string;
   text: string;
   emphasized?: string[];
+};
+
+export type SectionImage = {
+  image_name: string;
+  uri: string;
 };
 
 export type LessonJson = {
