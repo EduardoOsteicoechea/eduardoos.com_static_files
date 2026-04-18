@@ -19,33 +19,33 @@
       {
          "type": "prose",
          "id": "introduccion",
-         "title": "Un asesinato para comenzar",
+         "title": "Un homicidio para empezar",
          "content": [
-            "La primera aparacición de Pablo ocurre durante un homicidio:",
-            "Entonces ellos gritaron a gran voz, y tapándose los oídos se lanzaron a una contra él.",
+            "La primera aparacición de Pablo es un asesinato:",
             "Echándolo fuera de la ciudad, comenzaron a apedrearlo; y los testigos pusieron sus mantos a los pies de un joven llamado Saulo.",
             "Y mientras lo apedreaban, Esteban invocaba al Señor y decía: 'Señor Jesús, recibe mi espíritu'.",
-            "Cayendo de rodillas, clamó en alta voz: 'Señor, no les tomes en cuenta este pecado'. Habiendo dicho esto, durmió.",
             "Y Saulo estaba de completo acuerdo con ellos en su muerte.",
             "Las historias bíblicas son selectivas.",
-            "Dios incluye solo que busca remarcar.",
+            "Como dice el autor bíblico:",
+            "Y hay también muchas otras cosas que Jesús hizo, que si se escribieran en detalle, pienso que ni aun el mundo mismo podría contener los libros que se escribirían."
+            ,"Dios solo incluye lo que busca remarcar.",
             "El hecho de que Pablo comience la historia partícipando de un homicidio dice mucho.",
-            "Dios quiere enfatizar que este hombre esa un asesino de cristianos.",
-            "El pasaje dice: \"Saulo estaba de completo acuerdo\" con este homicidio.",
-            "Saulo estaba presente cuando estos hombres, llenos de ira, arrojaban piedras con toda su fuerza sobre la humanidad de esteban.",
-            "Saulo era la ayuda idónea de los testigos oficiales de esta ejecución gubernamental.",
-            "Los testigos formales que participaban del apedreamiento, al parecer requerían cierta movilidad.",
+            "Dios quiere enfatizar que este hombre era un asesino de cristianos.",
+            "El pasaje dice que \"Saulo estaba de completo acuerdo\" con este homicidio.",
+            "Saulo era la ayuda idónea de los testigos formales de esta ejecución.",
             "Saulo supervisaba sus mantos, para que terminaran la tarea cómodamente.",
             "Y cuando las piedras habían hecho su trabajo...",
             "Cuando los órganos de Esteban habían detenido su funcionamiento adecuado...",
-            "Cuando el sistema vital de Esteban se detenía mientras éste retenía la conciencia...",
-            "Saulo decía: ¡Me parece bien!"
+            "Cuando el sistema vital de Esteban se detenía mientras éste retenía la conciencia y percibía el dolor de las contusiones...",
+            "Saulo decía..."
+            ,"¡Me parece bien!"
          ],
          "emphasyzed_phrases": [
-            "Las historias bíblicas son selectivas",
+            "Las historias bíblicas son selectivas.",
             "asesino de cristianos",
             "ayuda idónea de los testigos oficiales de esta ejecución"
-            ,"Saulo decía: ¡Me parece bien!"
+            ,"Saulo decía"
+            ,"¡Me parece bien!"
          ],
          "biblical_quotes": [
             {
@@ -77,6 +77,11 @@
                   "Y Saulo estaba de completo acuerdo con ellos en su muerte."
                ]
             }
+            ,{
+               "reference": "Juan 21:25",
+               "text": "Y hay también muchas otras cosas que Jesús hizo, que si se escribieran en detalle, pienso que ni aun el mundo mismo podría contener los libros que se escribirían.",
+               "emphasized": []
+            }
          ],
          "quiz": [
             {
@@ -97,14 +102,19 @@
          "title": "De casa en casa",
          "content": [
             "De hecho, lo próximo que vemos es igualmente atemorizante.",
-            "Pero Saulo hacía estragos en la iglesia entrando de casa en casa, y arrastrando a hombres y mujeres, los echaba en la cárcel.",
-            "Saulo recorría las calles de Jerusalén, derribando puertas, agrediendo y apresando violentamente a todo el profesara seguir a Jesucristo.",
-            "Piensa en esto por un momento.",
-            "¿Qué ocurría cuando por ejemplo, un padre se rehusaba dejar a su familia para ir con Saulo cuando éste derribada la puerta?",
-            "Podemos imaginar a Saulo golpeando a este hombre, mientras su mujer y niños gritaban aterrorizados.",
-            "Incluso de las mujeres creyentes eran arrastradas fuera de sus casas para ser apresadas.",
+            "...Saulo hacía estragos en la iglesia entrando de casa en casa, y arrastrando a hombres y mujeres, los echaba en la cárcel.",
+            "Que ironía que los cristianos modernos evangelizamos de casa en casa.",
+            "Esta fue la modalidad primitiva de persecusión.",
+            "De casa en casa...",
+            "Piénsalo por un momento...",
+            "Saulo recorría Jerusalén, derribando puertas, agrediendo y apresando con violencia al profesara seguir a Jesucristo.",
+            "¿Qué ocurría cuando por ejemplo, un padre se rehusaba dejar a su familia para ir con Saulo?",
+            "Saulo derrbaría la puerta...",
+            "Y posiblemente golpearía a este hombre hasta que dejara de resistirse, mientras su mujer y niños gritaban aterrorizados.",
+            "Incluso de las mujeres creyentes eran arrastradas fuera de sus casas.",
             "entrando de casa en casa, y arrastrando a hombres y mujeres, los echaba en la cárcel.",
-            "Considerando que la iglesia tenía miles de miembros en este punto, podemos imaginar la dimensión de esta violencia y conmoción en Jerusalén."
+            "La iglesia tenía miles de miembros en este punto.",
+            "Imagina la escala de esta violencia y conmoción."
          ],
          "biblical_quotes": [
             {
@@ -116,8 +126,8 @@
             },
             {
                "reference": "Hechos 8:3",
-               "text": "Pero Saulo hacía estragos en la iglesia entrando de casa en casa, y arrastrando a hombres y mujeres, los echaba en la cárcel.",
-               "emphasized": []
+               "text": "...Saulo hacía estragos en la iglesia entrando de casa en casa, y arrastrando a hombres y mujeres, los echaba en la cárcel.",
+               "emphasized": ["de casa en casa"]
             },
             {
                "reference": "Hechos 8:3",
@@ -143,17 +153,205 @@
       {
          "type": "prose",
          "id": "introduccion",
-         "title": "Trescientos kilómetros",
+         "title": "Trescientos kilómetros de ira",
          "content": [
-            "Saulo, todavía respirando amenazas y muerte contra los discípulos del Señor, fue al sumo sacerdote, y le pidió cartas para las sinagogas de Damasco, para que si encontraba algunos que pertenecieran al Camino, tanto hombres como mujeres, los pudiera llevar a tados a Jerusalén.",
-            "Saulo estaba tan determinado a acabar con el cristianismo, que llegó a perseguirlo hasta damasco.",
+            "Pero limitarse a Jerusalén no era suficiente.",
+            "... fue al sumo sacerdote, y le pidió cartas para las sinagogas de Damasco, para que si encontraba algunos que pertenecieran al Camino, tanto hombres como mujeres, los pudiera llevar a tados a Jerusalén.",
+            "Saulo estaba determinado a acabar con el cristianismo.",
+            "Su celo le llevó a perseguir cristianos hasta damasco.",
             "300km_de_persecusion_de_jerusalen_a_damasco.webp",
             "La distancia entre estas localidades es de 300 kilómetros.",
             "Esto era una extensión enorme de territorio.",
-            "Sin embargo, Saulo tenía la dedicación para no solo ir de casa en casa, sino igualmente ir más allá de Jerusalén para deterner al cristianismo."
+            "Saulo tenía la dedicación para no solo ir de casa en casa, sino también llegar a Damasco para detener cristianos en ese punto."
+            ,"Gracias a Dios, carecemos de registros que muestren que Saulo persiguió creyentes en todos los territorios judíos."
+            ,"Al contrario..."
+            ,"Leemos que:"
+            ,"...los que habían sido esparcidos iban predicando la Palabra. Felipe, descendiendo a la ciudad de Samaria, les predicaba a Cristo."
+            ,"Pero Felipe se encontró en Azoto, y por donde pasaba, anunciaba el evangelio en todas las ciudades, hasta que llegó a Cesarea."
+            ,"Entretanto la iglesia gozaba de paz por toda Judea, Galilea y Samaria, y era edificada; y andanto en el temor del Señor y en la fortaleza del Espíritu Santo, seguía creciendo."
+            ,"Si bien la persecusión de Jerusalén fue brutal y exhaustiva, al parecer, la mayoría de las localidades israelíes aún permitían la predicación y discipulado."
+            ,"Pareciera que la intención de Pablo fuera colocarse hacia el principal extremo migratorio del territorio judío."
+            ,"Posiblemente quería capturar a los que escaparon o al menos evitar que salieran de la nación con facilidad."
          ],
          "biblical_quotes": [
             {
+               "reference": "Hechos 9:1-2",
+               "text": "... fue al sumo sacerdote, y le pidió cartas para las sinagogas de Damasco, para que si encontraba algunos que pertenecieran al Camino, tanto hombres como mujeres, los pudiera llevar a tados a Jerusalén.",
+               "emphasized": []
+            }
+            ,{
+               "reference": "Hechos 9:1-2",
+               "text": "Saulo, todavía respirando amenazas y muerte contra los discípulos del Señor, fue al sumo sacerdote, y le pidió cartas para las sinagogas de Damasco, para que si encontraba algunos que pertenecieran al Camino, tanto hombres como mujeres, los pudiera llevar a tados a Jerusalén.",
+               "emphasized": []
+            }
+            ,{
+               "reference": "Hechos 8:4",
+               "text": "...los que habían sido esparcidos iban predicando la Palabra. Felipe, descendiendo a la ciudad de Samaria, les predicaba a Cristo.",
+               "emphasized": []
+            }
+            ,{
+               "reference": "Hechos 8:40",
+               "text": "Pero Felipe se encontró en Azoto, y por donde pasaba, anunciaba el evangelio en todas las ciudades, hasta que llegó a Cesarea.",
+               "emphasized": []
+            }
+            ,{
+               "reference": "Hechos 9:31",
+               "text": "Entretanto la iglesia gozaba de paz por toda Judea, Galilea y Samaria, y era edificada; y andanto en el temor del Señor y en la fortaleza del Espíritu Santo, seguía creciendo.",
+               "emphasized": []
+            }
+         ],
+         "images": [
+            {
+               "image_name": "300km_de_persecusion_de_jerusalen_a_damasco.webp",
+               "uri": "/300km_de_persecusion_de_jerusalen_a_damasco.webp"
+            }
+         ],
+         "quiz": [
+            {
+               "question": "¿Cuál es el propósito de dedicar varios estudios a conocer la persona de Pablo?",
+               "options": [
+                  "Únicamente aprender historia antigua.",
+                  "Leer mejor las enseñanzas del autor al conocer aspectos relevantes de su vida.",
+                  "Memorizar versículos en griego."
+               ],
+               "correctIndex": 1,
+               "explanation": "Conocer el trasfondo y origen del autor (Pablo) nos permitirá interpretar y entender mejor sus escritos."
+            }
+         ]
+      },
+      {
+         "type": "prose",
+         "id": "introduccion",
+         "title": "De confianza para el sumo sacerdote",
+         "content": [
+            "Para lograr su cometido, Saulo:"
+            ,"... fue al sumo sacerdote, y le pidió cartas para las sinagogas de Damasco, para que si encontraba algunos que pertenecieran al Camino, tanto hombres como mujeres, los pudiera llevar a tados a Jerusalén."
+            ,"Esto fue un evento veraz y público, que aún podía ser atestiguado delante de todo el pueblo."
+            ,"Como dijo Pablo ante la turba de Jerusalén que procuraba eliminarlo:"
+            ,"...de lo cual pueden testificar el sumo sacerdote y todo el Concilio de los ancianos. De ellos recibí cartas para los hermanos, y me puse en marcha para Damasco con el fin de traer presos a Jerusalén también a los que estaban allá, para que fueran castigados."
+            ,"Pablo recibió autorizaciones de la cúpula judía para extender la persecusión de los creyentes."
+            ,"Esto sugiere que Pablo era reconocido entre las esferas más importantes de Israel y del judaísmo."
+            ,"Y particularmente era conocido por ser tan celoso de la ley, que estaba dispuesto a viajar trescientos kilómetros para detener esta desviación del judaísmo."
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "Hechos 9:1-2",
+               "text": "... fue al sumo sacerdote, y le pidió cartas para las sinagogas de Damasco, para que si encontraba algunos que pertenecieran al Camino, tanto hombres como mujeres, los pudiera llevar a tados a Jerusalén.",
+               "emphasized": []
+            }
+            ,{
+               "reference": "Hechos 22:5",
+               "text": "...de lo cual pueden testificar el sumo sacerdote y todo el Concilio de los ancianos. De ellos recibí cartas para los hermanos, y me puse en marcha para Damasco con el fin de traer presos a Jerusalén también a los que estaban allá, para que fueran castigados.",
+               "emphasized": []
+            }
+         ],
+         "images": [
+            {
+               "image_name": "300km_de_persecusion_de_jerusalen_a_damasco.webp",
+               "uri": "/300km_de_persecusion_de_jerusalen_a_damasco.webp"
+            }
+         ],
+         "quiz": [
+            {
+               "question": "¿Cuál es el propósito de dedicar varios estudios a conocer la persona de Pablo?",
+               "options": [
+                  "Únicamente aprender historia antigua.",
+                  "Leer mejor las enseñanzas del autor al conocer aspectos relevantes de su vida.",
+                  "Memorizar versículos en griego."
+               ],
+               "correctIndex": 1,
+               "explanation": "Conocer el trasfondo y origen del autor (Pablo) nos permitirá interpretar y entender mejor sus escritos."
+            }
+         ]
+      },
+      {
+         "type": "prose",
+         "id": "introduccion",
+         "title": "Respirando muerte",
+         "content": [
+            "Otro detalle atemorizante de Saulo de Tarso era su corazón homicida."
+            ,"La historia bíblica dice:"
+            ,"Saulo, respirando todavía amenazas y muerte contra los discípulos del Señor, fue al sumo sacerdote..."
+            ,"El pasaje bíblico dice que Saulo respiraba amenazas y muerte."
+            ,"Su celo por el judaísmo le llevaba a desar asesinar a los cristianos el primer siglo."
+            ,"Saulo era un hombre consumido por la ira violenta, dispuesto a llegar a derramar sangre para preservar el judaísmo."
+            ,"De hecho, el mismo Pablo afirma que estuvo involucrado en los homicidios de cristianos al decir:"
+            ,"Perseguí este camino hasta la muerte, encadenando y echando en cárceles tanto a hombres como a mujeres, de lo cual pueden testificar el sumo sacerdote y todo e concilio de los ancianos."
+            ,"Saulo era un hombre con manos manchadas de sangre."
+            ,"Y esta sangre no era cualquier sangre. Era la vida de los santos escogidos por Jesucristo."
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "Hechos 9:1",
+               "text": "Saulo, respirando todavía amenazas y muerte contra los discípulos del Señor, fue al sumo sacerdote...",
+               "emphasized": []
+            }
+            ,{
+               "reference": "Hechos 22:4-5",
+               "text": "Perseguí este camino hasta la muerte, encadenando y echando en cárceles tanto a hombres como a mujeres, de lo cual pueden testificar el sumo sacerdote y todo e concilio de los ancianos.",
+               "emphasized": []
+            }
+         ],
+         "quiz": [
+            {
+               "question": "¿Cuál es el propósito de dedicar varios estudios a conocer la persona de Pablo?",
+               "options": [
+                  "Únicamente aprender historia antigua.",
+                  "Leer mejor las enseñanzas del autor al conocer aspectos relevantes de su vida.",
+                  "Memorizar versículos en griego."
+               ],
+               "correctIndex": 1,
+               "explanation": "Conocer el trasfondo y origen del autor (Pablo) nos permitirá interpretar y entender mejor sus escritos."
+            }
+         ]
+      },
+      {
+         "type": "prose",
+         "id": "introduccion",
+         "title": "Famoso por la violencia",
+         "content": [
+            "...Ananías respondió: 'Señor, he oído de muchos acerca de este hombre, cuánto mal ha hecho a Tus santos en Jerusalén, y aquí tiene autoridad de los principales sacerdotes para prender a todos los que invocan Tu nombre'."
+            ,"Cuando Saulo llegó a Jerusalén, trataba de juntarse con los discípulos; pero todos le temían, no creyendo que era discípulo."
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "Hechos 9:13",
+               "text": "...Ananías respondió: 'Señor, he oído de muchos acerca de este hombre, cuánto mal ha hecho a Tus santos en Jerusalén, y aquí tiene autoridad de los principales sacerdotes para prender a todos los que invocan Tu nombre'.",
+               "emphasized": []
+            }
+            ,{
+               "reference": "Hechos 9:26",
+               "text": "Cuando Saulo llegó a Jerusalén, trataba de juntarse con los discípulos; pero todos le temían, no creyendo que era discípulo.",
+               "emphasized": []
+            }
+         ],
+         "quiz": [
+            {
+               "question": "¿Cuál es el propósito de dedicar varios estudios a conocer la persona de Pablo?",
+               "options": [
+                  "Únicamente aprender historia antigua.",
+                  "Leer mejor las enseñanzas del autor al conocer aspectos relevantes de su vida.",
+                  "Memorizar versículos en griego."
+               ],
+               "correctIndex": 1,
+               "explanation": "Conocer el trasfondo y origen del autor (Pablo) nos permitirá interpretar y entender mejor sus escritos."
+            }
+         ]
+      },
+      {
+         "type": "prose",
+         "id": "introduccion",
+         "title": "Recordando la violencia",
+         "content": [
+            "."
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "Hechos 9:1-2",
+               "text": "... fue al sumo sacerdote, y le pidió cartas para las sinagogas de Damasco, para que si encontraba algunos que pertenecieran al Camino, tanto hombres como mujeres, los pudiera llevar a tados a Jerusalén.",
+               "emphasized": []
+            }
+            ,{
                "reference": "Hechos 9:1-2",
                "text": "Saulo, todavía respirando amenazas y muerte contra los discípulos del Señor, fue al sumo sacerdote, y le pidió cartas para las sinagogas de Damasco, para que si encontraba algunos que pertenecieran al Camino, tanto hombres como mujeres, los pudiera llevar a tados a Jerusalén.",
                "emphasized": []
