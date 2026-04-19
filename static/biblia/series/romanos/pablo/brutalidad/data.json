@@ -101,7 +101,7 @@
             "Incluso de las mujeres creyentes eran arrastradas fuera de sus casas.",
             "entrando de casa en casa, y arrastrando a hombres y mujeres, los echaba en la cárcel.",
             "La iglesia tenía miles de miembros en este punto.",
-            "Imagina la escala de esta violencia y conmoción."
+            "Imagina la escala de esta violencia."
          ],
          "biblical_quotes": [
             {
@@ -130,7 +130,7 @@
          "id": "introduccion",
          "title": "Trescientos kilómetros de ira",
          "content": [
-            "Pero limitarse a Jerusalén no era suficiente.",
+            "Pero Jerusalén no era suficiente...",
             "... fue al sumo sacerdote, y le pidió cartas para las sinagogas de Damasco, para que si encontraba algunos que pertenecieran al Camino, tanto hombres como mujeres, los pudiera llevar a tados a Jerusalén.",
             "Saulo estaba determinado a acabar con el cristianismo.",
             "Su celo le llevó a perseguir cristianos hasta damasco.",
@@ -162,17 +162,17 @@
             ,{
                "reference": "Hechos 8:4",
                "text": "...los que habían sido esparcidos iban predicando la Palabra. Felipe, descendiendo a la ciudad de Samaria, les predicaba a Cristo.",
-               "emphasized": []
+               "emphasized": ["los que habían sido esparcidos iban predicando la Palabra", "descendiendo a la ciudad de Samaria, les predicaba a Cristo."]
             }
             ,{
                "reference": "Hechos 8:40",
                "text": "Pero Felipe se encontró en Azoto, y por donde pasaba, anunciaba el evangelio en todas las ciudades, hasta que llegó a Cesarea.",
-               "emphasized": []
+               "emphasized": ["anunciaba el evangelio en todas las ciudades"]
             }
             ,{
                "reference": "Hechos 9:31",
                "text": "Entretanto la iglesia gozaba de paz por toda Judea, Galilea y Samaria, y era edificada; y andando en el temor del Señor y en la fortaleza del Espíritu Santo, seguía creciendo.",
-               "emphasized": []
+               "emphasized": ["la iglesia gozaba de paz por toda Judea, Galilea y Samaria"]
             }
          ],
          "images": [
