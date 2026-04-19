@@ -6,7 +6,7 @@ export const ssr = false;
 export const load: PageLoad = async () => {
 	return {
 		/** Placeholder until GLTF/GLB loading is implemented; safe to point at a future static asset. */
-		modelUrl: '/sample-model.glb',
+		modelUrl: '/sample-model-slab-only.glb',
 		title: 'BIM · 3D Viewer',
 	};
 };

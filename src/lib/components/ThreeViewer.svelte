@@ -13,73 +13,291 @@
     disposeObject3DSubtree,
     type ThreeModule,
   } from "$lib/three/disposeObject3DSubtree";
+  import type {
+    BimElementRef,
+    BimElementSummary,
+    FilterMode,
+  } from "$lib/types/bim";
+  import {
+    calculateFaceArea,
+    extractTopFaceGeometry,
+  } from "$lib/three/geometry/slabOperations";
+  import { processSlabTopFace } from "$lib/three/geometry/slabPlayground";
+
+  type RunningState = {
+    THREE: ThreeModule;
+    animation: { id: number };
+    resizeObserver: ResizeObserver;
+    renderer: WebGLRenderer;
+    scene: Scene;
+    camera: PerspectiveCamera;
+    controls: OrbitControls;
+    modelRoot: Object3D | null;
+    raycaster: import("three").Raycaster;
+    pointer: import("three").Vector2;
+    onPointerDown: (event: PointerEvent) => void;
+    selected:
+      | {
+          mesh: Mesh;
+          originalMaterial: Material | Material[];
+          highlightMaterial: Material | Material[];
+        }
+      | null;
+    /** Neon top-face extraction preview; removed when selection changes. */
+    topFacePreviewMesh: Mesh | null;
+  };
+
+  function getCanonicalElementId(object: Object3D): string {
+    const data = object.userData as Record<string, unknown> | undefined;
+    if (data?.ifcGuid != null && String(data.ifcGuid).length > 0) {
+      return String(data.ifcGuid);
+    }
+    if (data?.id != null && String(data.id).length > 0) {
+      return String(data.id);
+    }
+    return object.uuid;
+  }
+
+  function buildBimElementRef(
+    object: Object3D,
+    computed?: Record<string, unknown>,
+  ): BimElementRef {
+    const data = object.userData as Record<string, unknown> | undefined;
+    const base: BimElementRef = {
+      id: getCanonicalElementId(object),
+      uuid: object.uuid,
+      name: object.name || undefined,
+      userData: data && Object.keys(data).length > 0 ? data : undefined,
+    };
+    if (computed && Object.keys(computed).length > 0) {
+      return { ...base, computed };
+    }
+    return base;
+  }
+
+  function disposeTopFacePreview(rv: RunningState) {
+    if (!rv.topFacePreviewMesh) return;
+    const prev = rv.topFacePreviewMesh;
+    // Dispose any attached debug visuals (e.g. contour lines) before disposing the preview mesh.
+    prev.traverse((child) => {
+      if (child === prev) return;
+      const maybeGeom = (child as unknown as { geometry?: { dispose?: () => void } })
+        .geometry;
+      maybeGeom?.dispose?.();
+
+      const maybeMat = (child as unknown as { material?: unknown }).material;
+      if (Array.isArray(maybeMat)) {
+        for (const m of maybeMat as Array<{ dispose?: () => void }>) {
+          m?.dispose?.();
+        }
+      } else if (maybeMat && typeof maybeMat === "object") {
+        (maybeMat as { dispose?: () => void }).dispose?.();
+      }
+    });
+    prev.removeFromParent();
+    prev.geometry.dispose();
+    const pm = prev.material;
+    if (Array.isArray(pm)) {
+      for (const m of pm) m.dispose();
+    } else {
+      pm.dispose();
+    }
+    rv.topFacePreviewMesh = null;
+  }
+
+  /**
+   * Top-face extraction + area; attaches neon preview mesh to `targetMesh` when a face is found.
+   */
+  function buildRefWithTopFaceTelemetry(
+    rv: RunningState,
+    targetMesh: Mesh,
+  ): BimElementRef {
+    const THREE = rv.THREE;
+    const extracted = extractTopFaceGeometry(targetMesh, THREE);
+    const posAttr = extracted.getAttribute("position");
+    console.log("[Viewer] Extracted top face vertices:", posAttr ? posAttr.count : 0);
+    if (!posAttr || posAttr.count === 0) {
+      extracted.dispose();
+      return buildBimElementRef(targetMesh);
+    }
+
+    const topFaceArea = calculateFaceArea(extracted, THREE);
+    const { metrics, visuals } = processSlabTopFace(extracted, THREE);
+
+    const previewMat = new THREE.MeshStandardMaterial({
+      color: 0x39ff14,
+      emissive: 0x175022,
+      emissiveIntensity: 0.4,
+      transparent: true,
+      opacity: 0.52,
+      side: THREE.DoubleSide,
+      depthWrite: false,
+      metalness: 0.15,
+      roughness: 0.42,
+    });
+
+    const previewMesh = new THREE.Mesh(extracted, previewMat);
+    previewMesh.name = "top-face-preview";
+    previewMesh.renderOrder = 999;
+    for (const visual of visuals) {
+      previewMesh.add(visual);
+    }
+    targetMesh.add(previewMesh);
+    rv.topFacePreviewMesh = previewMesh;
+
+    return buildBimElementRef(targetMesh, { topFaceArea, ...metrics });
+  }
+
+  function buildMeshIdMap(
+    root: Object3D,
+    THREE: ThreeModule,
+  ): { map: Map<string, Mesh>; catalog: BimElementSummary[] } {
+    const map = new Map<string, Mesh>();
+    const catalog: BimElementSummary[] = [];
+    root.traverse((object) => {
+      if (!(object instanceof THREE.Mesh)) return;
+      const id = getCanonicalElementId(object);
+      if (!map.has(id)) {
+        map.set(id, object);
+        const rawName = object.name?.trim();
+        catalog.push({
+          id,
+          displayName: rawName ? rawName : id,
+        });
+      }
+    });
+    return { map, catalog };
+  }
+
+  function clearSelectionState(rv: RunningState) {
+    if (!rv.selected) return;
+    rv.selected.mesh.material = rv.selected.originalMaterial;
+    const highlights = Array.isArray(rv.selected.highlightMaterial)
+      ? rv.selected.highlightMaterial
+      : [rv.selected.highlightMaterial];
+    for (const highlightMaterial of highlights) {
+      highlightMaterial.dispose();
+    }
+    rv.selected = null;
+  }
+
+  function applyHighlight(rv: RunningState, mesh: Mesh) {
+    const THREE = rv.THREE;
+    const originalMaterial = mesh.material;
+    const sourceMaterials = Array.isArray(originalMaterial)
+      ? originalMaterial
+      : [originalMaterial];
+
+    const highlightMaterials = sourceMaterials.map((sourceMaterial) => {
+      const cloned = sourceMaterial.clone();
+      const maybeEmissive = (cloned as unknown as { emissive?: import("three").Color })
+        .emissive;
+      if (maybeEmissive) {
+        maybeEmissive.set(new THREE.Color(0x0055ff));
+      }
+      // Diagnostic: make selected element see-through wireframe.
+      (cloned as unknown as { wireframe?: boolean }).wireframe = true;
+      (cloned as unknown as { transparent?: boolean }).transparent = true;
+      (cloned as unknown as { opacity?: number }).opacity = 0.1;
+      return cloned;
+    });
+
+    mesh.material = Array.isArray(originalMaterial)
+      ? highlightMaterials
+      : highlightMaterials[0];
+
+    rv.selected = {
+      mesh,
+      originalMaterial,
+      highlightMaterial: Array.isArray(originalMaterial)
+        ? highlightMaterials
+        : highlightMaterials[0],
+    };
+  }
 
   let {
     modelUrl,
     background = 0xf0f0f0,
+    selectedId = null,
+    filterMode = "none",
     onElementSelect,
+    onCatalogReady,
   }: {
     modelUrl: string;
     background?: number;
-    onElementSelect?: (data: Record<string, any> | null) => void;
+    selectedId?: string | null;
+    filterMode?: FilterMode;
+    onElementSelect?: (data: BimElementRef | null) => void;
+    onCatalogReady?: (catalog: BimElementSummary[]) => void;
   } = $props();
 
   /** Bound container for the canvas and `ResizeObserver` root. */
   let container = $state<HTMLDivElement | undefined>(undefined);
 
-  /**
-   * Tracks whether the component is still mounted. Async init checks this after `await import('three')`
-   * so we never assign `running` or leak WebGL if the user navigates away mid-setup.
-   */
   let mounted = $state(true);
 
   /** Live viewer handles; assigned only after scene/renderer/controls are ready (model may still be loading). */
-  let running:
-    | {
-        THREE: ThreeModule;
-        animation: { id: number };
-        resizeObserver: ResizeObserver;
-        renderer: WebGLRenderer;
-        scene: Scene;
-        camera: PerspectiveCamera;
-        controls: OrbitControls;
-        modelRoot: Object3D | null;
-        raycaster: import("three").Raycaster;
-        pointer: import("three").Vector2;
-        onPointerDown: (event: PointerEvent) => void;
-        selected:
-          | {
-              mesh: Mesh;
-              originalMaterial: Material | Material[];
-              highlightMaterial: Material | Material[];
-            }
-          | null;
-      }
-    | undefined;
-  type RunningState = NonNullable<typeof running>;
+  let running = $state<RunningState | undefined>(undefined);
 
-  function disposeRunning(
-    rv: RunningState,
-    reason: "destroy" | "abort",
-  ) {
+  /** Populated after GLTF load; drives `$effect` when the map becomes available. */
+  let meshById = $state<Map<string, Mesh>>(new Map());
+
+  /**
+   * Bumps when the user picks on the canvas so telemetry re-runs even if `selectedId` is unchanged.
+   */
+  let selectionRevision = $state(0);
+
+  $effect(() => {
+    console.log(
+      "[Effect] Triggered. selectedId:",
+      selectedId,
+      "Revision:",
+      selectionRevision,
+    );
+    const id = selectedId ?? null;
+    const mode = filterMode ?? "none";
+    const rv = running;
+    meshById;
+    selectionRevision;
+    if (!rv?.modelRoot) return;
+
+    const targetMesh = id ? meshById.get(id) ?? null : null;
+    console.log("[Effect] Target mesh found in map?", !!targetMesh);
+
+    if (mode === "isolate" && id && targetMesh) {
+      for (const mesh of meshById.values()) {
+        mesh.visible = mesh.uuid === targetMesh.uuid;
+      }
+    } else {
+      for (const mesh of meshById.values()) {
+        mesh.visible = true;
+      }
+    }
+
+    disposeTopFacePreview(rv);
+    clearSelectionState(rv);
+
+    if (!targetMesh) {
+      onElementSelect?.(null);
+      return;
+    }
+
+    applyHighlight(rv, targetMesh);
+    const ref = buildRefWithTopFaceTelemetry(rv, targetMesh);
+    onElementSelect?.(ref);
+  });
+
+  function disposeRunning(rv: RunningState, reason: "destroy" | "abort") {
     cancelAnimationFrame(rv.animation.id);
     rv.resizeObserver.disconnect();
     container?.removeEventListener("pointerdown", rv.onPointerDown);
 
-    if (rv.selected) {
-      rv.selected.mesh.material = rv.selected.originalMaterial;
-      const highlights = Array.isArray(rv.selected.highlightMaterial)
-        ? rv.selected.highlightMaterial
-        : [rv.selected.highlightMaterial];
-      for (const highlightMaterial of highlights) {
-        highlightMaterial.dispose();
-      }
-      rv.selected = null;
-    }
+    clearSelectionState(rv);
+
+    disposeTopFacePreview(rv);
 
     rv.controls.dispose();
 
-    // Meshes under `scene` (including loaded GLTF content) release GPU buffers here.
     disposeObject3DSubtree(rv.scene, rv.THREE);
 
     rv.renderer.dispose();
@@ -87,6 +305,7 @@
 
     if (reason === "destroy") {
       running = undefined;
+      meshById = new Map();
     }
   }
 
@@ -105,10 +324,6 @@
       if (!mounted) return;
       if (!container) return;
 
-      /**
-       * Frames `root` in view using its world-space bounding box.
-       * Keeps near/far sensible for the fitted distance so large/small assets do not clip.
-       */
       function frameObjectInView(
         root: Object3D,
         camera: PerspectiveCamera,
@@ -213,6 +428,7 @@
         pointer,
         onPointerDown: (_event: PointerEvent) => {},
         selected: null,
+        topFacePreviewMesh: null,
       };
 
       if (!mounted) {
@@ -223,58 +439,8 @@
       running = candidate;
       tick();
 
-      function buildSelectionPayload(object: Object3D): Record<string, any> {
-        const data = object.userData as Record<string, any> | undefined;
-        if (data && Object.keys(data).length > 0) {
-          return data;
-        }
-        return {
-          name: object.name || "(unnamed)",
-          uuid: object.uuid,
-        };
-      }
-
-      function clearSelectionState() {
-        if (!candidate.selected) return;
-        candidate.selected.mesh.material = candidate.selected.originalMaterial;
-        const highlights = Array.isArray(candidate.selected.highlightMaterial)
-          ? candidate.selected.highlightMaterial
-          : [candidate.selected.highlightMaterial];
-        for (const highlightMaterial of highlights) {
-          highlightMaterial.dispose();
-        }
-        candidate.selected = null;
-      }
-
-      function applyHighlight(mesh: Mesh) {
-        const originalMaterial = mesh.material;
-        const sourceMaterials = Array.isArray(originalMaterial)
-          ? originalMaterial
-          : [originalMaterial];
-
-        const highlightMaterials = sourceMaterials.map((sourceMaterial) => {
-          const cloned = sourceMaterial.clone();
-          const maybeEmissive = (cloned as unknown as { emissive?: import("three").Color }).emissive;
-          if (maybeEmissive) {
-            maybeEmissive.set(new THREE.Color(0x0055ff));
-          }
-          return cloned;
-        });
-
-        mesh.material = Array.isArray(originalMaterial)
-          ? highlightMaterials
-          : highlightMaterials[0];
-
-        candidate.selected = {
-          mesh,
-          originalMaterial,
-          highlightMaterial: Array.isArray(originalMaterial)
-            ? highlightMaterials
-            : highlightMaterials[0],
-        };
-      }
-
       candidate.onPointerDown = (event: PointerEvent) => {
+        console.log("[Raycaster] Click detected at", event.clientX, event.clientY);
         if (!candidate.modelRoot) return;
 
         const rect = renderer.domElement.getBoundingClientRect();
@@ -287,23 +453,22 @@
           candidate.modelRoot.children,
           true,
         );
+        console.log("[Raycaster] Intersections found:", intersections.length);
         const firstMeshHit = intersections.find(
           (intersection) => intersection.object instanceof THREE.Mesh,
         );
 
         if (!firstMeshHit || !(firstMeshHit.object instanceof THREE.Mesh)) {
-          clearSelectionState();
+          console.log("[Raycaster] Missed. Clicked on background.");
+          selectionRevision++;
           onElementSelect?.(null);
           return;
         }
 
         const hitMesh = firstMeshHit.object;
-        if (candidate.selected?.mesh !== hitMesh) {
-          clearSelectionState();
-          applyHighlight(hitMesh);
-        }
-
-        onElementSelect?.(buildSelectionPayload(firstMeshHit.object));
+        selectionRevision++;
+        console.log("[Raycaster] Hit mesh! ID:", getCanonicalElementId(hitMesh));
+        onElementSelect?.(buildBimElementRef(hitMesh));
       };
 
       container.addEventListener("pointerdown", candidate.onPointerDown);
@@ -319,15 +484,17 @@
         const gltf = await loader.loadAsync(url);
 
         if (!mounted || !running) {
-          // Loaded after teardown: release GPU data for a scene that was never attached.
           disposeObject3DSubtree(gltf.scene, THREE);
           return;
         }
 
-        clearSelectionState();
+        clearSelectionState(candidate);
         onElementSelect?.(null);
         candidate.modelRoot = gltf.scene;
         scene.add(gltf.scene);
+        const { map: nextMap, catalog } = buildMeshIdMap(gltf.scene, THREE);
+        meshById = nextMap;
+        onCatalogReady?.(catalog);
         frameObjectInView(gltf.scene, camera, controls);
       } catch (err) {
         console.error("[ThreeViewer] Failed to load model:", url, err);
