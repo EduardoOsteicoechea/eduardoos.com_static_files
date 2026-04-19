@@ -181,7 +181,7 @@
 	display: flex;
 	flex-direction: column;
    gap: 10px;
-    margin-top: var(--big-top-margin_02);
+   margin-top: var(--big-top-margin_02);
 }
 
 .accordion-block {
@@ -277,7 +277,7 @@
 .prose {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 1.25rem;
 	font-size: var(--font-size-5);
 	line-height: var(--line-height-5);
 }
