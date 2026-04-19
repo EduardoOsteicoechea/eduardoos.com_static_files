@@ -19,7 +19,7 @@
       {
          "type": "prose",
          "id": "introduccion",
-         "title": "Un homicidio para empezar",
+         "title": "Un homicidio como comienzo",
          "content": [
             "La primera aparacición de Pablo es un asesinato:",
             "Echándolo fuera de la ciudad, comenzaron a apedrearlo; y los testigos pusieron sus mantos a los pies de un joven llamado Saulo.",
@@ -453,9 +453,9 @@
       {
          "type": "prose",
          "id": "introduccion",
-         "title": "Cuidado con la falta de misericordia hacia los oprimidos",
+         "title": "Falta de misericordia hacia los oprimidos",
          "content": [
-            "En verdad Dios ha escogido lo necio y lo vil."
+            "En verdad Dios ha escogido lo vil y lo necio."
             ,"Lo digo por mi propia vida."
             ,"Cuando escuchamos doctrinas como esta, nuestra necedad tiende a manifestarse."
             ,"Si evitamos caer del lado de la hipocresía inmisericorde, nos balanceamos aparatosamente al otro extremo antibíclio."
@@ -471,13 +471,48 @@
             ,"El legítimo castigo de la injusticia no es contrario a la gracia."
             ,"Ambas cosas coexisten bajo la justicia del evangelio."
             ,"Por ejemplo:"
-            ,"Por ejemplo."
-
+            ,"Mateo 18:17-18 "
+            ,"Jesús ordenó expulsar y atar espiritualmente a quienes rehusan obedecer la Escritura en la iglesia"
+            ,"Romanos "
+            ,"Pablo enseñó que Dios le entregó una espada al gobierno para traspasar a los malvados."
+            ,"2 Tesalonicenses "
+            ,"El Espíritu ordenó señalar a los ociosos y apartarse de ellos."
+            ,"Estas medidas fueron dadas por el Dios de gracia y forman parte del evangelio."
+            ,"Aunque debemos pedir por el arrepentimiento y salvación de nuestros opresores, al mismo tiempo, dedemos castigar el mal en la sociedad e iglesia."
+            ,"En todo momento debemos pedir gracia para los rebeldes mientras aplicamos justicia en la iglesia y aplaudimos el balanceo justo de la espada del gobierno."
          ],
          "biblical_quotes": [
             {
                "reference": "Hechos 9:26",
                "text": "Cuando Saulo llegó a Jerusalén, trataba de juntarse con los discípulos; pero todos le temían, no creyendo que era discípulo.",
+               "emphasized": []
+            }
+         ]
+      },
+      {
+         "type": "prose",
+         "id": "introduccion",
+         "title": "Un ejemplo de gracia",
+         "content": [
+            "Quisiera concluir esta enseñanza con la auto evaluación inspirada de la gracia que se le dió a Pablo"
+            ,"Hacia el final de su ministerio, Pablo habló del propósito de esta misericordia."
+            ,"Palabra fiel y digna de ser aceptada por todos: Cristo Jesús vino al mundo para salvar a los pecadores, entre los cuales yo soy el primero. Sin embargo, por esto hallé misericordia, para que en mí, como el primero, Jesucristo demostrar toda Su paciencia como un ejemplo para los que habrían de creer en Él para vida eterna."
+            ,"Entre las razones por las que Dios escogió a Pablo, encontramos un plan para ejemplificar la gracia."
+            ,"Dios no escogió a Pablo porque estaba dispuesto para recibir el evangelio."
+            ,"De hecho, la razón fue exactamente lo contrario."
+            ,"Dios escogió a uno de los más violentos agresores, perseguidores y blasfemos de Jesucristo, para demostrar qué tipo de personas pueden salvarse."
+            ,"Dios escogió a uno de sus enemigos, para demostrar qué tan poderosa y abundante es Su gracia."
+            ,"Dios quiere salvar a los pecadores."
+            ,"Independientemente de tu pasado, si sometes tu vida al Cristo que ha resucitado, puedes ser perdonado."
+            ,"Independientemente de tu pasado, si crees que Jesús está reinando sobre el universo, y te sometes a su reino por el resto de tus días, serás perdonado."
+            ,"Cristo Jesus vino para salvar a los pecadores, de los cuales somos los primeros."
+            ,"Cristo te ofrece un lugar entre nosotros."
+            ,"¿Aceptarás su ofrecimiento, o rehusarás aceptarlo como los judíos que fueron condenados?"
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "1 Timoteo 1:15-16",
+               "text": "Palabra fiel y digna de ser aceptada por todos: Cristo Jesús vino al mundo para salvar a los pecadores, entre los cuales yo soy el primero. Sin embargo, por esto hallé misericordia, para que en mí, como el primero, Jesucristo demostrar toda Su paciencia como un ejemplo para los que habrían de creer en Él para vida eterna.",
                "emphasized": []
             }
          ]
