@@ -25,7 +25,7 @@ export async function loadBibleArticle({
   const routePath = url.pathname.replace(/\/$/, "");
   const assetDirectory = `${routePath}/`;
   const dataJsonUrl = `${assetDirectory}data.json`;
-  const sermonUrl = `${assetDirectory}sermon.mp4`;
+  const sermonUrl = `${assetDirectory}sermon.mp3`;
   const heroUrl = `${assetDirectory}hero.png`;
 
   const dataRes = await fetch(dataJsonUrl);
