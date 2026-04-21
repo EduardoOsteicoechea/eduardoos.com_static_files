@@ -26,6 +26,10 @@
         <h2>Brutalidad</h2>
         <p>Estudio sobre la contundencia del mensaje y su impacto.</p>
       </a>
+      <a class="route-card" href="/biblia/series/romanos/pablo/llamado">
+        <h2>Llamado</h2>
+        <p>Estudio sobre la conversión y apostolado de Pablo.</p>
+      </a>
     </section>
   </main>
 </div>

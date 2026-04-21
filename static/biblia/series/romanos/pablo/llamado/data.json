@@ -19,16 +19,53 @@
       {
          "type": "prose",
          "id": "introduccion",
-         "title": "Llamado durante su ira",
+         "title": "Llamado en medio de su violencia",
          "content": [
-            
+             "Lo primero que notamos de la conversión de Pablo es su resistencia."
+            ,"El relato dice:"
+            ,"Saulo, respirando todavía amenazas y muerte contra los discípulos del Señor, fue al sumo sacerdote, y le pidió cartas para las sinagogas de Damasco, para que si encontraba a algunos que pertenecieran al Camino, tanto hombres como mujeres, los pudiera llevar atados a Jerusalén."
+            ,"La conversión de Saulo ocurre mientras éste respira amenazas y muerte contra los discípulos."
+            ,"Esta es la primera sorpresa."
+            ,"Dios escoge a sus instrumentos usando criterios misteriosos."
+            ,"Décadas luego, Saulo diría..."
+            ,"Él nos ha salvado y nos ha llamado con un llamamiento santo, no según nuestras obras, sino según Su propòsito y según la gracia que nos fue dada en Cristo Jesús desde la eternidad..."
+            ,"La única previsión que encontramos en la Escritura, para la escogencia de este hombre era la dimensión de su maldad."
+            ,"Saulo fue escogido entre otras cosas, porque era un malvado asesino de creyentes; un ignorante de la verdad, un incrédulo:"
+            ,"Doy gracias a Cristo Jesús nuestro Señor, que me ha fortalecido, porque me tuvo por fiel, poniéndome en el ministerio, aun habiendo sido yo antes blasfemo, perseguidar y agresor. Sin embargo, se me mostró misericordia porque lo hice por ignorancia en mi incredulidad."
+            ,"Sin embargo, por esto hallé misericordia, para que en mí, como el primero, Jesucristo demostrara toda Su paciencia como un ejemplo para los que habrían de creer en Él para vida eterna."
+            ,"Una pregunta interesante sería, ¿Por qué solo Saulo?."
+            ,"¿Por qué no escuchamos más de los hombres que venían con él y que igualmente presenciaron el milagro?."
+            ,"¿Por qué no darle esta revelación al concilio, a los sumos sacerdotes, al César?"
+            ,"En verdad solo Dios sabe."
+            ,"Lo que sí sabemos es que..."
+            ,"...no depende del que quiere ni del que corre, sino de Dios que tiene misericordia."
          ],
          "emphasyzed_phrases": [
          ],
          "biblical_quotes": [
             {
-               "reference": "Hechos 9:15",
-               "text": "Entonces ellos gritaron a gran voz, y tapándose los oídos se lanzaron a una contra él.",
+               "reference": "Hechos 9:1",
+               "text": "Saulo, respirando todavía amenazas y muerte contra los discípulos del Señor, fue al sumo sacerdote, y le pidió cartas para las sinagogas de Damasco, para que si encontraba a algunos que pertenecieran al Camino, tanto hombres como mujeres, los pudiera llevar atados a Jerusalén.",
+               "emphasized": []
+            }
+            ,{
+               "reference": "2 Timoteo 1:9",
+               "text": "Él nos ha salvado y nos ha llamado con un llamamiento santo, no según nuestras obras, sino según Su propòsito y según la gracia que nos fue dada en Cristo Jesús desde la eternidad...",
+               "emphasized": ["según Su propòsito y según la gracia que nos fue dada en Cristo Jesús desde la eternidad"]
+            }
+            ,{
+               "reference": "1 Timoteo 1:12-13",
+               "text": "Doy gracias a Cristo Jesús nuestro Señor, que me ha fortalecido, porque me tuvo por fiel, poniéndome en el ministerio, aun habiendo sido yo antes blasfemo, perseguidar y agresor. Sin embargo, se me mostró misericordia porque lo hice por ignorancia en mi incredulidad.",
+               "emphasized": []
+            }
+            ,{
+               "reference": "1 Timoteo 1:16",
+               "text": "Sin embargo, por esto hallé misericordia, para que en mí, como el primero, Jesucristo demostrara toda Su paciencia como un ejemplo para los que habrían de creer en Él para vida eterna.",
+               "emphasized": []
+            }
+            ,{
+               "reference": "Romanos 9:16",
+               "text": "...no depende del que quiere ni del que corre, sino de Dios que tiene misericordia.",
                "emphasized": []
             }
          ]
