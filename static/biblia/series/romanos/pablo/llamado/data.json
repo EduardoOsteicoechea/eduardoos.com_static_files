@@ -1,0 +1,37 @@
+{
+   "serie": "romanos",
+   "facilitador": "Eduardo Osteicoechea",
+   "libro_de_pasaje": "romanos",
+   "capitulos_de_pasaje": [
+      1
+   ],
+   "versiculos_de_pasaje": [
+      1
+   ],
+   "texto_nbla": "Pablo, siervo de Jesucristo, llamado a ser apóstol, apartado para el evangelio de Dios.",
+   "texto_nestleadam": "Παῦλος δοῦλος Χριστοῦ Ἰησοῦ, κλητὸς ἀπόστολος ἀφωρισμένος εἰς εὐαγγέλιον θεοῦ",
+   "titulo_de_enseñanza": "El llamado de Pablo",
+   "sections": [
+      {
+         "type": "youtube",
+         "youtube_url": "https://www.youtube.com/@tenanimovzla"
+      },
+      {
+         "type": "prose",
+         "id": "introduccion",
+         "title": "Llamado durante su ira",
+         "content": [
+            
+         ],
+         "emphasyzed_phrases": [
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "Hechos 9:15",
+               "text": "Entonces ellos gritaron a gran voz, y tapándose los oídos se lanzaron a una contra él.",
+               "emphasized": []
+            }
+         ]
+      }    
+   ]
+}

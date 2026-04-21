@@ -1,5 +1,6 @@
 <script lang="ts">
   import { audioState, toggleAudio } from "$lib/state/audio.svelte";
+  import MainMenuPanel from "$lib/components/MainMenuPanel.svelte";
 
   // --- Scroll progress ---
   let scrollPercent = $state(0);
@@ -61,9 +62,20 @@
 
   // WhatsApp link
   const waUrl = "https://wa.me/+584147281033";
+  let isMainMenuOpen = $state(false);
+
+  function toggleMainMenu() {
+    isMainMenuOpen = !isMainMenuOpen;
+  }
+
+  function closeMainMenu() {
+    isMainMenuOpen = false;
+  }
 </script>
 
 <svelte:window onscroll={onScroll} />
+
+<MainMenuPanel isOpen={isMainMenuOpen} onClose={closeMainMenu} />
 
 <div
   class="activity-bar"
@@ -71,6 +83,29 @@
   role="toolbar"
   aria-label="Barra de actividad"
 >
+  <button
+    class="bar-btn nav-btn activity-bar-item"
+    onclick={toggleMainMenu}
+    aria-label="Abrir menu principal"
+    title="Abrir menu principal"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      width="20"
+      height="20"
+      aria-hidden="true"
+    >
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <line x1="3" y1="12" x2="21" y2="12" />
+      <line x1="3" y1="18" x2="21" y2="18" />
+    </svg>
+  </button>
+
   <!-- WhatsApp CTA -->
   <!-- WhatsApp CTA -->
   <!-- WhatsApp CTA -->
