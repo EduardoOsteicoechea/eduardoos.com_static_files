@@ -19,12 +19,12 @@
       {
          "type": "prose",
          "id": "introduccion",
-         "title": "Llamado en medio de su violencia",
+         "title": "Llamado en la violencia",
          "content": [
-             "Lo primero que notamos de la conversión de Pablo es su resistencia."
+             "Lo primero que notamos del llamado de Pablo es el estado en el que ocurre."
             ,"El relato dice:"
             ,"Saulo, respirando todavía amenazas y muerte contra los discípulos del Señor, fue al sumo sacerdote, y le pidió cartas para las sinagogas de Damasco, para que si encontraba a algunos que pertenecieran al Camino, tanto hombres como mujeres, los pudiera llevar atados a Jerusalén."
-            ,"La conversión de Saulo ocurre mientras éste respira amenazas y muerte contra los discípulos."
+            ,"La conversión de Saulo ocurre mientras respira amenazas y muerte contra los discípulos."
             ,"Esta es la primera sorpresa."
             ,"Dios escoge a sus instrumentos usando criterios misteriosos."
             ,"Décadas luego, Saulo diría..."
@@ -33,8 +33,8 @@
             ,"Saulo fue escogido entre otras cosas, porque era un malvado asesino de creyentes; un ignorante de la verdad, un incrédulo:"
             ,"Doy gracias a Cristo Jesús nuestro Señor, que me ha fortalecido, porque me tuvo por fiel, poniéndome en el ministerio, aun habiendo sido yo antes blasfemo, perseguidar y agresor. Sin embargo, se me mostró misericordia porque lo hice por ignorancia en mi incredulidad."
             ,"Sin embargo, por esto hallé misericordia, para que en mí, como el primero, Jesucristo demostrara toda Su paciencia como un ejemplo para los que habrían de creer en Él para vida eterna."
-            ,"Una pregunta interesante sería, ¿Por qué solo Saulo?."
-            ,"¿Por qué no escuchamos más de los hombres que venían con él y que igualmente presenciaron el milagro?."
+            ,"Una pregunta interesante sería, ¿Por qué solo Saulo?"
+            ,"¿Por qué no escuchamos más de los hombres que venían con él y que igualmente presenciaron el milagro?"
             ,"¿Por qué no darle esta revelación al concilio, a los sumos sacerdotes, al César?"
             ,"En verdad solo Dios sabe."
             ,"Lo que sí sabemos es que..."
@@ -69,6 +69,210 @@
                "emphasized": []
             }
          ]
-      }    
+      }
+      ,{
+         "type": "prose",
+         "id": "introduccion",
+         "title": "Llamado al apostolado",
+         "content": [
+            ""
+         ],
+         "emphasyzed_phrases": [
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "",
+               "text": "",
+               "emphasized": []
+            }
+         ]
+      }   
+      ,{
+         "type": "prose",
+         "id": "introduccion",
+         "title": "Llamado al arrepentimiento",
+         "content": [
+            ""
+         ],
+         "emphasyzed_phrases": [
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "",
+               "text": "",
+               "emphasized": []
+            }
+         ]
+      }   
+      ,{
+         "type": "prose",
+         "id": "introduccion",
+         "title": "Llamado a prepararse",
+         "content": [
+            ""
+         ],
+         "emphasyzed_phrases": [
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "",
+               "text": "",
+               "emphasized": []
+            }
+         ]
+      }   
+      ,{
+         "type": "prose",
+         "id": "introduccion",
+         "title": "Llamado a comenzar congregaciones",
+         "content": [
+            ""
+         ],
+         "emphasyzed_phrases": [
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "",
+               "text": "",
+               "emphasized": []
+            }
+         ]
+      }   
+      ,{
+         "type": "prose",
+         "id": "introduccion",
+         "title": "Llamado a confirmar iglesias",
+         "content": [
+            ""
+         ],
+         "emphasyzed_phrases": [
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "",
+               "text": "",
+               "emphasized": []
+            }
+         ]
+      }   
+      ,{
+         "type": "prose",
+         "id": "introduccion",
+         "title": "Llamado a establecer doctrinas",
+         "content": [
+            ""
+         ],
+         "emphasyzed_phrases": [
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "",
+               "text": "",
+               "emphasized": []
+            }
+         ]
+      }   
+      ,{
+         "type": "prose",
+         "id": "introduccion",
+         "title": "Llamado a cumplir una tarea",
+         "content": [
+            ""
+         ],
+         "emphasyzed_phrases": [
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "",
+               "text": "",
+               "emphasized": []
+            }
+         ]
+      }   
+      ,{
+         "type": "prose",
+         "id": "introduccion",
+         "title": "Llamado a revelar el evangelio",
+         "content": [
+            ""
+         ],
+         "emphasyzed_phrases": [
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "",
+               "text": "",
+               "emphasized": []
+            }
+         ]
+      }   
+      ,{
+         "type": "prose",
+         "id": "introduccion",
+         "title": "Llamado a promover la obediencia de la fe",
+         "content": [
+            ""
+         ],
+         "emphasyzed_phrases": [
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "",
+               "text": "",
+               "emphasized": []
+            }
+         ]
+      }   
+      ,{
+         "type": "prose",
+         "id": "introduccion",
+         "title": "Llamado al padecimiento",
+         "content": [
+            ""
+         ],
+         "emphasyzed_phrases": [
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "",
+               "text": "",
+               "emphasized": []
+            }
+         ]
+      }   
+      ,{
+         "type": "prose",
+         "id": "introduccion",
+         "title": "Llamado al arrepentimiento",
+         "content": [
+            ""
+         ],
+         "emphasyzed_phrases": [
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "",
+               "text": "",
+               "emphasized": []
+            }
+         ]
+      }   
+      ,{
+         "type": "prose",
+         "id": "introduccion",
+         "title": "Llamado al arrepentimiento",
+         "content": [
+            ""
+         ],
+         "emphasyzed_phrases": [
+         ],
+         "biblical_quotes": [
+            {
+               "reference": "",
+               "text": "",
+               "emphasized": []
+            }
+         ]
+      }   
    ]
 }
