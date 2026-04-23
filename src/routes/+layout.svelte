@@ -1,6 +1,5 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import favicon from "$lib/assets/favicon.svg";
   import PersonalPhoto from "$lib/components/global/background/PersonalPhoto.svelte";
   import Chat from "$lib/components/global/chat/Chat.svelte";
   import Controls from "$lib/components/global/controls/Controls.svelte";
@@ -24,7 +23,6 @@
 <!-- -->
 
 <svelte:head>
-  <link rel="icon" href={favicon} />
   <title>Eduardo Osteicoechea</title>
 </svelte:head>
 
