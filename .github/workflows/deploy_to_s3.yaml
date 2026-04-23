@@ -23,6 +23,8 @@ jobs:
 
       - name: Build Vite App
         run: npm run build
+        env:
+          PUBLIC_BACKEND_API_BASE_URL: "https://eduardoos.com"
 
       - name: Deploy via SSH and Rsync
         uses: easingthemes/ssh-deploy@main
