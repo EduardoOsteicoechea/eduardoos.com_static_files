@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { authenticatedUserStore } from "$lib/stores/authenticatedUserStore";
+
   let {
     isOpen = false,
     onClose = () => {},
@@ -6,6 +8,15 @@
     isOpen?: boolean;
     onClose?: () => void;
   } = $props();
+
+  const isAuthenticatedUserSession = $derived(
+    $authenticatedUserStore.authLifecycleStatus === "authenticated"
+  );
+
+  const handleLogoutClick = async (): Promise<void> => {
+    await authenticatedUserStore.logoutAndClearAuthenticatedUserState();
+    onClose();
+  };
 </script>
 
 {#if isOpen}
@@ -48,6 +59,16 @@
   <nav class="main-menu-nav" aria-label="Menu principal">
     <a class="main-menu-link" href="/bim/viewer" onclick={onClose}>bim/viewer</a>
     <a class="main-menu-link" href="/biblia" onclick={onClose}>bible</a>
+
+    {#if isAuthenticatedUserSession}
+      <a class="main-menu-link" href="/profile" onclick={onClose}>Profile</a>
+      <a class="main-menu-link" href="/dashboard" onclick={onClose}>Dashboard</a>
+      <a class="main-menu-link" href="/payments" onclick={onClose}>Payments</a>
+      <button class="main-menu-link main-menu-link-button" onclick={handleLogoutClick}>Logout</button>
+    {:else}
+      <a class="main-menu-link" href="/login" onclick={onClose}>Login</a>
+      <a class="main-menu-link" href="/register" onclick={onClose}>Register</a>
+    {/if}
   </nav>
 </aside>
 
@@ -135,6 +156,13 @@
   .main-menu-link:hover {
     background: var(--btn-hover-bg);
     color: var(--btn-nav-hover);
+  }
+
+  .main-menu-link-button {
+    text-align: left;
+    width: 100%;
+    color: var(--text-color);
+    cursor: pointer;
   }
 
   @media (min-width: 769px) {

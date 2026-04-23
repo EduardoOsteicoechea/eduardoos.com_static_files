@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   import favicon from "$lib/assets/favicon.svg";
   import PersonalPhoto from "$lib/components/global/background/PersonalPhoto.svelte";
   import Chat from "$lib/components/global/chat/Chat.svelte";
@@ -7,9 +8,14 @@
   import Modal from "$lib/components/global/modal/Modal.svelte";
   import Payment from "$lib/components/global/payment/Payment.svelte";
   import ActivityBar from "$lib/components/ActivityBar.svelte";
+  import { authenticatedUserStore } from "$lib/stores/authenticatedUserStore";
   import "../app.css";
 
   let { children } = $props();
+
+  onMount(() => {
+    void authenticatedUserStore.rehydrateAuthenticatedUserFromProfileCheck();
+  });
 </script>
 
 <!-- MARKUP -->
