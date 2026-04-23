@@ -23,7 +23,7 @@ type AuthAcknowledgementResponse = {
 export const submitUserLoginCredentials = async (
 	loginCredentialsPayload: UserLoginCredentialsPayload
 ): Promise<AuthAcknowledgementResponse> =>
-	executeJsonHttpRequest<AuthAcknowledgementResponse>("/login", {
+	executeJsonHttpRequest<AuthAcknowledgementResponse>("/api/login", {
 		requestMethod: "POST",
 		requestBody: loginCredentialsPayload
 	});
@@ -31,24 +31,24 @@ export const submitUserLoginCredentials = async (
 export const submitUserRegistrationCredentials = async (
 	registrationCredentialsPayload: UserRegistrationCredentialsPayload
 ): Promise<AuthAcknowledgementResponse> =>
-	executeJsonHttpRequest<AuthAcknowledgementResponse>("/register", {
+	executeJsonHttpRequest<AuthAcknowledgementResponse>("/api/register", {
 		requestMethod: "POST",
 		requestBody: registrationCredentialsPayload
 	});
 
 export const fetchAuthenticatedUserProfile = async (): Promise<AuthenticatedUserProfileResponse> =>
-	executeJsonHttpRequest<AuthenticatedUserProfileResponse>("/profile", {
+	executeJsonHttpRequest<AuthenticatedUserProfileResponse>("/api/profile", {
 		requestMethod: "GET"
 	});
 
 export const submitUserLogoutRequest = async (): Promise<AuthAcknowledgementResponse> =>
-	executeJsonHttpRequest<AuthAcknowledgementResponse>("/logout", {
+	executeJsonHttpRequest<AuthAcknowledgementResponse>("/api/logout", {
 		requestMethod: "POST"
 	});
 
 export const submitRefreshTokenRotationRequest = async (): Promise<boolean> => {
 	try {
-		await executeJsonHttpRequest<AuthAcknowledgementResponse>("/refresh-token", {
+		await executeJsonHttpRequest<AuthAcknowledgementResponse>("/api/refresh-token", {
 			requestMethod: "POST",
 			skipUnauthorizedRetry: true
 		});
