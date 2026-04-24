@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { getProseParagraphsFromSection } from "$lib/biblia/proseReaderUtils";
   import type { LessonJson } from "$lib/components/AticleAssets";
 
   let { lesson }: { lesson: LessonJson } = $props();
@@ -10,9 +11,9 @@
   let wordCount = $derived.by(() => {
     let count = 0;
     for (const section of lesson.sections) {
-      if (section.type === "prose" && section.content) {
-        for (const paragraph of section.content) {
-          count += paragraph.trim().split(/\s+/).filter(w => w.length > 0).length;
+      if (section.type === "prose") {
+        for (const paragraph of getProseParagraphsFromSection(section)) {
+          count += paragraph.trim().split(/\s+/).filter((w) => w.length > 0).length;
         }
       }
     }
@@ -31,8 +32,8 @@
     
     for (const section of lesson.sections) {
       text += `## ${section.title}\n\n`;
-      if (Array.isArray(section.content)) {
-        for (const paragraph of section.content) {
+      if (section.type === "prose") {
+        for (const paragraph of getProseParagraphsFromSection(section)) {
           text += `${paragraph}\n\n`;
         }
       }
@@ -72,8 +73,8 @@
 
     for (const section of lesson.sections) {
       html += `<h2>${section.title}</h2>`;
-      if (Array.isArray(section.content)) {
-        for (const paragraph of section.content) {
+      if (section.type === "prose") {
+        for (const paragraph of getProseParagraphsFromSection(section)) {
           html += `<p>${paragraph}</p>`;
         }
       }

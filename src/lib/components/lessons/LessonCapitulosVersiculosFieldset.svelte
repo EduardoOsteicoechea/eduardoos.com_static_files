@@ -15,14 +15,6 @@
 			.map((entry) => Number(entry.trim()))
 			.filter((entry) => Number.isInteger(entry) && entry > 0);
 
-	const updateCapitulosFromInput = (event: Event): void => {
-		const inputValue = (event.currentTarget as HTMLInputElement).value;
-		onLessonDraftChange({
-			...lessonDraft,
-			capitulos_de_pasaje: parseCommaSeparatedNumericValues(inputValue)
-		});
-	};
-
 	const updateVersiculosFromInput = (event: Event): void => {
 		const inputValue = (event.currentTarget as HTMLInputElement).value;
 		onLessonDraftChange({
@@ -33,18 +25,12 @@
 </script>
 
 <fieldset class="lesson-fieldset">
-	<legend>Passage Indexes</legend>
+	<legend>Versículos del pasaje</legend>
+	<p class="lesson-fieldset-hint">
+		Números de versículo separados por comas (el capítulo se elige arriba).
+	</p>
 
-	<label for="lesson-capitulos-input">Capitulos (comma-separated integers)</label>
-	<input
-		id="lesson-capitulos-input"
-		type="text"
-		value={lessonDraft.capitulos_de_pasaje.join(", ")}
-		oninput={updateCapitulosFromInput}
-		required
-	/>
-
-	<label for="lesson-versiculos-input">Versiculos (comma-separated integers)</label>
+	<label for="lesson-versiculos-input">Versículos</label>
 	<input
 		id="lesson-versiculos-input"
 		type="text"
@@ -62,5 +48,12 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.45rem;
+	}
+
+	.lesson-fieldset-hint {
+		margin: 0;
+		font-size: var(--font-size-4);
+		line-height: var(--line-height-4);
+		color: var(--text-muted);
 	}
 </style>

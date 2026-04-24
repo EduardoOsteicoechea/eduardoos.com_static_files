@@ -14,6 +14,8 @@ export type JsonHttpRequestOptions = {
 	requestHeaders?: Record<string, string>;
 	requestBody?: unknown;
 	skipUnauthorizedRetry?: boolean;
+	/** When true, a failed refresh after 401 does not run the global unauthenticated handler (e.g. redirect to login). */
+	skipUnauthenticatedSessionHandler?: boolean;
 };
 
 let registeredSessionRefreshRequester: HttpSessionRefreshRequester | null = null;
@@ -108,7 +110,9 @@ export const executeJsonHttpRequest = async <ResponsePayload>(
 			});
 		}
 
-		registeredUnauthenticatedSessionHandler?.();
+		if (!requestOptions.skipUnauthenticatedSessionHandler) {
+			registeredUnauthenticatedSessionHandler?.();
+		}
 	}
 
 	if (!httpResponse.ok) {

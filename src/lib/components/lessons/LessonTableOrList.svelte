@@ -24,8 +24,17 @@
 			{#each $lessonDashboardStore.lessonCollection as lessonRecord}
 				<li class="lesson-list-item">
 					<div class="lesson-list-copy">
-						<strong>{lessonRecord.titulo_de_ensenanza}</strong>
-						<span>{lessonRecord.serie} - {lessonRecord.facilitador}</span>
+						<strong>{lessonRecord.titulo_de_ensenanza ?? lessonRecord.tituloDeEnsenanza}</strong>
+						<span>
+							{lessonRecord.serie}
+							{#if lessonRecord.tema_serie ?? lessonRecord.temaSerie}
+								· {lessonRecord.tema_serie ?? lessonRecord.temaSerie}
+							{/if}
+							· {lessonRecord.facilitador}
+							{#if lessonRecord.slug}
+								· slug: {lessonRecord.slug}
+							{/if}
+						</span>
 					</div>
 					<div class="lesson-list-actions">
 						<button type="button" onclick={() => beginLessonEdition(lessonRecord)}>Edit</button>

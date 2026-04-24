@@ -7,10 +7,21 @@ export type LessonSectionMultimediaEntry = {
 	mediaDescription: string;
 };
 
+export type LessonBiblicalQuotePayload = {
+	reference: string;
+	text: string;
+	emphasized?: string[];
+};
+
 export type LessonSectionEntry = {
 	sectionOrder: number;
 	sectionTitle: string;
+	/** ProseEditor source (shortcodes / **emphasis**). */
 	sectionBody: string;
+	/** Compiled prose paragraphs (set on save / from API). */
+	content?: string[];
+	biblical_quotes?: LessonBiblicalQuotePayload[];
+	emphasyzed_phrases?: string[];
 	multimedia: LessonSectionMultimediaEntry[];
 };
 
@@ -28,7 +39,10 @@ export type LessonQuizQuestionEntry = {
 };
 
 export type LessonUpsertPayload = {
+	slug: string;
 	serie: string;
+	/** Thematic unit within the series (URL slug), not the Bible chapter. */
+	tema_serie: string;
 	facilitador: string;
 	libro_de_pasaje: string;
 	titulo_de_ensenanza: string;
@@ -40,8 +54,11 @@ export type LessonUpsertPayload = {
 	quiz: LessonQuizQuestionEntry[];
 };
 
-export type LessonRecord = LessonUpsertPayload & {
+export type LessonRecord = Omit<LessonUpsertPayload, "slug" | "tema_serie"> & {
 	id: number;
+	slug?: string | null;
+	tema_serie?: string | null;
+	temaSerie?: string | null;
 	libroDePasaje?: string | null;
 	tituloDeEnsenanza?: string | null;
 	textoNbla?: string | null;

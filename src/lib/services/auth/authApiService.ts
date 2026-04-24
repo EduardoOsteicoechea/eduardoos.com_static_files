@@ -1,4 +1,4 @@
-import { executeJsonHttpRequest } from "$lib/services/http/httpRequestExecutor";
+import { executeJsonHttpRequest, type JsonHttpRequestOptions } from "$lib/services/http/httpRequestExecutor";
 
 export type UserLoginCredentialsPayload = {
 	email: string;
@@ -38,12 +38,16 @@ export const submitUserRegistrationCredentials = async (
 
 export const fetchAuthenticatedUserProfile = async (): Promise<AuthenticatedUserProfileResponse> =>
 	executeJsonHttpRequest<AuthenticatedUserProfileResponse>("/api/profile", {
-		requestMethod: "GET"
+		requestMethod: "GET",
+		skipUnauthenticatedSessionHandler: true
 	});
 
-export const submitUserLogoutRequest = async (): Promise<AuthAcknowledgementResponse> =>
+export const submitUserLogoutRequest = async (
+	requestOptions: JsonHttpRequestOptions = {}
+): Promise<AuthAcknowledgementResponse> =>
 	executeJsonHttpRequest<AuthAcknowledgementResponse>("/api/logout", {
-		requestMethod: "POST"
+		requestMethod: "POST",
+		...requestOptions
 	});
 
 export const submitRefreshTokenRotationRequest = async (): Promise<boolean> => {

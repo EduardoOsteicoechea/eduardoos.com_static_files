@@ -350,6 +350,11 @@
   font-style: normal;
 }
 
+.text-emphasis {
+	font-weight: 700;
+	color: var(--accent-article-emphazysed-text);
+}
+
 .biblio-aporte {
 	display: flex;
 	flex-direction: column;

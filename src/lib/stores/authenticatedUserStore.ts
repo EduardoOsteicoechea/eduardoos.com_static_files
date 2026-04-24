@@ -44,24 +44,54 @@ const deriveReadableAuthErrorMessage = (unknownError: unknown): string => {
 	return "Unexpected authentication error.";
 };
 
-const routeToLoginIfClientRuntime = (): void => {
-	if (!browser) {
-		return;
-	}
-	void goto("/login");
-};
-
 const { subscribe, update, set } = writable<AuthenticatedUserStoreState>(
 	defaultAuthenticatedUserStoreState
 );
 
-const markUnauthenticatedSessionAndRedirect = (): void => {
+/**
+ * Best-effort clear of auth cookie names. Server sets `httpOnly: true` on real tokens, so `document.cookie`
+ * cannot see or remove them; `POST /api/logout` is what actually clears them. This still helps if flags
+ * change, and matches `path` / `SameSite` / `Secure` for deletions the browser will accept.
+ */
+const clearAuthCookiesInBrowserBestEffort = (): void => {
+	if (!browser || typeof document === "undefined") {
+		return;
+	}
+	const isHttps = typeof location !== "undefined" && location.protocol === "https:";
+	const base = "path=/; Max-Age=0; SameSite=Strict" + (isHttps ? "; Secure" : "");
+	document.cookie = `access_token=; ${base}`;
+	document.cookie = `refresh_token=; ${base}`;
+};
+
+const applyUnauthenticatedStoreState = (): void => {
 	set({
 		authLifecycleStatus: "unauthenticated",
 		authenticatedUserProfile: null,
 		authErrorMessage: null
 	});
-	routeToLoginIfClientRuntime();
+};
+
+/**
+ * Called on 401 after refresh fails: clear httpOnly cookies via the logout handler, drop client ghost state,
+ * then navigate to login so `hooks.server.ts` no longer bounces "has cookie" users back to `/dashboard`.
+ */
+const markUnauthenticatedSessionAndRedirect = (): void => {
+	void (async () => {
+		try {
+			await submitUserLogoutRequest({
+				skipUnauthenticatedSessionHandler: true,
+				skipUnauthorizedRetry: true
+			});
+		} catch {
+			// Network or unexpected error — still clear UI and best-effort cookies
+		} finally {
+			applyUnauthenticatedStoreState();
+			clearAuthCookiesInBrowserBestEffort();
+			if (browser) {
+				void goto("/login");
+			}
+		}
+	})();
 };
 
 registerHttpSessionRefreshRequester(submitRefreshTokenRotationRequest);
@@ -142,7 +172,11 @@ export const authenticatedUserStore = {
 		try {
 			await submitUserLogoutRequest();
 		} finally {
-			markUnauthenticatedSessionAndRedirect();
+			applyUnauthenticatedStoreState();
+			clearAuthCookiesInBrowserBestEffort();
+			if (browser) {
+				void goto("/login");
+			}
 		}
 	},
 	clearAuthenticatedUserStateAfterUnauthorizedRefreshFailure: (): void => {

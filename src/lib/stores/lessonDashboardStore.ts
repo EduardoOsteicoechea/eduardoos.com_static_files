@@ -1,11 +1,13 @@
 import { writable } from "svelte/store";
+import { decompileProseToSource } from "$lib/lessons/proseCompiler";
+import { prepareLessonPayloadForApi } from "$lib/lessons/prepareLessonForApi";
 import {
 	createLessonArticle,
 	deleteLessonArticleById,
 	retrieveAllLessonArticles,
 	updateLessonArticleById
 } from "$lib/services/lessons/lessonApiService";
-import type { LessonRecord, LessonUpsertPayload } from "$lib/types/lessons";
+import type { LessonRecord, LessonSectionEntry, LessonUpsertPayload } from "$lib/types/lessons";
 
 type LessonDashboardOperationStatus = "idle" | "loading" | "saving" | "error";
 type LessonEditorMode = "create" | "edit";
@@ -19,15 +21,30 @@ type LessonDashboardStoreState = {
 	errorMessage: string | null;
 };
 
+const normalizeSectionForEditor = (section: LessonSectionEntry): LessonSectionEntry => {
+	if (section.sectionBody?.trim()) {
+		return section;
+	}
+	if (section.content?.length) {
+		return {
+			...section,
+			sectionBody: decompileProseToSource(section.content, section.biblical_quotes)
+		};
+	}
+	return section;
+};
+
 export const createEmptyLessonPayloadDraft = (): LessonUpsertPayload => ({
+	slug: "",
 	serie: "",
+	tema_serie: "",
 	facilitador: "",
 	libro_de_pasaje: "",
 	titulo_de_ensenanza: "",
 	texto_nbla: "",
 	texto_nestleadam: "",
-	capitulos_de_pasaje: [1],
-	versiculos_de_pasaje: [1],
+	capitulos_de_pasaje: [],
+	versiculos_de_pasaje: [],
 	sections: [
 		{
 			sectionOrder: 1,
@@ -58,43 +75,55 @@ export const createEmptyLessonPayloadDraft = (): LessonUpsertPayload => ({
 });
 
 const mapLessonRecordToUpsertPayload = (lessonRecord: LessonRecord): LessonUpsertPayload => ({
+	slug: lessonRecord.slug ?? "",
 	serie: lessonRecord.serie,
+	tema_serie: lessonRecord.tema_serie ?? lessonRecord.temaSerie ?? "",
 	facilitador: lessonRecord.facilitador,
-	libro_de_pasaje: lessonRecord.libro_de_pasaje,
-	titulo_de_ensenanza: lessonRecord.titulo_de_ensenanza,
-	texto_nbla: lessonRecord.texto_nbla,
-	texto_nestleadam: lessonRecord.texto_nestleadam,
+	libro_de_pasaje: lessonRecord.libro_de_pasaje || lessonRecord.libroDePasaje || "",
+	titulo_de_ensenanza: lessonRecord.titulo_de_ensenanza || lessonRecord.tituloDeEnsenanza || "",
+	texto_nbla: lessonRecord.texto_nbla || lessonRecord.textoNbla || "",
+	texto_nestleadam: lessonRecord.texto_nestleadam || lessonRecord.textoNestleadam || "",
 	capitulos_de_pasaje: lessonRecord.capitulos_de_pasaje,
 	versiculos_de_pasaje: lessonRecord.versiculos_de_pasaje,
-	sections: lessonRecord.sections,
+	sections: lessonRecord.sections.map(normalizeSectionForEditor),
 	quiz: lessonRecord.quiz
 });
 
 const validateLessonUpsertPayloadBeforeSubmit = (lessonPayload: LessonUpsertPayload): string | null => {
-	if (!lessonPayload.serie.trim()) return "Serie is required.";
+	if (!lessonPayload.slug.trim()) {
+		return "El nombre del artículo debe generar un slug de URL válido (usa letras o números en el título).";
+	}
+	if (!lessonPayload.serie.trim()) return "La serie es obligatoria.";
+	if (!lessonPayload.tema_serie.trim()) return "El tema o capítulo de la serie es obligatorio.";
 	if (!lessonPayload.facilitador.trim()) return "Facilitador is required.";
 	if (!lessonPayload.libro_de_pasaje.trim()) return "Libro de pasaje is required.";
 	if (!lessonPayload.titulo_de_ensenanza.trim()) return "Titulo de ensenanza is required.";
 	if (!lessonPayload.texto_nbla.trim()) return "Texto NBLA is required.";
 	if (!lessonPayload.texto_nestleadam.trim()) return "Texto Nestle-Aland is required.";
-	if (lessonPayload.capitulos_de_pasaje.length === 0) return "At least one capitulo is required.";
-	if (lessonPayload.versiculos_de_pasaje.length === 0) return "At least one versiculo is required.";
+	if (lessonPayload.capitulos_de_pasaje.length === 0) return "Indica al menos un capítulo de pasaje.";
+	if (lessonPayload.versiculos_de_pasaje.length === 0) return "Indica al menos un versículo de pasaje.";
 	if (lessonPayload.sections.length === 0) return "At least one section is required.";
 	if (lessonPayload.quiz.length === 0) return "At least one quiz question is required.";
+
+	const multimediaSlotIncomplete = (mediaEntry: LessonUpsertPayload["sections"][number]["multimedia"][number]): boolean => {
+		const url = mediaEntry.mediaUrl.trim();
+		if (!url) {
+			return false;
+		}
+		return !mediaEntry.mediaTitle.trim() || !mediaEntry.mediaDescription.trim();
+	};
 
 	const containsInvalidSection = lessonPayload.sections.some(
 		(sectionEntry) =>
 			!sectionEntry.sectionTitle.trim() ||
-			!sectionEntry.sectionBody.trim() ||
+			!sectionEntry.content ||
+			sectionEntry.content.length === 0 ||
 			sectionEntry.multimedia.length === 0 ||
-			sectionEntry.multimedia.some(
-				(mediaEntry) =>
-					!mediaEntry.mediaUrl.trim() ||
-					!mediaEntry.mediaTitle.trim() ||
-					!mediaEntry.mediaDescription.trim()
-			)
+			sectionEntry.multimedia.some(multimediaSlotIncomplete)
 	);
-	if (containsInvalidSection) return "Every section and multimedia entry must be fully completed.";
+	if (containsInvalidSection) {
+		return "Cada sección necesita título, cuerpo con al menos un párrafo o cita, y al menos una fila multimedia (si pones URL, completa título y descripción).";
+	}
 
 	const containsInvalidQuiz = lessonPayload.quiz.some(
 		(quizEntry) =>
@@ -163,9 +192,8 @@ export const lessonDashboardStore = {
 			return state;
 		});
 
-		const validationErrorMessage = validateLessonUpsertPayloadBeforeSubmit(
-			snapshot.activeEditingLessonDraft
-		);
+		const preparedPayload = prepareLessonPayloadForApi(snapshot.activeEditingLessonDraft);
+		const validationErrorMessage = validateLessonUpsertPayloadBeforeSubmit(preparedPayload);
 		if (validationErrorMessage) {
 			update((state) => ({ ...state, errorMessage: validationErrorMessage, operationStatus: "error" }));
 			return false;
@@ -175,9 +203,9 @@ export const lessonDashboardStore = {
 
 		try {
 			if (snapshot.activeEditorMode === "create") {
-				await createLessonArticle(snapshot.activeEditingLessonDraft);
+				await createLessonArticle(preparedPayload);
 			} else if (snapshot.activeEditingLessonId !== null) {
-				await updateLessonArticleById(snapshot.activeEditingLessonId, snapshot.activeEditingLessonDraft);
+				await updateLessonArticleById(snapshot.activeEditingLessonId, preparedPayload);
 			}
 
 			const lessonCollection = await retrieveAllLessonArticles();

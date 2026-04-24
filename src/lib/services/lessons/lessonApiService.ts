@@ -30,3 +30,19 @@ export const deleteLessonArticleById = async (lessonId: number): Promise<{ messa
 	executeJsonHttpRequest<{ message: string }>(`/api/delete-article/${lessonId}`, {
 		requestMethod: "DELETE"
 	});
+
+export const checkLessonArticleSlugAvailable = async (
+	slug: string,
+	excludeLessonId?: number
+): Promise<boolean> => {
+	const query = new URLSearchParams({ slug: slug.trim().toLowerCase() });
+	if (excludeLessonId !== undefined) {
+		query.set("excludeId", String(excludeLessonId));
+	}
+	const { available } = await executeJsonHttpRequest<{ available: boolean }>(`/api/check-slug?${query}`, {
+		requestMethod: "GET",
+		/** Avoid global `goto('/login')` on 401: would bounce with `hooks.server.ts` (login → dashboard → 401 → …). */
+		skipUnauthenticatedSessionHandler: true
+	});
+	return available;
+};

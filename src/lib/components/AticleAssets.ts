@@ -3,6 +3,8 @@ export type ContentSection = {
   id?: string;
   title?: string;
   content?: string[];
+  /** Legacy flat body when `content` is missing (e.g. old DB rows). */
+  sectionBody?: string;
   emphasyzed_phrases?: string[];
   images?: SectionImage[];
   quiz?: QuizQuestion[];
