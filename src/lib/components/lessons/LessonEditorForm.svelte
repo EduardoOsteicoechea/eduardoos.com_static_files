@@ -7,8 +7,13 @@
 		getThemesForSerie,
 		LIBRO_DE_PASAJE_OPTIONS
 	} from "$lib/bible/lessonSeriesCatalog";
+	import AccordionArticle from "$lib/components/AccordionArticle.svelte";
+	import ArticleActions from "$lib/components/ArticleActions.svelte";
+	import LessonHeader from "$lib/components/LessonHeader.svelte";
+	import Quiz from "$lib/components/Quiz.svelte";
 	import LessonQuizFieldset from "$lib/components/lessons/LessonQuizFieldset.svelte";
 	import LessonSectionFieldset from "$lib/components/lessons/LessonSectionFieldset.svelte";
+	import { mapDraftToPreviewJson } from "$lib/lessons/mapDraftToPreviewJson";
 	import { checkLessonArticleSlugAvailable } from "$lib/services/lessons/lessonApiService";
 	import { lessonDashboardStore } from "$lib/stores/lessonDashboardStore";
 	import { slugifyArticleName } from "$lib/utils/slugify";
@@ -354,8 +359,28 @@
 			(o) => o.value === $lessonDashboardStore.activeEditingLessonDraft.libro_de_pasaje
 		)
 	);
+
+	const previewLesson = $derived(mapDraftToPreviewJson($lessonDashboardStore.activeEditingLessonDraft));
+
+	let previewDialogEl = $state<HTMLDialogElement | null>(null);
+
+	const openPreviewModal = (): void => {
+		previewDialogEl?.showModal();
+	};
+
+	const closePreviewModal = (): void => {
+		previewDialogEl?.close();
+	};
+
+	const handlePreviewDialogClick = (event: MouseEvent): void => {
+		if (event.target === previewDialogEl) {
+			closePreviewModal();
+		}
+	};
 </script>
 
+<div class="lesson-editor-with-preview">
+	<div class="lesson-editor-form-column">
 <form class="lesson-editor-form" onsubmit={submitLessonDraft}>
 	<h2 class="form-title">
 		{$lessonDashboardStore.activeEditorMode === "create" ? "Nuevo artículo" : "Editar artículo"}
@@ -595,8 +620,117 @@
 		{/if}
 	</div>
 </form>
+	</div>
+
+	<!-- Desktop: right column; mobile: hidden (use FAB + dialog) -->
+	<aside
+		class="preview-panel lesson-editor-preview-column"
+		aria-label="Vista previa en vivo"
+		aria-hidden="false"
+	>
+		<div class="preview-rail">
+			<p class="preview-live-banner" id="live-preview-label-desktop" role="status">Vista Previa en Vivo</p>
+			<div
+				class="preview-reader-chrome"
+				aria-labelledby="live-preview-label-desktop"
+			>
+				<LessonHeader lesson={previewLesson} sermonUrl={undefined} heroUrl={undefined} />
+				<ArticleActions lesson={previewLesson} />
+				<AccordionArticle lesson={previewLesson} />
+				{#if previewLesson.quiz && previewLesson.quiz.length > 0}
+					<Quiz questions={previewLesson.quiz} />
+				{/if}
+			</div>
+		</div>
+	</aside>
+
+	<!-- Mobile: open full-screen preview -->
+	<button
+		type="button"
+		class="preview-fab"
+		aria-haspopup="dialog"
+		aria-label="Abrir vista previa en vivo"
+		onclick={openPreviewModal}
+	>
+		<span class="preview-fab-emoji" aria-hidden="true">👁️</span>
+		<span class="preview-fab-text">Vista Previa</span>
+	</button>
+
+	<dialog
+		bind:this={previewDialogEl}
+		class="preview-dialog"
+		aria-labelledby="live-preview-label-dialog"
+		onclick={handlePreviewDialogClick}
+	>
+		<div class="preview-dialog-surface" role="document">
+			<header class="preview-dialog-top">
+				<p class="preview-live-banner" id="live-preview-label-dialog" role="status">Vista Previa en Vivo</p>
+				<button
+					type="button"
+					class="preview-dialog-close"
+					aria-label="Cerrar vista previa"
+					onclick={closePreviewModal}
+				>
+					×
+				</button>
+			</header>
+			<div class="preview-rail preview-rail--modal">
+				<div
+					class="preview-reader-chrome"
+					aria-labelledby="live-preview-label-dialog"
+				>
+					<LessonHeader lesson={previewLesson} sermonUrl={undefined} heroUrl={undefined} />
+					<ArticleActions lesson={previewLesson} />
+					<AccordionArticle lesson={previewLesson} />
+					{#if previewLesson.quiz && previewLesson.quiz.length > 0}
+						<Quiz questions={previewLesson.quiz} />
+					{/if}
+				</div>
+			</div>
+		</div>
+	</dialog>
+</div>
 
 <style>
+	.lesson-editor-with-preview {
+		width: 100%;
+		display: block;
+		position: relative;
+	}
+
+	@media (min-width: 1024px) {
+		.lesson-editor-with-preview {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 1rem 1.25rem;
+			align-items: stretch;
+			min-height: min(80dvh, 52rem);
+			max-height: calc(100dvh - 7rem);
+		}
+
+		.lesson-editor-form-column,
+		.lesson-editor-preview-column {
+			min-height: 0;
+			min-width: 0;
+		}
+
+		.lesson-editor-form-column {
+			max-height: calc(100dvh - 7rem);
+			overflow-y: auto;
+			-webkit-overflow-scrolling: touch;
+		}
+
+		.lesson-editor-preview-column {
+			display: block;
+		}
+	}
+
+	@media (max-width: 1023.98px) {
+		.lesson-editor-preview-column {
+			display: none;
+		}
+	}
+
 	.lesson-editor-form {
 		display: flex;
 		flex-direction: column;
@@ -737,5 +871,149 @@
 		margin-top: 0.35rem;
 		padding-top: 0.5rem;
 		border-top: 1px solid var(--border-clear);
+	}
+
+	.preview-panel {
+		border: 1px solid var(--border-clear);
+		border-radius: var(--radius-1);
+		background: var(--accordion-bg);
+		display: flex;
+		flex-direction: column;
+		min-height: 0;
+	}
+
+	@media (min-width: 1024px) {
+		.lesson-editor-preview-column {
+			max-height: calc(100dvh - 7rem);
+			overflow-y: auto;
+			-webkit-overflow-scrolling: touch;
+		}
+	}
+
+	.preview-rail {
+		padding: 0.5rem 0.6rem 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.preview-live-banner {
+		margin: 0;
+		font-size: var(--font-size-3);
+		line-height: var(--line-height-3);
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--meta-color);
+		padding: 0.35rem 0.5rem;
+		background: var(--btn-secondary-bg, rgba(0, 0, 0, 0.04));
+		border-radius: var(--radius-1);
+		border: 1px dashed var(--border-clear);
+		text-align: center;
+	}
+
+	.preview-reader-chrome {
+		max-width: 40rem;
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	.preview-fab {
+		position: fixed;
+		right: 1rem;
+		bottom: 1.25rem;
+		z-index: 30;
+		display: none;
+		align-items: center;
+		gap: 0.35rem;
+		padding: 0.55rem 0.9rem;
+		font-size: var(--font-size-4);
+		font-weight: 600;
+		color: var(--text-main);
+		background: var(--accordion-bg);
+		border: 1px solid var(--border-clear);
+		border-radius: 9999px;
+		box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+		cursor: pointer;
+	}
+
+	.preview-fab:hover {
+		background: var(--btn-hover-bg, var(--btn-secondary-bg));
+	}
+
+	.preview-fab-emoji {
+		font-size: 1.1em;
+	}
+
+	@media (max-width: 1023.98px) {
+		.preview-fab {
+			display: inline-flex;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.preview-fab {
+			display: none;
+		}
+	}
+
+	.preview-dialog {
+		width: 100%;
+		height: 100%;
+		max-width: 100vw;
+		max-height: 100dvh;
+		margin: 0;
+		padding: 0;
+		border: none;
+		color: var(--text-main);
+	}
+
+	.preview-dialog::backdrop {
+		background: rgba(0, 0, 0, 0.45);
+	}
+
+	.preview-dialog-surface {
+		display: flex;
+		flex-direction: column;
+		height: 100dvh;
+		background: var(--accordion-bg);
+	}
+
+	.preview-dialog-top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5rem;
+		padding: 0.5rem 0.6rem;
+		border-bottom: 1px solid var(--border-clear);
+		flex-shrink: 0;
+	}
+
+	.preview-dialog-top .preview-live-banner {
+		flex: 1;
+		text-align: left;
+		border: none;
+		background: transparent;
+		padding: 0.2rem 0;
+	}
+
+	.preview-dialog-close {
+		flex-shrink: 0;
+		width: 2.5rem;
+		height: 2.5rem;
+		font-size: 1.4rem;
+		line-height: 1;
+		border: 1px solid var(--border-clear);
+		border-radius: var(--radius-1);
+		background: var(--btn-secondary-bg);
+		color: var(--text-main);
+		cursor: pointer;
+	}
+
+	.preview-rail--modal {
+		flex: 1;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		min-height: 0;
 	}
 </style>

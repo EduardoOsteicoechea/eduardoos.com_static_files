@@ -27,7 +27,9 @@
 
 <style>
   .protected-page-shell {
-    max-width: 36rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     margin: 0 auto;
     padding: 1rem;
     border: 1px solid var(--border-clear);
@@ -37,5 +39,18 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .protected-page-shell {
+      max-width: min(100%, 90rem);
+    }
+  }
+
+  /* Space for fixed "Vista Previa" FAB on small viewports */
+  @media (max-width: 1023.98px) {
+    .protected-page-shell {
+      padding-bottom: 4.5rem;
+    }
   }
 </style>
