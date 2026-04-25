@@ -1,5 +1,4 @@
 import { browser } from "$app/environment";
-import { redirect } from "@sveltejs/kit";
 import { authStore } from "$lib/stores/auth";
 import { buildBackendApiUrl } from "$lib/config/runtimeApiConfig";
 
@@ -10,7 +9,8 @@ export const verifyProtectedRouteLayoutAccess = async (fetcher: typeof fetch): P
 
 	const token = authStore.getToken();
 	if (!token) {
-		throw redirect(302, "/login");
+		window.location.assign("/login");
+		return;
 	}
 
 	let profileResponse: Response;
@@ -24,11 +24,13 @@ export const verifyProtectedRouteLayoutAccess = async (fetcher: typeof fetch): P
 	} catch (error) {
 		console.error("Network error fetching profile:", error);
 		authStore.logout();
-		throw redirect(302, "/login");
+		window.location.assign("/login");
+		return;
 	}
 
 	if (!profileResponse.ok) {
 		authStore.logout();
-		throw redirect(302, "/login");
+		window.location.assign("/login");
+		return;
 	}
 };
