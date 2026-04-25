@@ -2,8 +2,28 @@
 	import { lessonDashboardStore } from "$lib/stores/lessonDashboardStore";
 	import type { LessonRecord } from "$lib/types/lessons";
 
+	let {
+		onEditLesson = null,
+		onCreateLesson = null
+	}: {
+		onEditLesson?: ((lessonRecord: LessonRecord) => void) | null;
+		onCreateLesson?: (() => void) | null;
+	} = $props();
+
 	const beginLessonEdition = (lessonRecord: LessonRecord): void => {
+		if (onEditLesson) {
+			onEditLesson(lessonRecord);
+			return;
+		}
 		lessonDashboardStore.selectLessonForEdition(lessonRecord);
+	};
+
+	const beginLessonCreation = (): void => {
+		if (onCreateLesson) {
+			onCreateLesson();
+			return;
+		}
+		lessonDashboardStore.selectLessonForCreation();
 	};
 
 	const deleteLesson = async (lessonId: number): Promise<void> => {
@@ -14,7 +34,7 @@
 <section class="lesson-list-panel">
 	<div class="lesson-list-header">
 		<h2>Existing Lessons</h2>
-		<button type="button" onclick={() => lessonDashboardStore.selectLessonForCreation()}>New Lesson</button>
+		<button type="button" onclick={beginLessonCreation}>New Lesson</button>
 	</div>
 
 	{#if $lessonDashboardStore.lessonCollection.length === 0}

@@ -1,11 +1,39 @@
 import { executeJsonHttpRequest } from "$lib/services/http/httpRequestExecutor";
+import { isStandardHttpRequestError } from "$lib/services/http/httpErrorModel";
+import { authStore } from "$lib/stores/auth";
+import { goto } from "$app/navigation";
 import type { LessonRecord, LessonUpsertPayload } from "$lib/types/lessons";
 
-export const createLessonArticle = async (lessonPayload: LessonUpsertPayload): Promise<LessonRecord> =>
-	executeJsonHttpRequest<LessonRecord>("/api/create-article", {
-		requestMethod: "POST",
-		requestBody: lessonPayload
-	});
+const buildAuthorizationHeaders = (): Record<string, string> => {
+	const token = authStore.getToken();
+	return token ? { Authorization: `Bearer ${token}` } : {};
+};
+
+const handleAuthorizationFailure = async (error: unknown): Promise<void> => {
+	if (!isStandardHttpRequestError(error)) {
+		return;
+	}
+	if (error.responseStatusCode !== 401 && error.responseStatusCode !== 403) {
+		return;
+	}
+	authStore.logout();
+	await goto("/login");
+};
+
+export const createLessonArticle = async (lessonPayload: LessonUpsertPayload): Promise<LessonRecord> => {
+	try {
+		return await executeJsonHttpRequest<LessonRecord>("/api/create-article", {
+			requestMethod: "POST",
+			requestBody: lessonPayload,
+			requestHeaders: buildAuthorizationHeaders(),
+			skipUnauthorizedRetry: true,
+			skipUnauthenticatedSessionHandler: true
+		});
+	} catch (error) {
+		await handleAuthorizationFailure(error);
+		throw error;
+	}
+};
 
 export const retrieveLessonArticleById = async (lessonId: number): Promise<LessonRecord> =>
 	executeJsonHttpRequest<LessonRecord>(`/api/retrieve-article/${lessonId}`, {
@@ -20,16 +48,34 @@ export const retrieveAllLessonArticles = async (): Promise<LessonRecord[]> =>
 export const updateLessonArticleById = async (
 	lessonId: number,
 	lessonPayload: LessonUpsertPayload
-): Promise<LessonRecord> =>
-	executeJsonHttpRequest<LessonRecord>(`/api/update-article/${lessonId}`, {
-		requestMethod: "PUT",
-		requestBody: lessonPayload
-	});
+): Promise<LessonRecord> => {
+	try {
+		return await executeJsonHttpRequest<LessonRecord>(`/api/update-article/${lessonId}`, {
+			requestMethod: "PUT",
+			requestBody: lessonPayload,
+			requestHeaders: buildAuthorizationHeaders(),
+			skipUnauthorizedRetry: true,
+			skipUnauthenticatedSessionHandler: true
+		});
+	} catch (error) {
+		await handleAuthorizationFailure(error);
+		throw error;
+	}
+};
 
-export const deleteLessonArticleById = async (lessonId: number): Promise<{ message: string }> =>
-	executeJsonHttpRequest<{ message: string }>(`/api/delete-article/${lessonId}`, {
-		requestMethod: "DELETE"
-	});
+export const deleteLessonArticleById = async (lessonId: number): Promise<{ message: string }> => {
+	try {
+		return await executeJsonHttpRequest<{ message: string }>(`/api/delete-article/${lessonId}`, {
+			requestMethod: "DELETE",
+			requestHeaders: buildAuthorizationHeaders(),
+			skipUnauthorizedRetry: true,
+			skipUnauthenticatedSessionHandler: true
+		});
+	} catch (error) {
+		await handleAuthorizationFailure(error);
+		throw error;
+	}
+};
 
 export const checkLessonArticleSlugAvailable = async (
 	slug: string,

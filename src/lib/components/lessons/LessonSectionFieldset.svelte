@@ -9,10 +9,20 @@
 
 	let {
 		lessonDraft,
-		onLessonDraftChange
+		onLessonDraftChange,
+		activeSectionIndex = 0,
+		onActiveSectionIndexChange = null,
+		inlineAccordion = false,
+		showOnlySectionIndex = null,
+		onOpenSectionModal = null
 	}: {
 		lessonDraft: LessonUpsertPayload;
 		onLessonDraftChange: (nextLessonDraft: LessonUpsertPayload) => void;
+		activeSectionIndex?: number;
+		onActiveSectionIndexChange?: ((nextIndex: number) => void) | null;
+		inlineAccordion?: boolean;
+		showOnlySectionIndex?: number | null;
+		onOpenSectionModal?: ((sectionIndex: number) => void) | null;
 	} = $props();
 
 	const mediaTypes: LessonSectionMultimediaType[] = ["image", "video", "audio", "link"];
@@ -113,134 +123,174 @@
 		);
 		commitUpdatedSectionCollection(nextSectionCollection);
 	};
+
 </script>
 
 <div class="sections-root">
 	<p class="sections-hint">Cada bloque es una sección. El multimedia es opcional por fila.</p>
 
 	<div class="sections-stack">
-		{#each lessonDraft.sections as sectionEntry, sectionIndex}
+		{#each (showOnlySectionIndex == null
+			? lessonDraft.sections
+			: lessonDraft.sections.filter((_sectionEntry, sectionIndex) => sectionIndex === showOnlySectionIndex)) as sectionEntry, sectionIndex}
+			{@const actualSectionIndex = showOnlySectionIndex == null ? sectionIndex : showOnlySectionIndex}
+			{@const isInlineCollapsed = inlineAccordion && actualSectionIndex !== activeSectionIndex}
 			<section
 				class="section-item"
-				class:section-item--not-last={sectionIndex < lessonDraft.sections.length - 1}
-				aria-labelledby={`section-heading-${sectionIndex}`}
+				class:section-item--not-last={sectionIndex < (showOnlySectionIndex == null ? lessonDraft.sections.length : 1) - 1}
+				aria-labelledby={`section-heading-${actualSectionIndex}`}
 			>
-				<div class="section-head">
-					<h3 class="section-heading" id={`section-heading-${sectionIndex}`}>Sección {sectionIndex + 1}</h3>
-					<button
-						type="button"
-						class="section-remove"
-						onclick={() => removeSectionEntry(sectionIndex)}
-						disabled={lessonDraft.sections.length <= 1}
-					>
-						Eliminar
-					</button>
-				</div>
+				{#if isInlineCollapsed}
+					<div class="section-head">
+						<h3 class="section-heading" id={`section-heading-${actualSectionIndex}`}>
+							Sección {actualSectionIndex + 1}
+						</h3>
+					</div>
+					<p class="section-collapsed-title">
+						{sectionEntry.sectionTitle.trim() || "Sin título"}
+					</p>
+					<div class="section-collapsed-actions">
+						<button
+							type="button"
+							class="btn-ghost"
+							onclick={() => onActiveSectionIndexChange?.(actualSectionIndex)}
+						>
+							Edit Inline
+						</button>
+						<button
+							type="button"
+							class="btn-ghost"
+							onclick={() => onOpenSectionModal?.(actualSectionIndex)}
+						>
+							Full Screen Edit
+						</button>
+					</div>
+				{:else}
+					<div class="section-head">
+						<h3 class="section-heading" id={`section-heading-${actualSectionIndex}`}>
+							Sección {actualSectionIndex + 1}
+						</h3>
+						<button
+							type="button"
+							class="section-remove"
+							onclick={() => removeSectionEntry(actualSectionIndex)}
+							disabled={lessonDraft.sections.length <= 1}
+						>
+							Eliminar
+						</button>
+					</div>
 
-				<label class="lbl" for={`section-title-${sectionIndex}`}>Título de la sección</label>
-				<input
-					id={`section-title-${sectionIndex}`}
-					class="inp"
-					type="text"
-					value={sectionEntry.sectionTitle}
-					oninput={(event) =>
-						updateSectionFieldValue(sectionIndex, "sectionTitle", (event.currentTarget as HTMLInputElement).value)}
-					required
-				/>
+					<label class="lbl" for={`section-title-${actualSectionIndex}`}>Título de la sección</label>
+					<input
+						id={`section-title-${actualSectionIndex}`}
+						class="inp"
+						type="text"
+						value={sectionEntry.sectionTitle}
+						oninput={(event) =>
+							updateSectionFieldValue(
+								actualSectionIndex,
+								"sectionTitle",
+								(event.currentTarget as HTMLInputElement).value
+							)}
+						required
+					/>
 
-				<ProseEditor
-					id={`section-body-${sectionIndex}`}
-					label="Cuerpo"
-					value={sectionEntry.sectionBody}
-					onValueChange={(next) => updateSectionFieldValue(sectionIndex, "sectionBody", next)}
-				/>
+					<ProseEditor
+						id={`section-body-${actualSectionIndex}`}
+						label="Cuerpo"
+						value={sectionEntry.sectionBody}
+						onValueChange={(next) => updateSectionFieldValue(actualSectionIndex, "sectionBody", next)}
+					/>
 
-				<div class="media-list" role="group" aria-label="Multimedia">
-					{#each sectionEntry.multimedia as multimediaEntry, multimediaIndex}
-						<div class="media-block">
-							<span class="media-tag">Multimedia {multimediaIndex + 1}</span>
-							<label class="sr-only" for={`media-type-${sectionIndex}-${multimediaIndex}`}>Tipo</label>
-							<select
-								id={`media-type-${sectionIndex}-${multimediaIndex}`}
-								class="inp inp--narrow"
-								value={multimediaEntry.mediaType}
-								onchange={(event) =>
-									updateMultimediaFieldValue(
-										sectionIndex,
-										multimediaIndex,
-										"mediaType",
-										(event.currentTarget as HTMLSelectElement).value
-									)}
-							>
-								{#each mediaTypes as mediaType}
-									<option value={mediaType}>{mediaType}</option>
-								{/each}
-							</select>
-							<label class="lbl lbl--small" for={`media-url-${sectionIndex}-${multimediaIndex}`}
-								>URL (opcional)</label
-							>
-							<input
-								id={`media-url-${sectionIndex}-${multimediaIndex}`}
-								class="inp"
-								type="text"
-								inputmode="url"
-								autocomplete="off"
-								placeholder="Vacío si no hay medio"
-								value={multimediaEntry.mediaUrl}
-								oninput={(event) =>
-									updateMultimediaFieldValue(
-										sectionIndex,
-										multimediaIndex,
-										"mediaUrl",
-										(event.currentTarget as HTMLInputElement).value
-									)}
-							/>
-							<label class="lbl lbl--small" for={`media-title-${sectionIndex}-${multimediaIndex}`}
-								>Título</label
-							>
-							<input
-								id={`media-title-${sectionIndex}-${multimediaIndex}`}
-								class="inp"
-								type="text"
-								value={multimediaEntry.mediaTitle}
-								oninput={(event) =>
-									updateMultimediaFieldValue(
-										sectionIndex,
-										multimediaIndex,
-										"mediaTitle",
-										(event.currentTarget as HTMLInputElement).value
-									)}
-							/>
-							<label class="lbl lbl--small" for={`media-description-${sectionIndex}-${multimediaIndex}`}
-								>Descripción</label
-							>
-							<textarea
-								id={`media-description-${sectionIndex}-${multimediaIndex}`}
-								class="txt txt--small"
-								value={multimediaEntry.mediaDescription}
-								oninput={(event) =>
-									updateMultimediaFieldValue(
-										sectionIndex,
-										multimediaIndex,
-										"mediaDescription",
-										(event.currentTarget as HTMLTextAreaElement).value
-									)}
-							></textarea>
-							<button
-								type="button"
-								class="media-remove"
-								onclick={() => removeMultimediaEntry(sectionIndex, multimediaIndex)}
-								disabled={sectionEntry.multimedia.length <= 1}
-							>
-								Quitar multimedia
-							</button>
+					{#if !inlineAccordion}
+						<div class="media-list" role="group" aria-label="Multimedia">
+							{#each sectionEntry.multimedia as multimediaEntry, multimediaIndex}
+								<div class="media-block">
+									<span class="media-tag">Multimedia {multimediaIndex + 1}</span>
+									<label class="sr-only" for={`media-type-${actualSectionIndex}-${multimediaIndex}`}>Tipo</label>
+									<select
+										id={`media-type-${actualSectionIndex}-${multimediaIndex}`}
+										class="inp inp--narrow"
+										value={multimediaEntry.mediaType}
+										onchange={(event) =>
+											updateMultimediaFieldValue(
+												actualSectionIndex,
+												multimediaIndex,
+												"mediaType",
+												(event.currentTarget as HTMLSelectElement).value
+											)}
+									>
+										{#each mediaTypes as mediaType}
+											<option value={mediaType}>{mediaType}</option>
+										{/each}
+									</select>
+									<label class="lbl lbl--small" for={`media-url-${actualSectionIndex}-${multimediaIndex}`}
+										>URL (opcional)</label
+									>
+									<input
+										id={`media-url-${actualSectionIndex}-${multimediaIndex}`}
+										class="inp"
+										type="text"
+										inputmode="url"
+										autocomplete="off"
+										placeholder="Vacío si no hay medio"
+										value={multimediaEntry.mediaUrl}
+										oninput={(event) =>
+											updateMultimediaFieldValue(
+												actualSectionIndex,
+												multimediaIndex,
+												"mediaUrl",
+												(event.currentTarget as HTMLInputElement).value
+											)}
+									/>
+									<label class="lbl lbl--small" for={`media-title-${actualSectionIndex}-${multimediaIndex}`}
+										>Título</label
+									>
+									<input
+										id={`media-title-${actualSectionIndex}-${multimediaIndex}`}
+										class="inp"
+										type="text"
+										value={multimediaEntry.mediaTitle}
+										oninput={(event) =>
+											updateMultimediaFieldValue(
+												actualSectionIndex,
+												multimediaIndex,
+												"mediaTitle",
+												(event.currentTarget as HTMLInputElement).value
+											)}
+									/>
+									<label class="lbl lbl--small" for={`media-description-${actualSectionIndex}-${multimediaIndex}`}
+										>Descripción</label
+									>
+									<textarea
+										id={`media-description-${actualSectionIndex}-${multimediaIndex}`}
+										class="txt txt--small"
+										value={multimediaEntry.mediaDescription}
+										oninput={(event) =>
+											updateMultimediaFieldValue(
+												actualSectionIndex,
+												multimediaIndex,
+												"mediaDescription",
+												(event.currentTarget as HTMLTextAreaElement).value
+											)}
+									></textarea>
+									<button
+										type="button"
+										class="media-remove"
+										onclick={() => removeMultimediaEntry(actualSectionIndex, multimediaIndex)}
+										disabled={sectionEntry.multimedia.length <= 1}
+									>
+										Quitar multimedia
+									</button>
+								</div>
+							{/each}
 						</div>
-					{/each}
-				</div>
 
-				<button type="button" class="btn-ghost" onclick={() => addMultimediaEntry(sectionIndex)}>
-					+ Añadir multimedia
-				</button>
+						<button type="button" class="btn-ghost" onclick={() => addMultimediaEntry(actualSectionIndex)}>
+							+ Añadir multimedia
+						</button>
+					{/if}
+				{/if}
 			</section>
 		{/each}
 	</div>
@@ -276,6 +326,18 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.35rem;
+	}
+
+	.section-collapsed-title {
+		margin: 0;
+		font-size: var(--font-size-4);
+		color: var(--text-main);
+	}
+
+	.section-collapsed-actions {
+		display: flex;
+		gap: 0.5rem;
+		flex-wrap: wrap;
 	}
 
 	.section-item--not-last {

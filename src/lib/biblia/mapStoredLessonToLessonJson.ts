@@ -31,10 +31,11 @@ const splitBodyToParagraphs = (body: string): string[] => {
 const mapDashboardQuizToPresentation = (questions: LessonQuizQuestionEntry[]): QuizQuestion[] =>
 	questions
 		.slice()
-		.sort((a, b) => a.questionOrder - b.questionOrder)
+		.sort((a, b) => (a.questionOrder ?? 0) - (b.questionOrder ?? 0))
 		.map((entry) => {
-			const options = entry.options.map((option) => option.optionText);
-			const correctIndex = entry.options.findIndex((option) => option.optionId === entry.correctOptionId);
+			const entryOptions = Array.isArray(entry.options) ? entry.options : [];
+			const options = entryOptions.map((option) => option.optionText);
+			const correctIndex = entryOptions.findIndex((option) => option.optionId === entry.correctOptionId);
 			return {
 				question: entry.questionPrompt,
 				options,
@@ -89,10 +90,19 @@ export const mapStoredLessonApiRowToLessonJson = (apiRow: Record<string, unknown
 	const rawQuiz = readQuizArray(apiRow.quiz);
 
 	const sections: ContentSection[] = [];
-	const sortedSections = rawSections.slice().sort((a, b) => a.sectionOrder - b.sectionOrder);
+	const sortedSections = rawSections.slice().sort((a, b) => (a.sectionOrder ?? 0) - (b.sectionOrder ?? 0));
 
 	for (const sectionEntry of sortedSections) {
-		for (const mediaEntry of sectionEntry.multimedia) {
+		const multimedia = Array.isArray(sectionEntry.multimedia) ? sectionEntry.multimedia : [];
+		const sectionContent = Array.isArray(sectionEntry.content) ? sectionEntry.content : [];
+		const biblicalQuotesEntries = Array.isArray(sectionEntry.biblical_quotes)
+			? sectionEntry.biblical_quotes
+			: [];
+		const emphasizedPhrases = Array.isArray(sectionEntry.emphasyzed_phrases)
+			? sectionEntry.emphasyzed_phrases
+			: [];
+
+		for (const mediaEntry of multimedia) {
 			const url = mediaEntry.mediaUrl?.trim() ?? "";
 			if (!url) {
 				continue;
@@ -104,29 +114,28 @@ export const mapStoredLessonApiRowToLessonJson = (apiRow: Record<string, unknown
 			}
 		}
 
-		const images = sectionEntry.multimedia
+		const images = multimedia
 			.filter((mediaEntry) => mediaEntry.mediaType === "image" && (mediaEntry.mediaUrl?.trim() ?? "").length > 0)
 			.map((mediaEntry) => ({
 				image_name: mediaEntry.mediaTitle,
 				uri: mediaEntry.mediaUrl.trim()
 			}));
 
-		const structuredContent = sectionEntry.content?.filter((p) => String(p).trim().length > 0) ?? [];
+		const structuredContent = sectionContent.filter((p) => String(p).trim().length > 0);
 		const proseContent =
 			structuredContent.length > 0
 				? structuredContent.map((p) => String(p).trim())
 				: splitBodyToParagraphs(sectionEntry.sectionBody ?? "");
 
-		const biblicalQuotes = sectionEntry.biblical_quotes?.length
-			? sectionEntry.biblical_quotes.map((q) => ({
+		const biblicalQuotes = biblicalQuotesEntries.length
+			? biblicalQuotesEntries.map((q) => ({
 					reference: q.reference,
 					text: q.text,
 					...(q.emphasized?.length ? { emphasized: q.emphasized } : {})
 				}))
 			: undefined;
 
-		const emphasyzed =
-			sectionEntry.emphasyzed_phrases?.filter((p) => p.trim().length > 0) ?? undefined;
+		const emphasyzed = emphasizedPhrases.filter((p) => p.trim().length > 0);
 
 		sections.push({
 			type: "prose",

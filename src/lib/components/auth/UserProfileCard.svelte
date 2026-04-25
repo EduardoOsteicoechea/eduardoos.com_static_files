@@ -1,27 +1,27 @@
 <script lang="ts">
-  import { authenticatedUserStore } from "$lib/stores/authenticatedUserStore";
+  import { goto } from "$app/navigation";
+  import { authStore } from "$lib/stores/auth";
+
+  const currentUser = $derived(authStore.getCurrentUser());
 
   const logoutAuthenticatedUserSession = async (): Promise<void> => {
-    await authenticatedUserStore.logoutAndClearAuthenticatedUserState();
+    authStore.logout();
+    await goto("/login");
   };
 </script>
 
 <section class="user-profile-card">
   <h1 class="user-profile-title">Profile</h1>
 
-  {#if $authenticatedUserStore.authenticatedUserProfile}
+  {#if currentUser}
     <dl class="user-profile-data-list">
       <div class="user-profile-data-row">
         <dt>User ID</dt>
-        <dd>{$authenticatedUserStore.authenticatedUserProfile.id}</dd>
+        <dd>{currentUser.id}</dd>
       </div>
       <div class="user-profile-data-row">
-        <dt>Email</dt>
-        <dd>{$authenticatedUserStore.authenticatedUserProfile.email}</dd>
-      </div>
-      <div class="user-profile-data-row">
-        <dt>Created At</dt>
-        <dd>{$authenticatedUserStore.authenticatedUserProfile.createdAt}</dd>
+        <dt>Username</dt>
+        <dd>{currentUser.username}</dd>
       </div>
     </dl>
   {/if}

@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { authenticatedUserStore } from "$lib/stores/authenticatedUserStore";
+  import { goto } from "$app/navigation";
+  import { authStore } from "$lib/stores/auth";
 
   let {
     isOpen = false,
@@ -9,14 +10,17 @@
     onClose?: () => void;
   } = $props();
 
-  const isAuthenticatedUserSession = $derived(
-    $authenticatedUserStore.authLifecycleStatus === "authenticated"
-  );
+  let isAuthenticatedUserSession = $state(authStore.isAuthenticated());
 
   const handleLogoutClick = async (): Promise<void> => {
-    await authenticatedUserStore.logoutAndClearAuthenticatedUserState();
+    authStore.logout();
     onClose();
+    await goto("/login");
   };
+
+  $effect(() => {
+    isAuthenticatedUserSession = authStore.isAuthenticated();
+  });
 </script>
 
 {#if isOpen}
@@ -57,6 +61,7 @@
     </button>
   </div>
   <nav class="main-menu-nav" aria-label="Menu principal">
+    <a class="main-menu-link" href="/" onclick={onClose}>Home</a>
     <a class="main-menu-link" href="/bim/viewer" onclick={onClose}>bim/viewer</a>
     <a class="main-menu-link" href="/biblia" onclick={onClose}>bible</a>
 
@@ -67,7 +72,6 @@
       <button class="main-menu-link main-menu-link-button" onclick={handleLogoutClick}>Logout</button>
     {:else}
       <a class="main-menu-link" href="/login" onclick={onClose}>Login</a>
-      <a class="main-menu-link" href="/register" onclick={onClose}>Register</a>
     {/if}
   </nav>
 </aside>

@@ -46,7 +46,7 @@
     .bg-image {
         position: absolute; 
         top: 0;
-        left: 20%;
+        left: 10%;
         height:100%;
         opacity: 0;
         transition: opacity 2s ease-in-out;
@@ -67,12 +67,19 @@
     /**/
     /**/
     @media (max-width: 1024px) {
+.background-wrapper {
+        position: fixed;
+        top: 0%;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1; 
+        overflow: hidden;
+    }
         .bg-image {
-            /* Example: Center the image and remove the 20px offset for smaller screens */
-            left: 0; 
+            left: -20%; 
             width: 100%;
-            object-fit: cover; 
-            object-position: center center;
+            object-fit: contain; 
         }
     }
 

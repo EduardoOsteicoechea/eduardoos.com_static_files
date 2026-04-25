@@ -30,7 +30,11 @@ type Segment =
 	| { type: "prose"; text: string }
 	| { type: "quote"; reference: string; inner: string };
 
-const splitIntoSegments = (source: string): Segment[] => {
+const splitIntoSegments = (source: string | null | undefined): Segment[] => {
+	if (source == null || source === "") {
+		return [];
+	}
+
 	const segments: Segment[] = [];
 	const quotePattern = /\[quote\s+ref=["']([^"']*)["']\s*\]([\s\S]*?)\[\/quote\]/gi;
 	let lastIndex = 0;
@@ -63,10 +67,14 @@ const splitProseBlocks = (text: string): string[] => {
  * Compiles editor source (paragraphs, `[quote ref="…"]…[/quote]`, `**emphasis**`)
  * into `content`, `biblical_quotes`, and section-level `emphasyzed_phrases`.
  */
-export const compileProseSource = (source: string): CompiledProse => {
+export const compileProseSource = (source: string | null | undefined): CompiledProse => {
 	const content: string[] = [];
 	const biblical_quotes: LessonBiblicalQuotePayload[] = [];
 	const emphasyzed_phrases: string[] = [];
+
+	if (source == null || source === "") {
+		return { content, biblical_quotes, emphasyzed_phrases };
+	}
 
 	for (const segment of splitIntoSegments(source)) {
 		if (segment.type === "quote") {

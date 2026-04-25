@@ -1,18 +1,14 @@
 <script lang="ts">
+  import { goto } from "$app/navigation";
   import { onMount } from "svelte";
   import UserProfileCard from "$lib/components/auth/UserProfileCard.svelte";
-  import {
-    enforceProtectedRouteAccess,
-    subscribeProtectedRouteRedirectEffect
-  } from "$lib/guards/enforceProtectedRouteAccess";
-  import { authenticatedUserStore } from "$lib/stores/authenticatedUserStore";
-
-  let cleanupProtectedRouteSubscription: (() => void) | null = null;
+  import { authStore } from "$lib/stores/auth";
 
   onMount(() => {
-    enforceProtectedRouteAccess($authenticatedUserStore);
-    cleanupProtectedRouteSubscription = subscribeProtectedRouteRedirectEffect(authenticatedUserStore);
-    return () => cleanupProtectedRouteSubscription?.();
+    authStore.hydrateFromStorage();
+    if (!authStore.isAuthenticated()) {
+      void goto("/login");
+    }
   });
 </script>
 

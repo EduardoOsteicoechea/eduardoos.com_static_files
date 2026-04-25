@@ -15,9 +15,71 @@
 	import LessonSectionFieldset from "$lib/components/lessons/LessonSectionFieldset.svelte";
 	import { mapDraftToPreviewJson } from "$lib/lessons/mapDraftToPreviewJson";
 	import { checkLessonArticleSlugAvailable } from "$lib/services/lessons/lessonApiService";
-	import { lessonDashboardStore } from "$lib/stores/lessonDashboardStore";
+	import { createEmptyLessonPayloadDraft, lessonDashboardStore } from "$lib/stores/lessonDashboardStore";
 	import { slugifyArticleName } from "$lib/utils/slugify";
-	import type { LessonUpsertPayload } from "$lib/types/lessons";
+	import type { LessonRecord, LessonUpsertPayload } from "$lib/types/lessons";
+
+	type EditorMode = "create" | "edit";
+	type EditorModalState = {
+		isOpen: boolean;
+		target: "none" | "section" | "quiz";
+		index: number;
+	};
+
+	let {
+		mode = "create",
+		initialData = null
+	}: {
+		mode?: EditorMode;
+		initialData?: LessonRecord | null;
+	} = $props();
+
+	const deepCloneLessonRecord = (lessonRecord: LessonRecord): LessonRecord => {
+		return JSON.parse(JSON.stringify(lessonRecord)) as LessonRecord;
+	};
+
+	const ensureDraftHasEditableCollections = (draft: LessonUpsertPayload): LessonUpsertPayload => {
+		const templateDraft = createEmptyLessonPayloadDraft();
+		const firstTemplateSection = templateDraft.sections[0];
+		const firstTemplateQuiz = templateDraft.quiz[0];
+
+		const sections =
+			Array.isArray(draft.sections) && draft.sections.length > 0
+				? draft.sections.map((sectionEntry, index) => ({
+						...sectionEntry,
+						sectionOrder: sectionEntry.sectionOrder ?? index + 1,
+						sectionTitle: sectionEntry.sectionTitle ?? "",
+						sectionBody: sectionEntry.sectionBody ?? "",
+						multimedia:
+							Array.isArray(sectionEntry.multimedia) && sectionEntry.multimedia.length > 0
+								? sectionEntry.multimedia
+								: JSON.parse(JSON.stringify(firstTemplateSection.multimedia))
+					}))
+				: JSON.parse(JSON.stringify(templateDraft.sections));
+
+		const quiz =
+			Array.isArray(draft.quiz) && draft.quiz.length > 0
+				? draft.quiz.map((quizEntry, index) => ({
+						...quizEntry,
+						questionOrder: quizEntry.questionOrder ?? index + 1,
+						questionPrompt: quizEntry.questionPrompt ?? "",
+						options:
+							Array.isArray(quizEntry.options) && quizEntry.options.length > 0
+								? quizEntry.options
+								: JSON.parse(JSON.stringify(firstTemplateQuiz.options)),
+						correctOptionId:
+							quizEntry.correctOptionId ??
+							(firstTemplateQuiz.options[0]?.optionId ?? "A"),
+						rationale: quizEntry.rationale ?? ""
+					}))
+				: JSON.parse(JSON.stringify(templateDraft.quiz));
+
+		return {
+			...draft,
+			sections,
+			quiz
+		};
+	};
 
 	const applyLessonDraftChanges = (nextLessonDraft: LessonUpsertPayload): void => {
 		lessonDashboardStore.setActiveEditingLessonDraft(nextLessonDraft);
@@ -222,7 +284,9 @@
 	const showTema = $derived($lessonDashboardStore.activeEditingLessonDraft.serie.trim() !== "");
 
 	const showArticleAndRest = $derived(
-		$lessonDashboardStore.activeEditingLessonDraft.tema_serie.trim() !== ""
+		mode === "create" ||
+			$lessonDashboardStore.activeEditorMode === "edit" ||
+			$lessonDashboardStore.activeEditingLessonDraft.tema_serie.trim() !== ""
 	);
 
 	const serieValueInCatalog = $derived(
@@ -363,6 +427,29 @@
 	const previewLesson = $derived(mapDraftToPreviewJson($lessonDashboardStore.activeEditingLessonDraft));
 
 	let previewDialogEl = $state<HTMLDialogElement | null>(null);
+	let lastSyncedExternalStateKey = $state<string>("");
+	let activeSectionIndex = $state(0);
+	let modalState = $state<EditorModalState>({ isOpen: false, target: "none", index: -1 });
+
+	$effect(() => {
+		const externalId = initialData?.id ?? "none";
+		const externalSyncKey = `${mode}:${externalId}`;
+		if (externalSyncKey === lastSyncedExternalStateKey) {
+			return;
+		}
+		lastSyncedExternalStateKey = externalSyncKey;
+
+		if (mode === "edit" && initialData) {
+			lessonDashboardStore.selectLessonForEdition(deepCloneLessonRecord(initialData));
+			const editSnapshot = get(lessonDashboardStore).activeEditingLessonDraft;
+			lessonDashboardStore.setActiveEditingLessonDraft(ensureDraftHasEditableCollections(editSnapshot));
+			return;
+		}
+
+		lessonDashboardStore.selectLessonForCreation();
+		const createSnapshot = get(lessonDashboardStore).activeEditingLessonDraft;
+		lessonDashboardStore.setActiveEditingLessonDraft(ensureDraftHasEditableCollections(createSnapshot));
+	});
 
 	const openPreviewModal = (): void => {
 		previewDialogEl?.showModal();
@@ -377,6 +464,19 @@
 			closePreviewModal();
 		}
 	};
+
+	const openSectionModal = (sectionIndex: number): void => {
+		modalState = { isOpen: true, target: "section", index: sectionIndex };
+	};
+
+	const openQuizModal = (): void => {
+		modalState = { isOpen: true, target: "quiz", index: -1 };
+	};
+
+	const closeEditorModal = (): void => {
+		modalState = { isOpen: false, target: "none", index: -1 };
+	};
+
 </script>
 
 <div class="lesson-editor-with-preview">
@@ -600,11 +700,12 @@
 		<LessonSectionFieldset
 			lessonDraft={$lessonDashboardStore.activeEditingLessonDraft}
 			onLessonDraftChange={applyLessonDraftChanges}
+			{activeSectionIndex}
+			onActiveSectionIndexChange={(nextIndex) => (activeSectionIndex = nextIndex)}
+			inlineAccordion={true}
+			onOpenSectionModal={openSectionModal}
 		/>
-		<LessonQuizFieldset
-			lessonDraft={$lessonDashboardStore.activeEditingLessonDraft}
-			onLessonDraftChange={applyLessonDraftChanges}
-		/>
+		<button type="button" class="manage-quiz-button" onclick={openQuizModal}>Manage Lesson Quiz</button>
 	{/if}
 
 	<div class="lesson-form-actions">
@@ -689,6 +790,40 @@
 			</div>
 		</div>
 	</dialog>
+
+	{#if modalState.isOpen}
+		<div class="editor-fullscreen-modal">
+			<div class="editor-fullscreen-surface" role="dialog" aria-modal="true">
+				<header class="editor-fullscreen-header">
+					<h3>
+						{#if modalState.target === "section"}
+							Editar sección en pantalla completa
+						{:else if modalState.target === "quiz"}
+							Administrar quiz de la lección
+						{:else}
+							Editor
+						{/if}
+					</h3>
+					<button type="button" class="editor-fullscreen-close" onclick={closeEditorModal}>Close / Done</button>
+				</header>
+
+				<div class="editor-fullscreen-body">
+					{#if modalState.target === "section" && modalState.index >= 0}
+						<LessonSectionFieldset
+							lessonDraft={$lessonDashboardStore.activeEditingLessonDraft}
+							onLessonDraftChange={applyLessonDraftChanges}
+							showOnlySectionIndex={modalState.index}
+						/>
+					{:else if modalState.target === "quiz"}
+						<LessonQuizFieldset
+							lessonDraft={$lessonDashboardStore.activeEditingLessonDraft}
+							onLessonDraftChange={applyLessonDraftChanges}
+						/>
+					{/if}
+				</div>
+			</div>
+		</div>
+	{/if}
 </div>
 
 <style>
@@ -873,6 +1008,11 @@
 		border-top: 1px solid var(--border-clear);
 	}
 
+	.manage-quiz-button {
+		align-self: flex-start;
+		margin-top: 0.5rem;
+	}
+
 	.preview-panel {
 		border: 1px solid var(--border-clear);
 		border-radius: var(--radius-1);
@@ -977,6 +1117,53 @@
 		flex-direction: column;
 		height: 100dvh;
 		background: var(--accordion-bg);
+	}
+
+	.editor-fullscreen-modal {
+		position: fixed;
+		inset: 15px;
+		z-index: 1000;
+		background: rgba(0, 0, 0, 0.45);
+		border-radius: 8px;
+		overflow: hidden;
+		display: flex;
+	}
+
+	.editor-fullscreen-surface {
+		width: 100%;
+		height: 100%;
+		background: var(--accordion-bg);
+		display: flex;
+		flex-direction: column;
+	}
+
+	.editor-fullscreen-header {
+		position: sticky;
+		top: 0;
+		z-index: 1;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 0.75rem;
+		padding: 0.75rem 1rem;
+		border-bottom: 1px solid var(--border-clear);
+		background: var(--accordion-bg);
+	}
+
+	.editor-fullscreen-header h3 {
+		margin: 0;
+		font-size: var(--font-size-6);
+	}
+
+	.editor-fullscreen-close {
+		white-space: nowrap;
+	}
+
+	.editor-fullscreen-body {
+		flex: 1;
+		min-height: 0;
+		overflow-y: auto;
+		padding: 0.75rem 1rem 1rem;
 	}
 
 	.preview-dialog-top {
