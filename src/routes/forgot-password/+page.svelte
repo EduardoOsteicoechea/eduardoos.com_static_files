@@ -1,7 +1,4 @@
 <script lang="ts">
-  import { StandardHttpRequestError, isStandardHttpRequestError } from "$lib/services/http/httpErrorModel";
-  import { executeJsonHttpRequest } from "$lib/services/http/httpRequestExecutor";
-
   let email = $state("");
   let isSubmitting = $state(false);
   let successMessage = $state<string | null>(null);
@@ -14,19 +11,24 @@
     errorMessage = null;
 
     try {
-      await executeJsonHttpRequest<{ message?: string }>("/api/auth/forgot-password", {
-        requestMethod: "POST",
-        requestBody: {
-          email: email.trim().toLowerCase()
+      const response = await fetch("/api/auth/forgot-password", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
         },
-        skipUnauthorizedRetry: true,
-        skipUnauthenticatedSessionHandler: true
+        body: JSON.stringify({
+          email: email.trim().toLowerCase()
+        })
       });
+
+      if (!response.ok) {
+        const responseBody = (await response.json().catch(() => ({}))) as { message?: string };
+        throw new Error(responseBody.message ?? "No se pudo enviar el correo de recuperación.");
+      }
+
       successMessage = "Si la cuenta existe, enviamos un enlace de recuperación a tu correo.";
     } catch (error) {
-      if (isStandardHttpRequestError(error)) {
-        errorMessage = error.responseBodyMessage ?? "No se pudo enviar el correo de recuperación.";
-      } else if (error instanceof StandardHttpRequestError) {
+      if (error instanceof Error) {
         errorMessage = error.message;
       } else {
         errorMessage = "No se pudo enviar el correo de recuperación.";

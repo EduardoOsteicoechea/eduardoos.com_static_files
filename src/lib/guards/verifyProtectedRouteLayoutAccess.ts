@@ -1,20 +1,26 @@
 import { browser } from "$app/environment";
 import { redirect } from "@sveltejs/kit";
-import { PUBLIC_BACKEND_API_BASE_URL } from "$env/static/public";
+import { authStore } from "$lib/stores/auth";
 
-const normalizedBackendApiBaseUrl = PUBLIC_BACKEND_API_BASE_URL.replace(/\/+$/, "");
-
-export const verifyProtectedRouteLayoutAccess = async (): Promise<void> => {
+export const verifyProtectedRouteLayoutAccess = async (fetcher: typeof fetch): Promise<void> => {
 	if (!browser) {
 		return;
 	}
 
-	const profileResponse = await fetch(`${normalizedBackendApiBaseUrl}/api/profile`, {
+	const token = authStore.getToken();
+	if (!token) {
+		throw redirect(302, "/login");
+	}
+
+	const profileResponse = await fetcher("/api/profile", {
 		method: "GET",
-		credentials: "include"
+		headers: {
+			Authorization: `Bearer ${token}`
+		}
 	});
 
 	if (profileResponse.status === 401) {
+		authStore.logout();
 		throw redirect(302, "/login");
 	}
 };

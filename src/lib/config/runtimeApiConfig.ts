@@ -1,4 +1,5 @@
 import { PUBLIC_BACKEND_API_BASE_URL } from "$env/static/public";
+import { browser } from "$app/environment";
 
 const sanitizeConfiguredBaseUrl = (configuredBaseUrl: string): string =>
 	configuredBaseUrl.trim().replace(/\/+$/, "");
@@ -23,10 +24,16 @@ export const runtimeApiConfig = {
 } as const;
 
 export const buildBackendApiUrl = (endpointPath: string): string => {
+	const normalizedEndpointPath = normalizeEndpointPath(endpointPath);
+
+	// Prefer same-origin calls in the browser to avoid CORS/cookie issues.
+	if (browser) {
+		return normalizedEndpointPath;
+	}
+
 	if (!runtimeApiConfig.backendApiBaseUrl) {
 		throw new Error("PUBLIC_BACKEND_API_BASE_URL is not configured.");
 	}
 
-	const normalizedEndpointPath = normalizeEndpointPath(endpointPath);
 	return `${runtimeApiConfig.backendApiBaseUrl}${normalizedEndpointPath}`;
 };
