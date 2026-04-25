@@ -1,51 +1,35 @@
 <script lang="ts">
-  import { goto } from "$app/navigation";
   import { StandardHttpRequestError, isStandardHttpRequestError } from "$lib/services/http/httpErrorModel";
   import { executeJsonHttpRequest } from "$lib/services/http/httpRequestExecutor";
-  import { authStore } from "$lib/stores/auth";
-  import { onMount } from "svelte";
-  let username = $state("");
-  let password = $state("");
+
+  let email = $state("");
   let isSubmitting = $state(false);
+  let successMessage = $state<string | null>(null);
   let errorMessage = $state<string | null>(null);
 
-  type LoginResponse = {
-    token: string;
-    user: {
-      id: string;
-      username: string;
-    };
-  };
-
-  onMount(() => {
-    if (authStore.isAuthenticated()) {
-      void goto("/dashboard");
-    }
-  });
-
-  const submitLogin = async (event: SubmitEvent): Promise<void> => {
+  const submitForgotPassword = async (event: SubmitEvent): Promise<void> => {
     event.preventDefault();
-    errorMessage = null;
     isSubmitting = true;
+    successMessage = null;
+    errorMessage = null;
+
     try {
-      const payload = await executeJsonHttpRequest<LoginResponse>("/api/auth/login", {
+      await executeJsonHttpRequest<{ message?: string }>("/api/auth/forgot-password", {
         requestMethod: "POST",
         requestBody: {
-          username: username.trim().toLowerCase(),
-          password
+          email: email.trim().toLowerCase()
         },
         skipUnauthorizedRetry: true,
         skipUnauthenticatedSessionHandler: true
       });
-      authStore.login(payload.token, payload.user);
-      await goto("/dashboard");
+      successMessage = "Si la cuenta existe, enviamos un enlace de recuperación a tu correo.";
     } catch (error) {
       if (isStandardHttpRequestError(error)) {
-        errorMessage = error.responseBodyMessage ?? "Credenciales inválidas.";
+        errorMessage = error.responseBodyMessage ?? "No se pudo enviar el correo de recuperación.";
       } else if (error instanceof StandardHttpRequestError) {
         errorMessage = error.message;
       } else {
-        errorMessage = "No se pudo iniciar sesión. Intenta nuevamente.";
+        errorMessage = "No se pudo enviar el correo de recuperación.";
       }
     } finally {
       isSubmitting = false;
@@ -55,36 +39,30 @@
 
 <section class="auth-page-shell">
   <div class="auth-panel">
-    <h1>Login</h1>
-    <p class="auth-copy">Accede al dashboard para crear y editar lecciones.</p>
+    <h1>Forgot password</h1>
+    <p class="auth-copy">Te enviaremos un enlace para restablecer tu password.</p>
 
-    <form class="auth-form" onsubmit={submitLogin}>
-      <label for="login-username">Username / Email</label>
+    <form class="auth-form" onsubmit={submitForgotPassword}>
+      <label for="forgot-email">Email</label>
       <input
-        id="login-username"
-        type="text"
-        bind:value={username}
-        autocomplete="username"
+        id="forgot-email"
+        type="email"
+        bind:value={email}
+        autocomplete="email"
         placeholder="eduardoost@gmail.com"
         required
       />
 
-      <label for="login-password">Password</label>
-      <input
-        id="login-password"
-        type="password"
-        bind:value={password}
-        autocomplete="current-password"
-        required
-      />
-      <a class="auth-link" href="/forgot-password">Forgot your password?</a>
+      {#if successMessage}
+        <p class="auth-success">{successMessage}</p>
+      {/if}
 
       {#if errorMessage}
         <p class="auth-error">{errorMessage}</p>
       {/if}
 
       <button type="submit" disabled={isSubmitting}>
-        {isSubmitting ? "Iniciando..." : "Iniciar sesión"}
+        {isSubmitting ? "Enviando..." : "Send reset link"}
       </button>
     </form>
   </div>
@@ -146,27 +124,15 @@
     box-sizing: border-box;
   }
 
+  .auth-success {
+    margin: 0.25rem 0;
+    color: var(--option-correct-color);
+    font-size: var(--font-size-4);
+  }
+
   .auth-error {
     margin: 0.25rem 0;
     color: var(--option-wrong-color);
     font-size: var(--font-size-4);
-  }
-
-  .auth-link {
-    width: fit-content;
-    margin-top: 0.1rem;
-    font-size: var(--font-size-4);
-    color: var(--text-muted);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    transition: color 0.15s ease;
-  }
-
-  .auth-link:hover {
-    color: var(--text-main);
-  }
-
-  .auth-form button {
-    margin-top: 0.35rem;
   }
 </style>
