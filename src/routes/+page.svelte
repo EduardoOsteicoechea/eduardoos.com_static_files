@@ -2,7 +2,7 @@
   const homepageMetaDescription =
     "Architecturally trained BIM Modeler & Full Stack Developer. Bridging design and technology with custom Revit APIs, AI integrations, and cloud solutions.";
 
-  const siteNavigationJsonLd = {
+  const siteNavigationJsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@graph": [
       {
@@ -55,7 +55,8 @@
         }
       }
     ]
-  };
+  });
+  const siteNavigationScript = `<script type="application/ld+json">${siteNavigationJsonLd.replace(/</g, "\\u003c")}<${"/script"}>`;
 </script>
 
 <svelte:head>
@@ -63,9 +64,7 @@
   <meta name="description" content={homepageMetaDescription} />
   <meta property="og:title" content="Eduardo Osteicoechea" />
   <meta property="og:description" content={homepageMetaDescription} />
-  <script type="application/ld+json">
-    {JSON.stringify(siteNavigationJsonLd)}
-  </script>
+  {@html siteNavigationScript}
 </svelte:head>
 
 <div class="page route-index-page">
