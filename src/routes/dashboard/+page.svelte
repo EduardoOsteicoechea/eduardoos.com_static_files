@@ -1,7 +1,7 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
   import type { PageData } from "./$types";
-  import { authStore } from "$lib/stores/auth";
+  import { authStore } from "$lib/stores/authStore";
   let { data }: { data: PageData } = $props();
 
   const handleLogout = async (): Promise<void> => {
