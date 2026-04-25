@@ -26,13 +26,9 @@ export const runtimeApiConfig = {
 export const buildBackendApiUrl = (endpointPath: string): string => {
 	const normalizedEndpointPath = normalizeEndpointPath(endpointPath);
 
-	// Prefer same-origin calls in the browser to avoid CORS/cookie issues.
-	if (browser) {
-		return normalizedEndpointPath;
-	}
-
 	if (!runtimeApiConfig.backendApiBaseUrl) {
-		throw new Error("PUBLIC_BACKEND_API_BASE_URL is not configured.");
+		// Fallback to relative path if no base URL is configured
+		return normalizedEndpointPath;
 	}
 
 	return `${runtimeApiConfig.backendApiBaseUrl}${normalizedEndpointPath}`;

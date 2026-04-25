@@ -1,5 +1,6 @@
 import type { PageLoad } from "./$types";
 import { authStore } from "$lib/stores/auth";
+import { buildBackendApiUrl } from "$lib/config/runtimeApiConfig";
 
 export type DashboardLesson = {
   id: number;
@@ -22,18 +23,31 @@ export const load: PageLoad = async ({ fetch }): Promise<DashboardPageData> => {
     return { lessons: [] };
   }
 
-  const response = await fetch("/api/lecciones", {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${token}`
-    }
-  });
+  let response: Response;
+  try {
+    response = await fetch(buildBackendApiUrl("/api/lecciones"), {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+  } catch (error) {
+    console.error("Network error fetching lessons:", error);
+    return { lessons: [] };
+  }
 
   if (!response.ok) {
     return { lessons: [] };
   }
 
-  const lessons = (await response.json()) as DashboardLesson[];
+  let lessons: DashboardLesson[] = [];
+  try {
+    lessons = (await response.json()) as DashboardLesson[];
+  } catch (error) {
+    console.error("Failed to parse lessons JSON:", error);
+    return { lessons: [] };
+  }
+
   return {
     lessons
   };

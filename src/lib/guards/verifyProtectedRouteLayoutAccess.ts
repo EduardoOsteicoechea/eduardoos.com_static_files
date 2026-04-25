@@ -1,6 +1,7 @@
 import { browser } from "$app/environment";
 import { redirect } from "@sveltejs/kit";
 import { authStore } from "$lib/stores/auth";
+import { buildBackendApiUrl } from "$lib/config/runtimeApiConfig";
 
 export const verifyProtectedRouteLayoutAccess = async (fetcher: typeof fetch): Promise<void> => {
 	if (!browser) {
@@ -12,14 +13,21 @@ export const verifyProtectedRouteLayoutAccess = async (fetcher: typeof fetch): P
 		throw redirect(302, "/login");
 	}
 
-	const profileResponse = await fetcher("/api/profile", {
-		method: "GET",
-		headers: {
-			Authorization: `Bearer ${token}`
-		}
-	});
+	let profileResponse: Response;
+	try {
+		profileResponse = await fetcher(buildBackendApiUrl("/api/profile"), {
+			method: "GET",
+			headers: {
+				Authorization: `Bearer ${token}`
+			}
+		});
+	} catch (error) {
+		console.error("Network error fetching profile:", error);
+		authStore.logout();
+		throw redirect(302, "/login");
+	}
 
-	if (profileResponse.status === 401) {
+	if (!profileResponse.ok) {
 		authStore.logout();
 		throw redirect(302, "/login");
 	}
