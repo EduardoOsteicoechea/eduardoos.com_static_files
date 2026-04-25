@@ -1,4 +1,6 @@
 import { buildBackendApiUrl } from "$lib/config/runtimeApiConfig";
+import { authStore } from "$lib/stores/auth";
+import { browser } from "$app/environment";
 import { StandardHttpRequestError } from "./httpErrorModel";
 
 type HttpResponseBodyShape = {
@@ -13,6 +15,8 @@ export type JsonHttpRequestOptions = {
 	requestMethod?: "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
 	requestHeaders?: Record<string, string>;
 	requestBody?: unknown;
+	/** Internal guard to avoid infinite 401->refresh retry loops. */
+	_retry?: boolean;
 	skipUnauthorizedRetry?: boolean;
 	/** When true, a failed refresh after 401 does not run the global unauthenticated handler (e.g. redirect to login). */
 	skipUnauthenticatedSessionHandler?: boolean;
@@ -64,12 +68,18 @@ const parseResponseBodyIfPresent = async (
 };
 
 const executeSingleSessionRefreshAttempt = async (): Promise<boolean> => {
-	if (!registeredSessionRefreshRequester) {
-		return false;
-	}
+	const refreshRequester =
+		registeredSessionRefreshRequester ??
+		(async (): Promise<boolean> => {
+			const refreshResponse = await fetch(buildBackendApiUrl("/api/auth/refresh-token"), {
+				method: "POST",
+				credentials: "include"
+			});
+			return refreshResponse.ok;
+		});
 
 	if (!currentRefreshExecutionPromise) {
-		currentRefreshExecutionPromise = registeredSessionRefreshRequester()
+		currentRefreshExecutionPromise = refreshRequester()
 			.catch(() => false)
 			.finally(() => {
 				currentRefreshExecutionPromise = null;
@@ -101,17 +111,26 @@ export const executeJsonHttpRequest = async <ResponsePayload>(
 	const absoluteBackendApiUrl = buildBackendApiUrl(endpointPath);
 	const httpResponse = await fetch(absoluteBackendApiUrl, requestInit);
 
-	if (httpResponse.status === 401 && !requestOptions.skipUnauthorizedRetry) {
+	const isRetryEligible =
+		httpResponse.status === 401 && !requestOptions.skipUnauthorizedRetry && !requestOptions._retry;
+
+	if (isRetryEligible) {
 		const refreshSucceeded = await executeSingleSessionRefreshAttempt();
 		if (refreshSucceeded) {
 			return executeJsonHttpRequest<ResponsePayload>(endpointPath, {
 				...requestOptions,
+				_retry: true,
 				skipUnauthorizedRetry: true
 			});
 		}
 
 		if (!requestOptions.skipUnauthenticatedSessionHandler) {
-			registeredUnauthenticatedSessionHandler?.();
+			if (registeredUnauthenticatedSessionHandler) {
+				registeredUnauthenticatedSessionHandler();
+			} else if (browser) {
+				authStore.logout();
+				window.location.assign("/login");
+			}
 		}
 	}
 

@@ -9,13 +9,20 @@
     isSubmitting = true;
     successMessage = null;
     errorMessage = null;
+    let requestTimeout: number | undefined;
 
     try {
+      const requestController = new AbortController();
+      requestTimeout = window.setTimeout(() => {
+        requestController.abort();
+      }, 12000);
+
       const response = await fetch("/api/auth/forgot-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
+        signal: requestController.signal,
         body: JSON.stringify({
           email: email.trim().toLowerCase()
         })
@@ -23,17 +30,27 @@
 
       if (!response.ok) {
         const responseBody = (await response.json().catch(() => ({}))) as { message?: string };
+        if (response.status >= 500) {
+          throw new Error(responseBody.message ?? "El servidor no pudo procesar tu solicitud.");
+        }
         throw new Error(responseBody.message ?? "No se pudo enviar el correo de recuperación.");
       }
 
       successMessage = "Si la cuenta existe, enviamos un enlace de recuperación a tu correo.";
     } catch (error) {
+      if (error instanceof DOMException && error.name === "AbortError") {
+        errorMessage = "La solicitud tardó demasiado. Intenta nuevamente.";
+        return;
+      }
       if (error instanceof Error) {
         errorMessage = error.message;
       } else {
         errorMessage = "No se pudo enviar el correo de recuperación.";
       }
     } finally {
+      if (requestTimeout !== undefined) {
+        window.clearTimeout(requestTimeout);
+      }
       isSubmitting = false;
     }
   };
