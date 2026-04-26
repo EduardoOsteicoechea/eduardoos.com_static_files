@@ -1,0 +1,191 @@
+@import url("./theme.css");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+ul,
+ol,
+dl {
+  margin: 0;
+}
+
+main,
+header,
+section,
+article {
+  display: block;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+.accent-highlight {
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+#index-view {
+  width: min(100% - (2 * var(--space-5)), var(--container-max));
+  margin-inline: auto;
+  padding: var(--space-7) 0;
+}
+
+#index-view h1 {
+  margin-bottom: var(--space-5);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  line-height: var(--line-height-tight);
+}
+
+.article-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.article-card {
+  width: 100%;
+  text-align: left;
+  color: inherit;
+  background: var(--color-surface);
+  border: var(--border-thin) solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  cursor: pointer;
+}
+
+.article-card:hover {
+  border-color: var(--color-accent);
+}
+
+.article-card p {
+  color: var(--color-text-muted);
+}
+
+header#article-header,
+main#article-content {
+  width: min(100% - (2 * var(--space-5)), var(--container-max));
+  margin-inline: auto;
+}
+
+header#article-header {
+  padding: var(--space-7) 0 var(--space-6);
+  border-bottom: var(--border-thin) solid var(--color-border);
+}
+
+#article-header h1 {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  line-height: var(--line-height-tight);
+}
+
+#article-header p {
+  margin-top: var(--space-3);
+  max-width: var(--prose-max);
+  color: var(--color-text-muted);
+}
+
+#article-content {
+  padding: var(--space-6) 0 var(--space-7);
+}
+
+#article-content section + section {
+  margin-top: var(--space-6);
+}
+
+#article-content h2 {
+  margin-bottom: var(--space-3);
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+}
+
+p.prose {
+  max-width: var(--prose-max);
+  color: var(--color-text);
+}
+
+p.prose + p.prose {
+  margin-top: var(--space-4);
+}
+
+blockquote.biblical-quote {
+  max-width: var(--prose-max);
+  margin-top: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border-left: var(--border-thick) solid var(--color-quote-border);
+  background: var(--color-quote-bg);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+}
+
+blockquote.biblical-quote .accent-highlight {
+  color: var(--color-emphasis);
+}
+
+details.quiz {
+  max-width: var(--prose-max);
+  margin-top: var(--space-4);
+  border: var(--border-thin) solid var(--color-border);
+  background: var(--color-quiz-bg);
+  border-radius: var(--radius-md);
+  overflow: clip;
+}
+
+details.quiz summary {
+  cursor: pointer;
+  padding: var(--space-4) var(--space-5);
+  color: var(--color-quiz-summary);
+  font-weight: 600;
+}
+
+details.quiz[open] summary {
+  border-bottom: var(--border-thin) solid var(--color-border);
+}
+
+details.quiz .quiz-content {
+  padding: var(--space-4) var(--space-5);
+}
+
+details.quiz ol {
+  padding-left: 1.3rem;
+}
+
+details.quiz li + li {
+  margin-top: var(--space-2);
+}

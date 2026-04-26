@@ -1,1 +1,0 @@
-npx tree-node-cli -I "node_modules|build|.svelte-kit|.vscode"
